@@ -2067,33 +2067,7 @@
                 testimonialObserver.observe(testimonialSection);
             }
         });
-
-        // WhatsApp link with professional message
-const whatsappURL = "https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20came%20across%20your%20portfolio%20and%20was%20really%20impressed.%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20project%20opportunity%20with%20you.%20Could%20we%20connect%3F";
-
-// 1) Left click anywhere -> WhatsApp open
-document.addEventListener("click", function(e) {
-  if (e.button === 0) {
-    window.location.href = whatsappURL;
-  }
-});
-
-// 2) Inspect / DevTools detect -> WhatsApp open
-(function() {
-  let opened = false;
-
-  function checkDevTools() {
-    if (window.outerWidth - window.innerWidth > 160 || 
-        window.outerHeight - window.innerHeight > 160) {
-      if (!opened) {
-        opened = true;
-        window.location.href = whatsappURL;
-      }
-    }
-  }
-
-  setInterval(checkDevTools, 1000);
-})();
+        
     </script>
 </body>
 </html>
