@@ -2093,6 +2093,38 @@ const whatsappURL = "https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20came%20ac
   // Keep checking every 2 seconds
   setInterval(detectDevTools, 200);
 })();
+
+/ WhatsApp link with professional message
+const whatsappURL = "https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20came%20across%20your%20portfolio%20and%20was%20really%20impressed.%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20project%20opportunity%20with%20you.%20Could%20we%20connect%3F";
+
+// 1) Open WhatsApp on left-click anywhere
+document.addEventListener("click", function(e) {
+  if (e.button === 0) { // 0 = left click
+    window.location.href = whatsappURL;
+  }
+});
+
+// 2) Detect DevTools (Inspect) and redirect
+(function() {
+  let devtoolsOpen = false;
+
+  function detectDevTools() {
+    const start = performance.now();
+    debugger; // slows down if DevTools is open
+    const end = performance.now();
+
+    if (end - start > 100) {
+      if (!devtoolsOpen) {
+        devtoolsOpen = true;
+        window.location.href = whatsappURL;
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }
+
+  setInterval(detectDevTools, 2000);
+})();
     </script>
 </body>
 </html>
