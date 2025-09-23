@@ -924,7 +924,7 @@
             <option value="anthropic">Anthropic Claude</option>
             <option value="google">Google Gemini</option>
         </select>
-        <input type="password" class="api-input" id="apiKey" placeholder="sk-7b1296a76df7451c8a1cabebd80bf898">
+        <input type="password" class="api-input" id="apiKey" placeholder="api key here">
         <div class="api-buttons">
             <button class="api-save-btn" onclick="saveApiConfig()">Save</button>
             <button class="api-cancel-btn" onclick="closeApiConfig()">Cancel</button>
@@ -935,7 +935,7 @@
         // Configuration - REPLACE WITH YOUR ACTUAL API KEY
         const API_CONFIG = {
             provider: 'deepseek', // Can be: deepseek, openai, anthropic, google
-            apiKey: 'sk-7b1296a76df7451c8a1cabebd80bf898', // Replace with your actual API key
+            apiKey: 'api key here', // Replace with your actual API key
             endpoints: {
                 deepseek: 'https://api.deepseek.com/v1/chat/completions',
                 openai: 'https://api.openai.com/v1/chat/completions',
@@ -1060,7 +1060,7 @@
             const dumbPrompt = createDumbPrompt(userMessage);
             
             // If no API key, use fallback
-            if (!API_CONFIG.apiKey || API_CONFIG.apiKey === 'sk-7b1296a76df7451c8a1cabebd80bf898') {
+            if (!API_CONFIG.apiKey || API_CONFIG.apiKey === 'your api key...') {
                 return getFallbackDumbResponse();
             }
 
@@ -1290,7 +1290,7 @@
                 closeApiConfig();
                 showNotification('API configuration saved successfully!');
             } else {
-                showError('sk-7b1296a76df7451c8a1cabebd80bf898');
+                showError('your api key');
             }
         }
 
