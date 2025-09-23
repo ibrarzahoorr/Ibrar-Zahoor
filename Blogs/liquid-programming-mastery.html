@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Liquid Programming Mastery: Advanced Shopify Development Techniques | Complete Liquid Guide 2025</title>
+    <meta name="description" content="Master Shopify Liquid programming with advanced techniques: custom snippets, metafields, conditionals, loops, filters, and performance optimization. Complete developer guide with code examples." />
+    <meta name="keywords" content="shopify liquid, liquid programming, shopify development, liquid templates, shopify liquid tutorial, liquid code, shopify theme development, liquid snippets, shopify metafields, liquid conditionals, liquid loops, shopify liquid filters" />
+    <meta name="author" content="Ibrar Zahoor - Shopify Liquid Expert" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Liquid Programming Mastery: Advanced Shopify Development Techniques" />
+    <meta property="og:description" content="Master Shopify Liquid programming: advanced snippets, metafields, conditionals, loops, and performance optimization techniques." />
+    <meta property="og:image" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/liquid-programming-guide.jpg" />
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💧</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS -->
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap);
+      
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      
+      body {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      /* CSS Variables */
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --surface-2: #1a1a1a;
+        --border: rgba(255, 255, 255, 0.08);
+        --muted: #888888;
+        --text: #ffffff;
+        --text-2: #cccccc;
+        --brand: #0070f3;
+        --brand-2: #00a8cc;
+        --brand-3: #7928ca;
+        --accent: #ff4081;
+        --success: #00d084;
+        --warning: #ffaa00;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+        --radius: 12px;
+        --maxw: 1280px;
+        --gradient: linear-gradient(135deg, var(--brand), var(--brand-3));
+      }
+      
+      /* Container */
+      .container {
+        width: min(100% - 32px, var(--maxw));
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      
+      .section {
+        padding: 80px 0;
+        position: relative;
+      }
+      
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 16px;
+        max-width: var(--maxw);
+        margin: 0 auto;
+      }
+      
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #fff;
+        font-size: 18px;
+      }
+      
+      .brand-name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      
+      .nav-links a {
+        color: var(--text-2);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      
+      .nav-links a:hover {
+        color: var(--brand);
+      }
+      
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.2s;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      
+      .btn.primary {
+        background: var(--gradient);
+        color: #fff;
+      }
+      
+      .btn.success {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+      }
+
+      .btn.outline {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+      
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Hero Section */
+      .hero {
+        padding: 140px 0 80px;
+        background: var(--bg);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 120%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0, 112, 243, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      
+      .hero-text {
+        animation: fadeInUp 0.8s ease;
+      }
+      
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(0, 208, 132, 0.1);
+        border: 1px solid rgba(0, 208, 132, 0.3);
+        border-radius: 100px;
+        color: var(--success);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      
+      .status-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      
+      h1 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, var(--text) 0%, var(--brand) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .lead {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        animation: fadeInUp 0.8s 0.2s both;
+      }
+      
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+      
+      .stat-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .stat-number {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+      
+      .stat-label {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* Content Sections */
+      .content-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 40px;
+        margin: 40px 0;
+      }
+
+      .content-section h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text);
+      }
+
+      .content-section h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 30px 0 15px 0;
+        color: var(--brand);
+      }
+
+      .content-section h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 25px 0 10px 0;
+        color: var(--text);
+      }
+
+      .content-section p {
+        margin-bottom: 16px;
+        line-height: 1.7;
+        color: var(--text-2);
+      }
+
+      .content-section ul {
+        margin: 16px 0;
+        padding-left: 24px;
+      }
+
+      .content-section li {
+        margin-bottom: 8px;
+        color: var(--text-2);
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(0, 112, 243, 0.1), rgba(121, 40, 202, 0.1));
+        border: 1px solid var(--brand);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      /* Code Blocks */
+      .code-block {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+        overflow-x: auto;
+        position: relative;
+      }
+
+      .code-block pre {
+        margin: 0;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text-2);
+      }
+
+      .code-block code {
+        color: #61dafb;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .code-title {
+        font-weight: 600;
+        color: var(--text);
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+        background: var(--brand);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .copy-btn:hover {
+        background: var(--brand-3);
+      }
+
+      /* Syntax Highlighting */
+      .liquid-tag { color: #f92672; }
+      .liquid-filter { color: #a6e22e; }
+      .liquid-variable { color: #fd971f; }
+      .liquid-string { color: #e6db74; }
+      .liquid-comment { color: #75715e; }
+      .liquid-operator { color: #f8f8f2; }
+      
+      /* Features Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+      
+      .feature-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      
+      .feature-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      
+      .feature-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      
+      .feature-card p {
+        color: var(--text-2);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-title {
+        font-size: clamp(32px, 4vw, 42px);
+        font-weight: 800;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+      
+      .section-subtitle {
+        font-size: 18px;
+        color: var(--text-2);
+      }
+
+      /* Table of Contents */
+      .toc {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      .toc h4 {
+        margin-bottom: 16px;
+        color: var(--text);
+      }
+
+      .toc ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .toc li {
+        margin-bottom: 8px;
+      }
+
+      .toc a {
+        color: var(--text-2);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .toc a:hover {
+        color: var(--brand);
+      }
+
+      /* Technique Cards */
+      .technique-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+        margin: 40px 0;
+      }
+
+      .technique-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        transition: all 0.3s;
+      }
+
+      .technique-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+
+      .technique-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .technique-icon {
+        width: 32px;
+        height: 32px;
+        background: var(--gradient);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+      }
+
+      .technique-card h4 {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text);
+        margin: 0;
+      }
+
+      .technique-description {
+        color: var(--text-2);
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 60px 40px;
+        text-align: center;
+        margin: 80px 0;
+      }
+      
+      .cta-section h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      
+      .cta-section p {
+        font-size: 18px;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .cta-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 208, 132, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0);
+        }
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+        
+        .hero-actions {
+          flex-direction: column;
+        }
+        
+        .hero-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        
+        .cta-actions {
+          flex-direction: column;
+        }
+        
+        .cta-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .content-section {
+          padding: 24px;
+        }
+
+        .technique-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .section {
+          padding: 60px 0;
+        }
+        
+        .hero {
+          padding: 100px 0 60px;
+        }
+        
+        .container {
+          padding: 0 12px;
+        }
+        
+        .cta-section {
+          padding: 40px 24px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="nav container">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
+                <div class="brand-logo">IZ</div>
+                <div class="brand-name">Ibrar Zahoor</div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a>
+            </div>
+            
+            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20help%20with%20Shopify%20Liquid%20programming.%20Can%20you%20assist?" 
+               class="btn success" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                Liquid Help
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="status-badge">Advanced Programming Guide</div>
+                        <h1>Liquid Programming Mastery</h1>
+                        <p class="lead">
+                            Master <strong>Shopify Liquid programming</strong> with advanced techniques and best practices. 
+                            Complete guide to <strong>Liquid templates</strong>, <strong>custom snippets</strong>, 
+                            <strong>metafields</strong>, <strong>conditionals</strong>, <strong>loops</strong>, 
+                            <strong>filters</strong>, and <strong>performance optimization</strong> for professional 
+                            <strong>Shopify theme development</strong>.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#liquid-fundamentals" class="btn primary">
+                                <i class="fas fa-code"></i>
+                                Start Learning
+                            </a>
+                            <a href="#advanced-techniques" class="btn outline">
+                                <i class="fas fa-rocket"></i>
+                                Advanced Techniques
+                            </a>
+                            <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20help%20mastering%20Shopify%20Liquid%20programming.%20Can%20we%20discuss?" 
+                               class="btn success" 
+                               target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Get Expert Help
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Code Examples</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Advanced Techniques</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Production Ready</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table of Contents -->
+        <section class="section">
+            <div class="container">
+                <div class="toc">
+                    <h4>Complete Guide Contents</h4>
+                    <ul>
+                        <li><a href="#liquid-fundamentals">Liquid Programming Fundamentals</a></li>
+                        <li><a href="#liquid-variables">Variables and Data Types</a></li>
+                        <li><a href="#liquid-conditionals">Advanced Conditionals and Logic</a></li>
+                        <li><a href="#liquid-loops">Powerful Loops and Iterations</a></li>
+                        <li><a href="#liquid-filters">Essential Filters and Modifiers</a></li>
+                        <li><a href="#liquid-snippets">Custom Snippets and Includes</a></li>
+                        <li><a href="#metafields-programming">Metafields Programming</a></li>
+                        <li><a href="#advanced-techniques">Advanced Programming Techniques</a></li>
+                        <li><a href="#performance-optimization">Performance Optimization</a></li>
+                        <li><a href="#debugging-liquid">Debugging and Best Practices</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liquid Fundamentals -->
+        <section id="liquid-fundamentals" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Shopify Liquid Programming Fundamentals</h2>
+                    
+                    <p><strong>Shopify Liquid</strong> is a templating language created by Shopify for building dynamic themes. Understanding Liquid programming is essential for professional <strong>Shopify theme development</strong> and customization.</p>
+
+                    <h3 id="liquid-syntax">Liquid Syntax and Structure</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Core Liquid Elements</h4>
+                        <ul>
+                            <li><strong>Objects:</strong> {{ }} - Output dynamic content</li>
+                            <li><strong>Tags:</strong> {% %} - Logic and control flow</li>
+                            <li><strong>Filters:</strong> | - Modify and format output</li>
+                            <li><strong>Comments:</strong> {% comment %} - Code documentation</li>
+                            <li><strong>Raw:</strong> {% raw %} - Disable Liquid processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Basic Liquid Syntax Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Basic Liquid Syntax {% endcomment %}</span>
+
+<span class="liquid-comment"><!-- Objects: Output dynamic content --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">collection.description</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">shop.name</span> <span class="liquid-tag">}}</span>
+
+<span class="liquid-comment"><!-- Tags: Control flow and logic --></span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.available</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;button type="submit"&gt;Add to Cart&lt;/button&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;button disabled&gt;Sold Out&lt;/button&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment"><!-- Filters: Modify output --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| upcase</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">blog.created_at</span> <span class="liquid-filter">| date: '%B %d, %Y'</span> <span class="liquid-tag">}}</span></code></pre>
+                    </div>
+
+                    <h3 id="liquid-template-structure">Template File Structure</h3>
+                    
+                    <p>Understanding the <strong>Shopify theme structure</strong> and how Liquid templates work together is crucial for effective development:</p>
+
+                    <ul>
+                        <li><strong>Layout Templates:</strong> theme.liquid - Main wrapper for all pages</li>
+                        <li><strong>Template Files:</strong> index.liquid, product.liquid, collection.liquid</li>
+                        <li><strong>Section Files:</strong> Modular content blocks in sections/</li>
+                        <li><strong>Snippet Files:</strong> Reusable code components in snippets/</li>
+                        <li><strong>Asset Files:</strong> CSS, JavaScript, and images in assets/</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">theme.liquid - Layout Structure</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-string">&lt;!DOCTYPE html&gt;</span>
+<span class="liquid-string">&lt;html lang="</span><span class="liquid-tag">{{</span> <span class="liquid-variable">request.locale.iso_code</span> <span class="liquid-tag">}}</span><span class="liquid-string">"&gt;</span>
+<span class="liquid-string">&lt;head&gt;</span>
+  <span class="liquid-comment">{% comment %} Meta tags and SEO {% endcomment %}</span>
+  <span class="liquid-string">&lt;meta charset="utf-8"&gt;</span>
+  <span class="liquid-string">&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</span>
+  
+  <span class="liquid-comment">{% comment %} Dynamic title tag {% endcomment %}</span>
+  <span class="liquid-string">&lt;title&gt;</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">page_title</span> <span class="liquid-operator">==</span> <span class="liquid-string">blank</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-tag">{{</span> <span class="liquid-variable">shop.name</span> <span class="liquid-tag">}}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-tag">{{</span> <span class="liquid-variable">page_title</span> <span class="liquid-tag">}}</span> | <span class="liquid-tag">{{</span> <span class="liquid-variable">shop.name</span> <span class="liquid-tag">}}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;/title&gt;</span>
+  
+  <span class="liquid-comment">{% comment %} Include CSS and JavaScript {% endcomment %}</span>
+  <span class="liquid-tag">{{</span> <span class="liquid-string">'theme.css'</span> <span class="liquid-filter">| asset_url</span> <span class="liquid-filter">| stylesheet_tag</span> <span class="liquid-tag">}}</span>
+  <span class="liquid-tag">{{</span> <span class="liquid-variable">content_for_header</span> <span class="liquid-tag">}}</span>
+<span class="liquid-string">&lt;/head&gt;</span>
+
+<span class="liquid-string">&lt;body class="template-</span><span class="liquid-tag">{{</span> <span class="liquid-variable">template.name</span> <span class="liquid-tag">}}</span><span class="liquid-string">"&gt;</span>
+  <span class="liquid-comment">{% comment %} Include header snippet {% endcomment %}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">include</span> <span class="liquid-string">'header'</span> <span class="liquid-tag">%}</span>
+  
+  <span class="liquid-comment">{% comment %} Main content area {% endcomment %}</span>
+  <span class="liquid-string">&lt;main id="MainContent"&gt;</span>
+    <span class="liquid-tag">{{</span> <span class="liquid-variable">content_for_layout</span> <span class="liquid-tag">}}</span>
+  <span class="liquid-string">&lt;/main&gt;</span>
+  
+  <span class="liquid-comment">{% comment %} Include footer snippet {% endcomment %}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">include</span> <span class="liquid-string">'footer'</span> <span class="liquid-tag">%}</span>
+  
+  <span class="liquid-comment">{% comment %} JavaScript files {% endcomment %}</span>
+  <span class="liquid-tag">{{</span> <span class="liquid-string">'theme.js'</span> <span class="liquid-filter">| asset_url</span> <span class="liquid-filter">| script_tag</span> <span class="liquid-tag">}}</span>
+<span class="liquid-string">&lt;/body&gt;</span>
+<span class="liquid-string">&lt;/html&gt;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variables and Data Types -->
+        <section id="liquid-variables" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Liquid Variables and Data Types</h2>
+                    
+                    <p><strong>Liquid variables</strong> store data and make it accessible throughout your templates. Understanding variable types and scope is essential for effective <strong>Liquid programming</strong>.</p>
+
+                    <h3 id="shopify-global-objects">Shopify Global Objects</h3>
+                    
+                    <div class="technique-grid">
+                        <div class="technique-card">
+                            <div class="technique-header">
+                                <div class="technique-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <h4>Shop Object</h4>
+                            </div>
+                            <div class="technique-description">
+                                Contains store information like name, domain, currency, and settings.
+                            </div>
+                            <div class="code-block">
+                                <pre><code><span class="liquid-tag">{{</span> <span class="liquid-variable">shop.name</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">shop.domain</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">shop.currency</span> <span class="liquid-tag">}}</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="technique-card">
+                            <div class="technique-header">
+                                <div class="technique-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <h4>Product Object</h4>
+                            </div>
+                            <div class="technique-description">
+                                Contains product data including title, price, variants, images, and metafields.
+                            </div>
+                            <div class="code-block">
+                                <pre><code><span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.available</span> <span class="liquid-tag">}}</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="technique-card">
+                            <div class="technique-header">
+                                <div class="technique-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h4>Cart Object</h4>
+                            </div>
+                            <div class="technique-description">
+                                Contains cart data including items, total price, item count, and attributes.
+                            </div>
+                            <div class="code-block">
+                                <pre><code><span class="liquid-tag">{{</span> <span class="liquid-variable">cart.item_count</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">cart.total_price</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">cart.items.size</span> <span class="liquid-tag">}}</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="technique-card">
+                            <div class="technique-header">
+                                <div class="technique-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4>Customer Object</h4>
+                            </div>
+                            <div class="technique-description">
+                                Contains customer information when user is logged in, including orders and addresses.
+                            </div>
+                            <div class="code-block">
+                                <pre><code><span class="liquid-tag">{{</span> <span class="liquid-variable">customer.first_name</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">customer.email</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">customer.orders_count</span> <span class="liquid-tag">}}</span></code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 id="variable-assignment">Variable Assignment and Manipulation</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Advanced Variable Techniques</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Variable Assignment {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">product_count</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products.size</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">sale_price</span> <span class="liquid-operator">=</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| times: 0.8</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">formatted_date</span> <span class="liquid-operator">=</span> <span class="liquid-variable">blog.created_at</span> <span class="liquid-filter">| date: '%B %d, %Y'</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Capture Complex Content {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">capture</span> <span class="liquid-variable">product_description</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.description</span> <span class="liquid-operator">!=</span> <span class="liquid-string">blank</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-tag">{{</span> <span class="liquid-variable">product.description</span> <span class="liquid-filter">| truncatewords: 50</span> <span class="liquid-tag">}}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+    No description available for this product.
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endcapture</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Array Creation and Manipulation {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">featured_products</span> <span class="liquid-operator">=</span> <span class="liquid-string">''</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">for</span> <span class="liquid-variable">product</span> <span class="liquid-operator">in</span> <span class="liquid-variable">collections.featured.products</span> <span class="liquid-operator">limit:</span> <span class="liquid-string">5</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">unless</span> <span class="liquid-variable">forloop.first</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">featured_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">featured_products</span> <span class="liquid-filter">| append: ','</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endunless</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">featured_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">featured_products</span> <span class="liquid-filter">| append: product.id</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endfor</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">featured_array</span> <span class="liquid-operator">=</span> <span class="liquid-variable">featured_products</span> <span class="liquid-filter">| split: ','</span> <span class="liquid-tag">%}</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Conditionals -->
+        <section id="liquid-conditionals" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Advanced Liquid Conditionals and Logic</h2>
+                    
+                    <p><strong>Liquid conditionals</strong> control the flow of your templates and enable dynamic content rendering based on various conditions and user states.</p>
+
+                    <h3 id="complex-conditional-logic">Complex Conditional Logic</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Advanced Conditional Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Complex Product Availability Logic {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.available</span> <span class="liquid-operator">and</span> <span class="liquid-variable">product.price</span> <span class="liquid-operator">&gt;</span> <span class="liquid-string">0</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.compare_at_price</span> <span class="liquid-operator">&gt;</span> <span class="liquid-variable">product.price</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;span class="sale-badge"&gt;Sale&lt;/span&gt;</span>
+    <span class="liquid-string">&lt;span class="price"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/span&gt;</span>
+    <span class="liquid-string">&lt;span class="compare-price"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.compare_at_price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/span&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;span class="price"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/span&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">elsif</span> <span class="liquid-variable">product.price</span> <span class="liquid-operator">==</span> <span class="liquid-string">0</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;span class="free-badge"&gt;Free&lt;/span&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;span class="sold-out"&gt;Sold Out&lt;/span&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Customer Type Detection {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">customer</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">case</span> <span class="liquid-variable">customer.tags</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">when</span> <span class="liquid-string">'vip'</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-string">&lt;div class="vip-banner"&gt;VIP Customer Benefits Available&lt;/div&gt;</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">when</span> <span class="liquid-string">'wholesale'</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-string">&lt;div class="wholesale-pricing"&gt;Wholesale Pricing Applied&lt;/div&gt;</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-string">&lt;div class="standard-customer"&gt;Welcome back!&lt;/div&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endcase</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">else</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="guest-message"&gt;Sign up for exclusive offers&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Template-Specific Logic {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">unless</span> <span class="liquid-variable">template</span> <span class="liquid-operator">contains</span> <span class="liquid-string">'cart'</span> <span class="liquid-operator">or</span> <span class="liquid-variable">template</span> <span class="liquid-operator">contains</span> <span class="liquid-string">'checkout'</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="newsletter-signup"&gt;</span>
+    <span class="liquid-comment"><!-- Newsletter signup form --></span>
+  <span class="liquid-string">&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endunless</span> <span class="liquid-tag">%}</span></code></pre>
+                    </div>
+
+                    <h3 id="advanced-comparison-operators">Advanced Comparison Techniques</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Liquid Comparison Operators</h4>
+                        <ul>
+                            <li><strong>== (equals):</strong> Exact value comparison</li>
+                            <li><strong>!= (not equals):</strong> Value inequality check</li>
+                            <li><strong>< > <= >=:</strong> Numerical comparisons</li>
+                            <li><strong>contains:</strong> String/array contains check</li>
+                            <li><strong>and / or:</strong> Logical operators for complex conditions</li>
+                            <li><strong>blank / empty:</strong> Check for empty values</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Powerful Loops -->
+        <section id="liquid-loops" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Powerful Loops and Iterations</h2>
+                    
+                    <p><strong>Liquid loops</strong> are essential for iterating through collections, products, and arrays. Master advanced looping techniques for efficient <strong>Shopify theme development</strong>.</p>
+
+                    <h3 id="for-loop-mastery">Advanced For Loop Techniques</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Advanced Loop Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Product Grid with Advanced Loop Control {% endcomment %}</span>
+<span class="liquid-string">&lt;div class="product-grid"&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">for</span> <span class="liquid-variable">product</span> <span class="liquid-operator">in</span> <span class="liquid-variable">collection.products</span> <span class="liquid-operator">limit:</span> <span class="liquid-string">12</span> <span class="liquid-operator">offset:</span> <span class="liquid-string">4</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="product-item</span> <span class="liquid-tag">{%</span> <span class="liquid-operator">cycle</span> <span class="liquid-string">'odd'</span><span class="liquid-string">, 'even'</span> <span class="liquid-tag">%}</span> 
+       <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">forloop.first</span> <span class="liquid-tag">%}</span><span class="liquid-string">first</span><span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+       <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">forloop.last</span> <span class="liquid-tag">%}</span><span class="liquid-string">last</span><span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span><span class="liquid-string">"&gt;</span>
+    
+    <span class="liquid-string">&lt;h3&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/h3&gt;</span>
+    <span class="liquid-string">&lt;p&gt;Position: </span><span class="liquid-tag">{{</span> <span class="liquid-variable">forloop.index</span> <span class="liquid-tag">}}</span><span class="liquid-string"> of </span><span class="liquid-tag">{{</span> <span class="liquid-variable">forloop.length</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/p&gt;</span>
+    
+    <span class="liquid-comment">{% comment %} Break loop on specific condition {% endcomment %}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.tags</span> <span class="liquid-operator">contains</span> <span class="liquid-string">'featured'</span> <span class="liquid-operator">and</span> <span class="liquid-variable">forloop.index</span> <span class="liquid-operator">&gt;</span> <span class="liquid-string">6</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-tag">{%</span> <span class="liquid-operator">break</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+    
+    <span class="liquid-comment">{% comment %} Skip products without images {% endcomment %}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">unless</span> <span class="liquid-variable">product.featured_image</span> <span class="liquid-tag">%}</span>
+      <span class="liquid-tag">{%</span> <span class="liquid-operator">continue</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-tag">{%</span> <span class="liquid-operator">endunless</span> <span class="liquid-tag">%}</span>
+    
+  <span class="liquid-string">&lt;/div&gt;</span>
+  
+  <span class="liquid-comment">{% comment %} Add row break every 4 items {% endcomment %}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">forloop.index</span> <span class="liquid-operator">modulo:</span> <span class="liquid-string">4</span> <span class="liquid-operator">==</span> <span class="liquid-string">0</span> <span class="liquid-operator">and</span> <span class="liquid-variable">forloop.last</span> <span class="liquid-operator">==</span> <span class="liquid-string">false</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;div class="row-break"&gt;&lt;/div&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endfor</span> <span class="liquid-tag">%}</span>
+<span class="liquid-string">&lt;/div&gt;</span>
+
+<span class="liquid-comment">{% comment %} Table Row Loop with Alternating Classes {% endcomment %}</span>
+<span class="liquid-string">&lt;table class="order-history"&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">tablerow</span> <span class="liquid-variable">order</span> <span class="liquid-operator">in</span> <span class="liquid-variable">customer.orders</span> <span class="liquid-operator">cols:</span> <span class="liquid-string">1</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;td class="order-number"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">order.name</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/td&gt;</span>
+  <span class="liquid-string">&lt;td class="order-date"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">order.created_at</span> <span class="liquid-filter">| date: '%B %d, %Y'</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/td&gt;</span>
+  <span class="liquid-string">&lt;td class="order-total"&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">order.total_price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/td&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endtablerow</span> <span class="liquid-tag">%}</span>
+<span class="liquid-string">&lt;/table&gt;</span></code></pre>
+                    </div>
+
+                    <h3 id="loop-optimization">Loop Performance Optimization</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Loop Performance Best Practices</h4>
+                        <ul>
+                            <li><strong>Limit Results:</strong> Use limit: parameter to control loop size</li>
+                            <li><strong>Offset Pagination:</strong> Implement pagination with offset</li>
+                            <li><strong>Break/Continue:</strong> Exit loops early when conditions are met</li>
+                            <li><strong>Cycle Classes:</strong> Use cycle for alternating styles efficiently</li>
+                            <li><strong>Forloop Variables:</strong> Leverage forloop.index, forloop.first, etc.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essential Filters -->
+        <section id="liquid-filters" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Essential Liquid Filters and Modifiers</h2>
+                    
+                    <p><strong>Liquid filters</strong> modify and format output data. Master the most useful filters for professional <strong>Shopify development</strong>.</p>
+
+                    <h3 id="string-filters">Advanced String Manipulation</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">String Filter Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} String Formatting and Manipulation {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| upcase</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- PRODUCT TITLE --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| downcase</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- product title --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| capitalize</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- Product title --></span>
+
+<span class="liquid-comment">{% comment %} Text Truncation and Formatting {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.description</span> <span class="liquid-filter">| strip_html</span> <span class="liquid-filter">| truncatewords: 25, '...'</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.description</span> <span class="liquid-filter">| truncate: 150, '...'</span> <span class="liquid-tag">}}</span>
+
+<span class="liquid-comment">{% comment %} URL and Handle Generation {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| handleize</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- product-title --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.url</span> <span class="liquid-filter">| within: collection</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-string">'custom-class-name'</span> <span class="liquid-filter">| append: '-'</span> <span class="liquid-filter">| append: product.id</span> <span class="liquid-tag">}}</span>
+
+<span class="liquid-comment">{% comment %} Advanced String Operations {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.tags</span> <span class="liquid-filter">| join: ', '</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-string">'red,blue,green'</span> <span class="liquid-filter">| split: ','</span> <span class="liquid-filter">| first</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-filter">| replace: 'Old', 'New'</span> <span class="liquid-tag">}}</span></code></pre>
+                    </div>
+
+                    <h3 id="array-filters">Array and Collection Filters</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Array Manipulation Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Array Sorting and Filtering {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">sorted_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| sort: 'price'</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">available_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| where: 'available', true</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">featured_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| where: 'tags', 'featured'</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Array Size and Access {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">collection.products.size</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- Number of products --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| first</span> <span class="liquid-filter">| map: 'title'</span> <span class="liquid-tag">}}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| last</span> <span class="liquid-filter">| map: 'price'</span> <span class="liquid-tag">}}</span>
+
+<span class="liquid-comment">{% comment %} Advanced Array Operations {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">unique_vendors</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| map: 'vendor'</span> <span class="liquid-filter">| uniq</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">reversed_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| reverse</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">random_products</span> <span class="liquid-operator">=</span> <span class="liquid-variable">collection.products</span> <span class="liquid-filter">| sample: 4</span> <span class="liquid-tag">%}</span></code></pre>
+                    </div>
+
+                    <h3 id="math-date-filters">Math and Date Filters</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Math and Date Operations</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Mathematical Operations {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">sale_price</span> <span class="liquid-operator">=</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| times: 0.8</span> <span class="liquid-filter">| round: 2</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">savings</span> <span class="liquid-operator">=</span> <span class="liquid-variable">product.compare_at_price</span> <span class="liquid-filter">| minus: product.price</span> <span class="liquid-tag">%}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">savings_percent</span> <span class="liquid-operator">=</span> <span class="liquid-variable">savings</span> <span class="liquid-filter">| divided_by: product.compare_at_price</span> <span class="liquid-filter">| times: 100</span> <span class="liquid-filter">| round</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Date Formatting {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">blog.created_at</span> <span class="liquid-filter">| date: '%B %d, %Y'</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- January 15, 2025 --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">blog.created_at</span> <span class="liquid-filter">| date: '%m/%d/%Y'</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- 01/15/2025 --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-string">'now'</span> <span class="liquid-filter">| date: '%Y-%m-%d %H:%M:%S'</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- ISO format --></span>
+
+<span class="liquid-comment">{% comment %} Currency and Money Formatting {% endcomment %}</span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- $19.99 --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money_without_currency</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- 19.99 --></span>
+<span class="liquid-tag">{{</span> <span class="liquid-variable">product.price</span> <span class="liquid-filter">| money_with_currency</span> <span class="liquid-tag">}}</span> <span class="liquid-comment"><!-- $19.99 USD --></span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Techniques Section -->
+        <section id="advanced-techniques" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Advanced Liquid Programming Techniques</h2>
+                    <p class="section-subtitle">Master professional-level Liquid development strategies</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Custom Snippets</h3>
+                        <p>Create reusable code components with parameters and advanced logic for maintainable theme development.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Metafields Integration</h3>
+                        <p>Leverage custom metafields for additional product data, content management, and dynamic functionality.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Performance Optimization</h3>
+                        <p>Optimize Liquid code for speed, reduce server requests, and improve overall theme performance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Debugging Techniques</h3>
+                        <p>Advanced debugging strategies, error handling, and testing methods for Liquid development.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive Patterns</h3>
+                        <p>Create responsive designs with Liquid logic, device detection, and adaptive content loading.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Best Practices</h3>
+                        <p>Implement secure coding practices, data validation, and protection against common vulnerabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metafields Programming -->
+        <section id="metafields-programming" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Advanced Metafields Programming</h2>
+                    
+                    <p><strong>Shopify metafields</strong> extend the functionality of products, collections, and other objects. Master metafields programming for dynamic content management.</p>
+
+                    <h3 id="metafields-access">Accessing and Displaying Metafields</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Metafields Implementation Examples</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Product Metafields {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.material</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="product-material"&gt;</span>
+    <span class="liquid-string">&lt;strong&gt;Material:&lt;/strong&gt; </span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.metafields.custom.material.value</span> <span class="liquid-tag">}}</span>
+  <span class="liquid-string">&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} Rich Text Metafields {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.care_instructions</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="care-instructions"&gt;</span>
+    <span class="liquid-string">&lt;h4&gt;Care Instructions&lt;/h4&gt;</span>
+    <span class="liquid-tag">{{</span> <span class="liquid-variable">product.metafields.custom.care_instructions</span> <span class="liquid-tag">}}</span>
+  <span class="liquid-string">&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} File/Image Metafields {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.size_chart</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="size-chart"&gt;</span>
+    <span class="liquid-string">&lt;img src="</span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.metafields.custom.size_chart</span> <span class="liquid-filter">| image_url: width: 800</span> <span class="liquid-tag">}}</span><span class="liquid-string">" 
+         alt="Size Chart for </span><span class="liquid-tag">{{</span> <span class="liquid-variable">product.title</span> <span class="liquid-tag">}}</span><span class="liquid-string">"&gt;</span>
+  <span class="liquid-string">&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+
+<span class="liquid-comment">{% comment %} JSON Metafields for Complex Data {% endcomment %}</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.specifications</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">specs</span> <span class="liquid-operator">=</span> <span class="liquid-variable">product.metafields.custom.specifications.value</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-string">&lt;div class="specifications"&gt;</span>
+    <span class="liquid-string">&lt;h4&gt;Specifications&lt;/h4&gt;</span>
+    <span class="liquid-string">&lt;ul&gt;</span>
+      <span class="liquid-tag">{%</span> <span class="liquid-operator">for</span> <span class="liquid-variable">spec</span> <span class="liquid-operator">in</span> <span class="liquid-variable">specs</span> <span class="liquid-tag">%}</span>
+        <span class="liquid-string">&lt;li&gt;&lt;strong&gt;</span><span class="liquid-tag">{{</span> <span class="liquid-variable">spec.name</span> <span class="liquid-tag">}}</span><span class="liquid-string">:&lt;/strong&gt; </span><span class="liquid-tag">{{</span> <span class="liquid-variable">spec.value</span> <span class="liquid-tag">}}</span><span class="liquid-string">&lt;/li&gt;</span>
+      <span class="liquid-tag">{%</span> <span class="liquid-operator">endfor</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;/ul&gt;</span>
+  <span class="liquid-string">&lt;/div&gt;</span>
+<span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span></code></pre>
+                    </div>
+
+                    <h3 id="conditional-metafields">Conditional Metafields Logic</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Advanced Metafields Conditions</div>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+<pre><code><span class="liquid-comment">{% comment %} Conditional Product Badges {% endcomment %}</span>
+<span class="liquid-string">&lt;div class="product-badges"&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.is_eco_friendly.value</span> <span class="liquid-operator">==</span> <span class="liquid-string">true</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;span class="badge eco-friendly"&gt;Eco-Friendly&lt;/span&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+  
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">product.metafields.custom.shipping_method.value</span> <span class="liquid-operator">==</span> <span class="liquid-string">'express'</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;span class="badge express-shipping"&gt;Express Shipping&lt;/span&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+  
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">assign</span> <span class="liquid-variable">rating</span> <span class="liquid-operator">=</span> <span class="liquid-variable">product.metafields.reviews.rating.value</span> <span class="liquid-tag">%}</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">if</span> <span class="liquid-variable">rating</span> <span class="liquid-operator">and</span> <span class="liquid-variable">rating</span> <span class="liquid-operator">&gt;=</span> <span class="liquid-string">4.5</span> <span class="liquid-tag">%}</span>
+    <span class="liquid-string">&lt;span class="badge top-rated"&gt;Top Rated (</span><span class="liquid-tag">{{</span> <span class="liquid-variable">rating</span> <span class="liquid-tag">}}</span><span class="liquid-string"> stars)&lt;/span&gt;</span>
+  <span class="liquid-tag">{%</span> <span class="liquid-operator">endif</span> <span class="liquid-tag">%}</span>
+<span class="liquid-string">&lt;/div&gt;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="container">
+            <div class="cta-section">
+                <h2>Master Shopify Liquid Programming Today</h2>
+                <p>Take your Shopify development skills to the next level with expert guidance and advanced techniques. Get professional help mastering Liquid programming for powerful theme development.</p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20want%20to%20master%20Shopify%20Liquid%20programming.%20Can%20you%20provide%20training%20or%20development%20help?" 
+                       class="btn success" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Get Expert Training
+                    </a>
+                    <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact" class="btn primary">
+                        <i class="fas fa-envelope"></i>
+                        Custom Development
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('pre code').textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> Copied';
+                button.style.background = '#00d084';
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    button.style.background = '#0070f3';
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observeOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observeOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .technique-card, .code-block').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Syntax highlighting enhancement
+        document.querySelectorAll('code').forEach(block => {
+            let html = block.innerHTML;
+            
+            // Enhanced syntax highlighting
+            html = html.replace(/({%[^%]*%})/g, '<span class="liquid-tag">$1</span>');
+            html = html.replace(/({{[^}]*}})/g, '<span class="liquid-variable">$1</span>');
+            html = html.replace(/(\|[^}\s]*)/g, '<span class="liquid-filter">$1</span>');
+            html = html.replace(/({% comment %}[^{]*{% endcomment %})/g, '<span class="liquid-comment">$1</span>');
+            html = html.replace(/('[^']*')/g, '<span class="liquid-string">$1</span>');
+            
+            block.innerHTML = html;
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20help%20mastering%20Shopify%20Liquid%20programming.%20Can%20you%20assist%20me?" 
+       style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 999; text-decoration: none; transition: all 0.3s; animation: bounce 2s infinite;"
+       target="_blank"
+       title="Get Liquid Programming Help">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</body>
+</html>
