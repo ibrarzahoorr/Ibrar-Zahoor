@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Shopify SEO Optimization: Technical Guide for Developers (2025) | Advanced SEO Techniques</title>
+    <meta name="description" content="Complete technical guide to Shopify SEO optimization for developers. Advanced techniques including schema markup, Core Web Vitals, speed optimization, and ranking strategies for 2025." />
+    <meta name="keywords" content="shopify seo, technical seo, shopify optimization, schema markup, core web vitals, shopify speed optimization, seo guide 2025, developer seo" />
+    <meta name="author" content="Ibrar Zahoor - Shopify SEO Expert" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Shopify SEO Optimization: Technical Guide for Developers (2025)" />
+    <meta property="og:description" content="Advanced Shopify SEO techniques: technical optimization, schema markup, speed optimization, and Core Web Vitals for better rankings." />
+    <meta property="og:image" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-seo-guide-2025.jpg" />
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔍</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS -->
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap);
+      
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      
+      body {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      /* CSS Variables */
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --surface-2: #1a1a1a;
+        --border: rgba(255, 255, 255, 0.08);
+        --muted: #888888;
+        --text: #ffffff;
+        --text-2: #cccccc;
+        --brand: #0070f3;
+        --brand-2: #00a8cc;
+        --brand-3: #7928ca;
+        --accent: #ff4081;
+        --success: #00d084;
+        --warning: #ffaa00;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+        --radius: 12px;
+        --maxw: 1280px;
+        --gradient: linear-gradient(135deg, var(--brand), var(--brand-3));
+      }
+      
+      /* Container */
+      .container {
+        width: min(100% - 32px, var(--maxw));
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      
+      .section {
+        padding: 80px 0;
+        position: relative;
+      }
+      
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 16px;
+        max-width: var(--maxw);
+        margin: 0 auto;
+      }
+      
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #fff;
+        font-size: 18px;
+      }
+      
+      .brand-name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      
+      .nav-links a {
+        color: var(--text-2);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      
+      .nav-links a:hover {
+        color: var(--brand);
+      }
+      
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.2s;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      
+      .btn.primary {
+        background: var(--gradient);
+        color: #fff;
+      }
+      
+      .btn.success {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+      }
+
+      .btn.outline {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+      
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Hero Section */
+      .hero {
+        padding: 140px 0 80px;
+        background: var(--bg);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 120%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0, 112, 243, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      
+      .hero-text {
+        animation: fadeInUp 0.8s ease;
+      }
+      
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(0, 208, 132, 0.1);
+        border: 1px solid rgba(0, 208, 132, 0.3);
+        border-radius: 100px;
+        color: var(--success);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      
+      .status-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      
+      h1 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, var(--text) 0%, var(--brand) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .lead {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        animation: fadeInUp 0.8s 0.2s both;
+      }
+      
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+      
+      .stat-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .stat-number {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+      
+      .stat-label {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* Content Sections */
+      .content-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 40px;
+        margin: 40px 0;
+      }
+
+      .content-section h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text);
+      }
+
+      .content-section h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 30px 0 15px 0;
+        color: var(--brand);
+      }
+
+      .content-section h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 25px 0 10px 0;
+        color: var(--text);
+      }
+
+      .content-section p {
+        margin-bottom: 16px;
+        line-height: 1.7;
+        color: var(--text-2);
+      }
+
+      .content-section ul {
+        margin: 16px 0;
+        padding-left: 24px;
+      }
+
+      .content-section li {
+        margin-bottom: 8px;
+        color: var(--text-2);
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(0, 112, 243, 0.1), rgba(121, 40, 202, 0.1));
+        border: 1px solid var(--brand);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      /* Code Blocks */
+      .code-block {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+        overflow-x: auto;
+      }
+
+      .code-block pre {
+        margin: 0;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text-2);
+      }
+
+      .code-block code {
+        color: var(--brand);
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: between;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .code-title {
+        font-weight: 600;
+        color: var(--text);
+        font-size: 14px;
+      }
+      
+      /* Features Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+      
+      .feature-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      
+      .feature-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      
+      .feature-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      
+      .feature-card p {
+        color: var(--text-2);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-title {
+        font-size: clamp(32px, 4vw, 42px);
+        font-weight: 800;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+      
+      .section-subtitle {
+        font-size: 18px;
+        color: var(--text-2);
+      }
+
+      /* Metric Cards */
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin: 40px 0;
+      }
+
+      .metric-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .metric-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+
+      .metric-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        margin: 0 auto 16px auto;
+      }
+
+      .metric-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+
+      .metric-value {
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+
+      .metric-description {
+        color: var(--text-2);
+        font-size: 14px;
+      }
+
+      /* Tool Grid */
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        margin: 40px 0;
+      }
+
+      .tool-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        transition: all 0.3s;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+
+      .tool-card h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+
+      .tool-card p {
+        color: var(--text-2);
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 60px 40px;
+        text-align: center;
+        margin: 80px 0;
+      }
+      
+      .cta-section h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      
+      .cta-section p {
+        font-size: 18px;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .cta-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 208, 132, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0);
+        }
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+        
+        .hero-actions {
+          flex-direction: column;
+        }
+        
+        .hero-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        
+        .cta-actions {
+          flex-direction: column;
+        }
+        
+        .cta-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .content-section {
+          padding: 24px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .section {
+          padding: 60px 0;
+        }
+        
+        .hero {
+          padding: 100px 0 60px;
+        }
+        
+        .container {
+          padding: 0 12px;
+        }
+        
+        .cta-section {
+          padding: 40px 24px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="nav container">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
+                <div class="brand-logo">IZ</div>
+                <div class="brand-name">Ibrar Zahoor</div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a>
+            </div>
+            
+            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20help%20with%20Shopify%20SEO%20optimization.%20Can%20you%20assist?" 
+               class="btn success" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                SEO Consultation
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="status-badge">2025 SEO Guide</div>
+                        <h1>Shopify SEO Optimization: Technical Guide</h1>
+                        <p class="lead">
+                            Complete technical guide to <strong>Shopify SEO optimization</strong> for developers. 
+                            Advanced techniques including <strong>schema markup</strong>, <strong>Core Web Vitals</strong>, 
+                            <strong>speed optimization</strong>, and modern ranking strategies. Boost your Shopify store's 
+                            search visibility with proven 2025 SEO methods.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#technical-seo" class="btn primary">
+                                <i class="fas fa-code"></i>
+                                Technical Guide
+                            </a>
+                            <a href="#core-web-vitals" class="btn outline">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Core Web Vitals
+                            </a>
+                            <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20help%20optimizing%20my%20Shopify%20store%20for%20SEO.%20Can%20we%20discuss?" 
+                               class="btn success" 
+                               target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Get SEO Help
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">300%</div>
+                            <div class="stat-label">Average Traffic Increase</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">90+</div>
+                            <div class="stat-label">PageSpeed Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2.5s</div>
+                            <div class="stat-label">Average Load Time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Core Web Vitals Pass</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Web Vitals Section -->
+        <section id="core-web-vitals" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Core Web Vitals Optimization for Shopify</h2>
+                    <p class="section-subtitle">Essential performance metrics that directly impact SEO rankings</p>
+                </div>
+                
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Largest Contentful Paint (LCP)</h3>
+                        <div class="metric-value">&lt; 2.5s</div>
+                        <div class="metric-description">Loading performance - largest element render time</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <h3>First Input Delay (FID)</h3>
+                        <div class="metric-value">&lt; 100ms</div>
+                        <div class="metric-description">Interactivity - first user interaction response</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h3>Cumulative Layout Shift (CLS)</h3>
+                        <div class="metric-value">&lt; 0.1</div>
+                        <div class="metric-description">Visual stability - unexpected layout shifts</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>First Contentful Paint (FCP)</h3>
+                        <div class="metric-value">&lt; 1.8s</div>
+                        <div class="metric-description">Loading perception - first content render</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical SEO Guide -->
+        <section id="technical-seo" class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Technical SEO Fundamentals for Shopify</h2>
+                    
+                    <p><strong>Technical SEO</strong> forms the foundation of search engine optimization for Shopify stores. Proper implementation ensures search engines can crawl, index, and rank your store effectively.</p>
+
+                    <h3 id="shopify-seo-architecture">Shopify SEO Architecture Setup</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Essential Technical Elements</h4>
+                        <ul>
+                            <li><strong>URL Structure:</strong> Clean, hierarchical URLs with keywords</li>
+                            <li><strong>XML Sitemaps:</strong> Automatically generated and submitted</li>
+                            <li><strong>Robots.txt:</strong> Proper crawl directives and disallow rules</li>
+                            <li><strong>Canonical Tags:</strong> Duplicate content prevention</li>
+                            <li><strong>Meta Tags:</strong> Optimized titles and descriptions</li>
+                            <li><strong>Header Tags:</strong> Proper H1-H6 hierarchy</li>
+                            <li><strong>Internal Linking:</strong> Strategic link architecture</li>
+                            <li><strong>Mobile Optimization:</strong> Responsive design implementation</li>
+                        </ul>
+                    </div>
+
+                    <h3 id="shopify-liquid-seo">Liquid Template SEO Optimization</h3>
+                    
+                    <p>Optimizing Shopify's Liquid templates for SEO requires careful attention to markup, schema, and performance. Here's how to implement proper SEO in your templates:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">theme.liquid - SEO Meta Tags</div>
+                        </div>
+<pre><code>&lt;!-- Dynamic Title Tag --&gt;
+&lt;title&gt;
+  {%- if page_title == blank -%}
+    {{ shop.name }}
+  {%- elsif template contains 'product' -%}
+    {{ product.title }} | {{ collection.title }} | {{ shop.name }}
+  {%- elsif template contains 'collection' -%}
+    {{ collection.title }} | {{ shop.name }}
+  {%- else -%}
+    {{ page_title }} | {{ shop.name }}
+  {%- endif -%}
+&lt;/title&gt;
+
+&lt;!-- Meta Description --&gt;
+{%- if page_description -%}
+  &lt;meta name="description" content="{{ page_description | escape }}"&gt;
+{%- elsif template contains 'product' and product.description != blank -%}
+  &lt;meta name="description" content="{{ product.description | strip_html | truncatewords: 25 | escape }}"&gt;
+{%- elsif template contains 'collection' and collection.description != blank -%}
+  &lt;meta name="description" content="{{ collection.description | strip_html | truncatewords: 25 | escape }}"&gt;
+{%- else -%}
+  &lt;meta name="description" content="{{ shop.description | escape }}"&gt;
+{%- endif -%}
+
+&lt;!-- Canonical URL --&gt;
+&lt;link rel="canonical" href="{{ canonical_url }}"&gt;</code></pre>
+                    </div>
+
+                    <h3 id="schema-markup-implementation">Schema Markup Implementation</h3>
+                    
+                    <p><strong>Schema markup</strong> helps search engines understand your content better and can result in rich snippets. Here's how to implement key schema types for Shopify:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">product.liquid - Product Schema</div>
+                        </div>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "image": [
+    {%- for image in product.images limit: 5 -%}
+      "{{ image | image_url: '800x' }}"
+      {%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.vendor | escape }}"
+  },
+  "sku": "{{ product.selected_or_first_available_variant.sku }}",
+  "mpn": "{{ product.selected_or_first_available_variant.barcode }}",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
+    "priceCurrency": "{{ cart.currency.iso_code }}",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    }
+  }
+  {%- if product.metafields.reviews.rating.value -%}
+  ,"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+    "reviewCount": "{{ product.metafields.reviews.count.value }}"
+  }
+  {%- endif -%}
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3 id="breadcrumb-schema">Breadcrumb Schema Implementation</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">breadcrumbs.liquid - Breadcrumb Schema</div>
+                        </div>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ shop.url }}"
+    }
+    {%- if template contains 'collection' -%}
+    ,{
+      "@type": "ListItem", 
+      "position": 2,
+      "name": "{{ collection.title }}",
+      "item": "{{ shop.url }}{{ collection.url }}"
+    }
+    {%- endif -%}
+    {%- if template contains 'product' -%}
+    ,{
+      "@type": "ListItem",
+      "position": {% if collection %}3{% else %}2{% endif %},
+      "name": "{{ product.title }}",
+      "item": "{{ shop.url }}{{ product.url }}"
+    }
+    {%- endif -%}
+  ]
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speed Optimization Section -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2 id="speed-optimization">Shopify Speed Optimization Techniques</h2>
+                    
+                    <p><strong>Page speed</strong> is a critical ranking factor and directly impacts user experience. Here are advanced techniques to optimize your Shopify store's performance:</p>
+
+                    <h3 id="image-optimization">Advanced Image Optimization</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Image Optimization Strategies</h4>
+                        <ul>
+                            <li><strong>WebP Format:</strong> Use modern image formats for better compression</li>
+                            <li><strong>Responsive Images:</strong> Serve appropriately sized images</li>
+                            <li><strong>Lazy Loading:</strong> Load images only when needed</li>
+                            <li><strong>Image Compression:</strong> Optimize file sizes without quality loss</li>
+                            <li><strong>Critical Images:</strong> Preload above-the-fold images</li>
+                            <li><strong>Image CDN:</strong> Leverage Shopify's CDN for fast delivery</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Responsive Image Implementation</div>
+                        </div>
+<pre><code>&lt;!-- Responsive Product Images with WebP Support --&gt;
+{%- assign image_sizes = '300,400,500,600,700,800,900,1000,1200' | split: ',' -%}
+&lt;picture&gt;
+  &lt;!-- WebP Format --&gt;
+  &lt;source 
+    type="image/webp"
+    srcset="
+      {%- for size in image_sizes -%}
+        {{ product.featured_image | image_url: width: size, format: 'webp' }} {{ size }}w
+        {%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    "
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  &gt;
+  
+  &lt;!-- Fallback JPEG --&gt;
+  &lt;img 
+    src="{{ product.featured_image | image_url: width: 800 }}"
+    srcset="
+      {%- for size in image_sizes -%}
+        {{ product.featured_image | image_url: width: size }} {{ size }}w
+        {%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    "
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    alt="{{ product.title | escape }}"
+    loading="lazy"
+    width="800"
+    height="800"
+  &gt;
+&lt;/picture&gt;</code></pre>
+                    </div>
+
+                    <h3 id="javascript-optimization">JavaScript Performance Optimization</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Optimized Script Loading</div>
+                        </div>
+<pre><code>&lt;!-- Critical JavaScript - Inline for immediate execution --&gt;
+&lt;script&gt;
+  // Critical above-the-fold functionality
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+&lt;/script&gt;
+
+&lt;!-- Non-critical JavaScript - Defer loading --&gt;
+&lt;script defer src="{{ 'theme.js' | asset_url }}"&gt;&lt;/script&gt;
+
+&lt;!-- Third-party scripts - Load asynchronously --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"&gt;&lt;/script&gt;
+
+&lt;!-- Intersection Observer for Lazy Loading --&gt;
+&lt;script&gt;
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) =&gt; {
+    entries.forEach(entry =&gt; {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img =&gt; {
+    imageObserver.observe(img);
+  });
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3 id="css-optimization">CSS Performance Optimization</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Critical CSS Implementation</div>
+                        </div>
+<pre><code>&lt;!-- Critical CSS - Inline for immediate rendering --&gt;
+&lt;style&gt;
+/* Above-the-fold styles */
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero {
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+&lt;/style&gt;
+
+&lt;!-- Non-critical CSS - Load asynchronously --&gt;
+&lt;link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="{{ 'theme.css' | asset_url }}"&gt;&lt;/noscript&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Optimization Features -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Advanced SEO Optimization Techniques</h2>
+                    <p class="section-subtitle">Modern strategies for maximum search visibility</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Schema Markup</h3>
+                        <p>Implement comprehensive structured data for products, reviews, breadcrumbs, and organization information to enhance search result appearance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Core Web Vitals</h3>
+                        <p>Optimize LCP, FID, and CLS metrics through image optimization, JavaScript performance, and layout stability improvements.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First SEO</h3>
+                        <p>Implement mobile-first indexing optimization with responsive design, touch-friendly interfaces, and mobile performance enhancements.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Technical Audit</h3>
+                        <p>Comprehensive technical SEO auditing including crawlability, indexation, URL structure, and internal linking optimization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Performance Monitoring</h3>
+                        <p>Continuous monitoring of SEO metrics, rankings, traffic, and Core Web Vitals using advanced analytics and tracking tools.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Link Architecture</h3>
+                        <p>Strategic internal linking, URL optimization, canonical tag implementation, and link equity distribution for better crawling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Tools and Implementation -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2 id="seo-tools">Essential SEO Tools and Implementation</h2>
+                    
+                    <h3 id="google-search-console">Google Search Console Setup</h3>
+                    
+                    <p>Proper <strong>Google Search Console</strong> configuration is essential for monitoring your Shopify store's SEO performance and identifying issues.</p>
+
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                            <h4>Property Verification</h4>
+                            <p>Add and verify your Shopify store using HTML tag, DNS, or Google Analytics verification methods.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>Sitemap Submission</h4>
+                            <p>Submit XML sitemaps including products, collections, pages, and blog posts for better indexation.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>Core Web Vitals Monitoring</h4>
+                            <p>Track real-world performance metrics and identify pages that need Core Web Vitals improvements.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>Mobile Usability Testing</h4>
+                            <p>Monitor mobile-specific issues and ensure optimal mobile search performance.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="google-analytics-seo">Google Analytics 4 for SEO</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">GA4 Enhanced E-commerce Tracking</div>
+                        </div>
+<pre><code>&lt;!-- Google Analytics 4 Configuration --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-XXXXXXXXXX', {
+    send_page_view: false,
+    enhanced_ecommerce: true
+  });
+
+  // Enhanced E-commerce Events
+  {%- if template contains 'product' -%}
+  gtag('event', 'view_item', {
+    currency: '{{ cart.currency.iso_code }}',
+    value: {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }},
+    items: [{
+      item_id: '{{ product.selected_or_first_available_variant.sku }}',
+      item_name: '{{ product.title | escape }}',
+      category: '{{ product.type }}',
+      quantity: 1,
+      price: {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}
+    }]
+  });
+  {%- endif -%}
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <h3 id="robots-txt-optimization">Robots.txt Optimization</h3>
+                    
+                    <p>Shopify automatically generates a robots.txt file, but you can optimize it further through the admin panel:</p>
+
+                    <div class="highlight-box">
+                        <h4>Recommended Robots.txt Directives</h4>
+                        <ul>
+                            <li><strong>Allow Search Engines:</strong> Ensure product and collection pages are crawlable</li>
+                            <li><strong>Block Admin Areas:</strong> Prevent crawling of admin and checkout pages</li>
+                            <li><strong>Block Search Results:</strong> Avoid indexing internal search result pages</li>
+                            <li><strong>Allow CSS/JS:</strong> Ensure styling and scripts are accessible to crawlers</li>
+                            <li><strong>Sitemap Reference:</strong> Include sitemap location for easy discovery</li>
+                        </ul>
+                    </div>
+
+                    <h3 id="seo-apps-shopify">Recommended Shopify SEO Apps</h3>
+                    
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                            <h4>TinyIMG</h4>
+                            <p>Automated image compression, SEO optimization, and speed improvements for better Core Web Vitals.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>SearchPie</h4>
+                            <p>Comprehensive SEO toolkit with speed booster, schema markup, and technical SEO features.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>Booster</h4>
+                            <p>All-in-one app including SEO features, speed optimization, and conversion rate improvements.</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h4>Smart SEO</h4>
+                            <p>Advanced meta tag management, structured data, and technical SEO automation tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced SEO Strategies -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2 id="advanced-seo-strategies">Advanced SEO Strategies for 2025</h2>
+                    
+                    <h3 id="entity-seo">Entity-Based SEO</h3>
+                    
+                    <p><strong>Entity-based SEO</strong> focuses on helping search engines understand your brand, products, and relationships rather than just keywords.</p>
+
+                    <ul>
+                        <li><strong>Brand Entity Optimization:</strong> Consistent NAP information across all platforms</li>
+                        <li><strong>Product Entity Markup:</strong> Comprehensive schema for product attributes</li>
+                        <li><strong>Knowledge Graph Optimization:</strong> Building authority and topical relevance</li>
+                        <li><strong>Local SEO Entities:</strong> Geographic and location-based optimization</li>
+                    </ul>
+
+                    <h3 id="ai-seo-optimization">AI and Machine Learning SEO</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>AI-Powered SEO Techniques</h4>
+                        <ul>
+                            <li><strong>BERT Optimization:</strong> Natural language content optimization</li>
+                            <li><strong>RankBrain Factors:</strong> User experience signals and behavioral metrics</li>
+                            <li><strong>Core Updates Adaptation:</strong> Staying current with algorithm changes</li>
+                            <li><strong>Predictive SEO:</strong> Using data to predict ranking opportunities</li>
+                            <li><strong>Automated Testing:</strong> A/B testing for SEO improvements</li>
+                            <li><strong>Content Optimization:</strong> AI-driven content recommendations</li>
+                        </ul>
+                    </div>
+
+                    <h3 id="voice-search-optimization">Voice Search Optimization</h3>
+                    
+                    <p>Optimizing for voice search requires focusing on conversational queries and featured snippets:</p>
+
+                    <ul>
+                        <li><strong>Question-Based Content:</strong> FAQ sections and conversational content</li>
+                        <li><strong>Featured Snippet Optimization:</strong> Structured content for position zero</li>
+                        <li><strong>Local Voice Queries:</strong> "Near me" and location-based optimization</li>
+                        <li><strong>Long-Tail Keywords:</strong> Natural language and conversational phrases</li>
+                        <li><strong>Schema Markup:</strong> Enhanced structured data for voice results</li>
+                    </ul>
+
+                    <h3 id="international-seo">International SEO for Global Stores</h3>
+                    
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">Hreflang Implementation</div>
+                        </div>
+<pre><code>&lt;!-- Hreflang for International Versions --&gt;
+{%- if shop.permanent_domain contains 'myshop.com' -%}
+  &lt;link rel="alternate" hreflang="en-US" href="https://us.myshop.com{{ request.path }}" /&gt;
+  &lt;link rel="alternate" hreflang="en-CA" href="https://ca.myshop.com{{ request.path }}" /&gt;
+  &lt;link rel="alternate" hreflang="en-GB" href="https://uk.myshop.com{{ request.path }}" /&gt;
+  &lt;link rel="alternate" hreflang="fr-FR" href="https://fr.myshop.com{{ request.path }}" /&gt;
+  &lt;link rel="alternate" hreflang="x-default" href="https://myshop.com{{ request.path }}" /&gt;
+{%- endif -%}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="container">
+            <div class="cta-section">
+                <h2>Need Professional Shopify SEO Optimization?</h2>
+                <p>Get expert SEO optimization for your Shopify store with proven techniques that deliver results. Technical implementation, Core Web Vitals optimization, and ongoing SEO support available.</p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20professional%20Shopify%20SEO%20optimization.%20Can%20we%20discuss%20my%20store?" 
+                       class="btn success" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Get SEO Optimization
+                    </a>
+                    <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact" class="btn primary">
+                        <i class="fas fa-envelope"></i>
+                        Free SEO Audit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Code block copy functionality
+        document.querySelectorAll('.code-block').forEach(block => {
+            const button = document.createElement('button');
+            button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+            button.className = 'btn outline';
+            button.style.position = 'absolute';
+            button.style.top = '12px';
+            button.style.right = '12px';
+            button.style.fontSize = '12px';
+            button.style.padding = '4px 8px';
+            
+            block.style.position = 'relative';
+            block.appendChild(button);
+            
+            button.addEventListener('click', () => {
+                const code = block.querySelector('pre code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i> Copied';
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                    }, 2000);
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observeOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observeOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .metric-card, .tool-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20help%20with%20Shopify%20SEO%20optimization.%20Can%20you%20assist%20me?" 
+       style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 999; text-decoration: none; transition: all 0.3s; animation: bounce 2s infinite;"
+       target="_blank"
+       title="Get SEO Help">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</body>
+</html>

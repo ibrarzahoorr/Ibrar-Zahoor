@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Shopify Development Services: Complete Guide to Services & Pricing | Expert Developer</title>
+    <meta name="description" content="Comprehensive guide to Shopify development services: custom themes, app development, migrations, SEO optimization, and transparent pricing. Professional Shopify developer with 3+ years experience." />
+    <meta name="keywords" content="shopify development services, shopify developer, custom shopify themes, shopify app development, shopify migration, shopify SEO, shopify pricing, ecommerce development" />
+    <meta name="author" content="Ibrar Zahoor - Shopify Development Expert" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shopify Development Services: Complete Guide to Services & Pricing" />
+    <meta property="og:description" content="Comprehensive overview of professional Shopify development services with transparent pricing. Custom themes, apps, migrations, and SEO optimization." />
+    <meta property="og:image" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-development-services.jpg" />
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛍️</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS -->
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap);
+      
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      
+      body {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      /* CSS Variables */
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --surface-2: #1a1a1a;
+        --border: rgba(255, 255, 255, 0.08);
+        --muted: #888888;
+        --text: #ffffff;
+        --text-2: #cccccc;
+        --brand: #0070f3;
+        --brand-2: #00a8cc;
+        --brand-3: #7928ca;
+        --accent: #ff4081;
+        --success: #00d084;
+        --warning: #ffaa00;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+        --radius: 12px;
+        --maxw: 1280px;
+        --gradient: linear-gradient(135deg, var(--brand), var(--brand-3));
+      }
+      
+      /* Container */
+      .container {
+        width: min(100% - 32px, var(--maxw));
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      
+      .section {
+        padding: 80px 0;
+        position: relative;
+      }
+      
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 16px;
+        max-width: var(--maxw);
+        margin: 0 auto;
+      }
+      
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text);
+      }
+      
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #fff;
+        font-size: 18px;
+      }
+      
+      .brand-name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      
+      .nav-links a {
+        color: var(--text-2);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      
+      .nav-links a:hover {
+        color: var(--brand);
+      }
+      
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: all 0.2s;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      
+      .btn.primary {
+        background: var(--gradient);
+        color: #fff;
+      }
+      
+      .btn.success {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+      }
+
+      .btn.outline {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+      
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Hero Section */
+      .hero {
+        padding: 140px 0 80px;
+        background: var(--bg);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 120%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0, 112, 243, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      
+      .hero-text {
+        animation: fadeInUp 0.8s ease;
+      }
+      
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(0, 208, 132, 0.1);
+        border: 1px solid rgba(0, 208, 132, 0.3);
+        border-radius: 100px;
+        color: var(--success);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      
+      .status-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      
+      h1 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, var(--text) 0%, var(--brand) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .lead {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        animation: fadeInUp 0.8s 0.2s both;
+      }
+      
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+      
+      .stat-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .stat-number {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+      
+      .stat-label {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* Content Sections */
+      .content-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 40px;
+        margin: 40px 0;
+      }
+
+      .content-section h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text);
+      }
+
+      .content-section h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 30px 0 15px 0;
+        color: var(--brand);
+      }
+
+      .content-section h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 25px 0 10px 0;
+        color: var(--text);
+      }
+
+      .content-section p {
+        margin-bottom: 16px;
+        line-height: 1.7;
+        color: var(--text-2);
+      }
+
+      .content-section ul {
+        margin: 16px 0;
+        padding-left: 24px;
+      }
+
+      .content-section li {
+        margin-bottom: 8px;
+        color: var(--text-2);
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(0, 112, 243, 0.1), rgba(121, 40, 202, 0.1));
+        border: 1px solid var(--brand);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin: 24px 0;
+      }
+      
+      /* Features Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+      
+      .feature-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      
+      .feature-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      
+      .feature-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      
+      .feature-card p {
+        color: var(--text-2);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-title {
+        font-size: clamp(32px, 4vw, 42px);
+        font-weight: 800;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+      
+      .section-subtitle {
+        font-size: 18px;
+        color: var(--text-2);
+      }
+      
+      /* Pricing Section */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
+      }
+      
+      .pricing-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 40px 32px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .pricing-card.featured {
+        border-color: var(--brand);
+        transform: scale(1.05);
+      }
+      
+      .pricing-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--gradient);
+        color: #fff;
+        padding: 8px 24px;
+        border-radius: 0 0 20px 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      
+      .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+      
+      .pricing-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      
+      .pricing-price {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+      
+      .pricing-period {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+      
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 32px;
+      }
+      
+      .pricing-features li {
+        padding: 8px 0;
+        color: var(--text-2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .pricing-features li::before {
+        content: '✓';
+        color: var(--success);
+        font-weight: bold;
+      }
+
+      /* Service Category Cards */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 32px;
+        margin: 40px 0;
+      }
+
+      .service-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+        border-color: var(--brand);
+      }
+
+      .service-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .service-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text);
+        margin: 0;
+      }
+
+      .service-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--brand);
+        margin-bottom: 16px;
+      }
+
+      .service-description {
+        color: var(--text-2);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .service-features {
+        list-style: none;
+        margin-bottom: 24px;
+      }
+
+      .service-features li {
+        padding: 4px 0;
+        color: var(--text-2);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .service-features li::before {
+        content: '•';
+        color: var(--brand);
+        font-weight: bold;
+      }
+
+      /* FAQ Section */
+      .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .faq-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+      
+      .faq-question {
+        padding: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: var(--text);
+      }
+      
+      .faq-question:hover {
+        background: var(--surface-2);
+      }
+      
+      .faq-answer {
+        padding: 0 24px 24px;
+        color: var(--text-2);
+        line-height: 1.6;
+        display: none;
+      }
+      
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+      
+      .faq-icon {
+        transition: transform 0.3s;
+      }
+      
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 60px 40px;
+        text-align: center;
+        margin: 80px 0;
+      }
+      
+      .cta-section h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      
+      .cta-section p {
+        font-size: 18px;
+        color: var(--text-2);
+        margin-bottom: 32px;
+      }
+      
+      .cta-actions {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 208, 132, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 208, 132, 0);
+        }
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+        
+        .pricing-card.featured {
+          transform: none;
+        }
+        
+        .hero-actions {
+          flex-direction: column;
+        }
+        
+        .hero-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        
+        .cta-actions {
+          flex-direction: column;
+        }
+        
+        .cta-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .content-section {
+          padding: 24px;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .section {
+          padding: 60px 0;
+        }
+        
+        .hero {
+          padding: 100px 0 60px;
+        }
+        
+        .container {
+          padding: 0 12px;
+        }
+        
+        .pricing-card {
+          padding: 32px 24px;
+        }
+        
+        .cta-section {
+          padding: 40px 24px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="nav container">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
+                <div class="brand-logo">IZ</div>
+                <div class="brand-name">Ibrar Zahoor</div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a>
+            </div>
+            
+            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20Shopify%20development%20services.%20Can%20you%20help?" 
+               class="btn success" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                Get Quote
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="status-badge">Complete Development Guide</div>
+                        <h1>Shopify Development Services: Complete Guide</h1>
+                        <p class="lead">
+                            Comprehensive overview of professional <strong>Shopify development services</strong> including 
+                            <strong>custom themes</strong>, <strong>app development</strong>, <strong>migrations</strong>, 
+                            <strong>SEO optimization</strong>, and transparent pricing. Expert Shopify developer with 3+ years 
+                            experience delivering high-performance e-commerce solutions at 60% less cost than agencies.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#services-overview" class="btn primary">
+                                <i class="fas fa-list"></i>
+                                View All Services
+                            </a>
+                            <a href="#pricing" class="btn outline">
+                                <i class="fas fa-tags"></i>
+                                See Pricing
+                            </a>
+                            <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20Shopify%20development%20services.%20Can%20we%20discuss%20my%20project?" 
+                               class="btn success" 
+                               target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Free Consultation
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Countries Served</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">60%</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section id="services-overview" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Complete Shopify Development Services</h2>
+                    <p class="section-subtitle">Professional solutions for every aspect of your Shopify store</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Custom Theme Development</h3>
+                        </div>
+                        <div class="service-price">Starting at $599</div>
+                        <div class="service-description">
+                            Professional custom Shopify themes built from scratch or customized to match your brand identity perfectly.
+                        </div>
+                        <ul class="service-features">
+                            <li>Responsive mobile-first design</li>
+                            <li>Performance optimization</li>
+                            <li>SEO-friendly structure</li>
+                            <li>Cross-browser compatibility</li>
+                            <li>Custom functionality integration</li>
+                        </ul>
+                        <a href="#theme-development" class="btn primary">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Shopify App Development</h3>
+                        </div>
+                        <div class="service-price">Starting at $1,299</div>
+                        <div class="service-description">
+                            Custom Shopify apps to extend functionality and solve specific business requirements.
+                        </div>
+                        <ul class="service-features">
+                            <li>Private and public apps</li>
+                            <li>Admin dashboard integration</li>
+                            <li>API integrations</li>
+                            <li>Database management</li>
+                            <li>App store submission</li>
+                        </ul>
+                        <a href="#app-development" class="btn primary">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>Platform Migration</h3>
+                        </div>
+                        <div class="service-price">Starting at $1,499</div>
+                        <div class="service-description">
+                            Seamless migration from WooCommerce, Magento, BigCommerce to Shopify with zero data loss.
+                        </div>
+                        <ul class="service-features">
+                            <li>Complete data preservation</li>
+                            <li>SEO-friendly URL mapping</li>
+                            <li>Design recreation</li>
+                            <li>Testing and validation</li>
+                            <li>Go-live support</li>
+                        </ul>
+                        <a href="#migration-services" class="btn primary">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>SEO Optimization</h3>
+                        </div>
+                        <div class="service-price">Starting at $399</div>
+                        <div class="service-description">
+                            Complete SEO optimization to improve search rankings and drive organic traffic.
+                        </div>
+                        <ul class="service-features">
+                            <li>Technical SEO audit</li>
+                            <li>Meta tags optimization</li>
+                            <li>Schema markup</li>
+                            <li>Page speed optimization</li>
+                            <li>Content optimization</li>
+                        </ul>
+                        <a href="#seo-services" class="btn primary">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>Store Setup & Configuration</h3>
+                        </div>
+                        <div class="service-price">Starting at $299</div>
+                        <div class="service-description">
+                            Complete Shopify store setup with payment gateways, shipping, and essential configurations.
+                        </div>
+                        <ul class="service-features">
+                            <li>Store configuration</li>
+                            <li>Payment gateway setup</li>
+                            <li>Shipping configuration</li>
+                            <li>Tax settings</li>
+                            <li>Product catalog setup</li>
+                        </ul>
+                        <a href="#store-setup" class="btn primary">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Maintenance & Support</h3>
+                        </div>
+                        <div class="service-price">Starting at $99/month</div>
+                        <div class="service-description">
+                            Ongoing maintenance, updates, bug fixes, and technical support for your Shopify store.
+                        </div>
+                        <ul class="service-features">
+                            <li>Regular updates</li>
+                            <li>Bug fixes</li>
+                            <li>Performance monitoring</li>
+                            <li>Security updates</li>
+                            <li>24/7 emergency support</li>
+                        </ul>
+                        <a href="#maintenance-support" class="btn primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Service Sections -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <h2 id="theme-development">Custom Shopify Theme Development</h2>
+                    
+                    <p><strong>Custom Shopify theme development</strong> creates unique, high-performing themes tailored to your brand and business requirements. Unlike pre-built themes, custom development ensures optimal performance, unique design, and specific functionality.</p>
+
+                    <h3>What's Included in Custom Theme Development</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Complete Theme Development Package</h4>
+                        <ul>
+                            <li><strong>Design Conversion:</strong> PSD, Figma, or Sketch to Shopify theme</li>
+                            <li><strong>Responsive Design:</strong> Mobile-first approach for all devices</li>
+                            <li><strong>Performance Optimization:</strong> Fast loading speeds and Core Web Vitals</li>
+                            <li><strong>SEO Structure:</strong> Clean code and SEO-friendly markup</li>
+                            <li><strong>Custom Sections:</strong> Modular content blocks for easy editing</li>
+                            <li><strong>Product Features:</strong> Variants, galleries, reviews, and recommendations</li>
+                            <li><strong>Cart Functionality:</strong> Ajax cart, shipping calculator, and discount codes</li>
+                            <li><strong>Browser Testing:</strong> Cross-browser compatibility verification</li>
+                        </ul>
+                    </div>
+
+                    <h3>Theme Development Process</h3>
+                    
+                    <ul>
+                        <li><strong>Design Analysis:</strong> Review design files and technical requirements</li>
+                        <li><strong>Theme Structure:</strong> Set up liquid templates and section architecture</li>
+                        <li><strong>Frontend Development:</strong> HTML, CSS, and JavaScript implementation</li>
+                        <li><strong>Shopify Integration:</strong> Liquid templating and Shopify API integration</li>
+                        <li><strong>Testing Phase:</strong> Functionality, performance, and compatibility testing</li>
+                        <li><strong>Optimization:</strong> Speed optimization and final adjustments</li>
+                        <li><strong>Launch Support:</strong> Theme installation and initial configuration</li>
+                    </ul>
+
+                    <h3>Custom Theme Pricing</h3>
+                    
+                    <ul>
+                        <li><strong>Basic Custom Theme:</strong> $599 - $1,299 (5-15 pages)</li>
+                        <li><strong>Advanced Custom Theme:</strong> $1,299 - $2,999 (15+ pages, complex features)</li>
+                        <li><strong>Enterprise Theme:</strong> $2,999 - $5,999 (Large sites, advanced functionality)</li>
+                        <li><strong>Theme Customization:</strong> $299 - $999 (Existing theme modifications)</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="app-development">Shopify App Development Services</h2>
+                    
+                    <p><strong>Shopify app development</strong> extends your store's functionality with custom solutions tailored to your specific business needs. From private apps for internal use to public apps for the Shopify App Store.</p>
+
+                    <h3>Types of Shopify Apps We Develop</h3>
+                    
+                    <ul>
+                        <li><strong>Private Apps:</strong> Custom solutions for specific business requirements</li>
+                        <li><strong>Public Apps:</strong> Apps for Shopify App Store submission</li>
+                        <li><strong>Embedded Apps:</strong> Apps that work within Shopify admin</li>
+                        <li><strong>Standalone Apps:</strong> Independent applications with Shopify integration</li>
+                        <li><strong>API Integrations:</strong> Connecting third-party services with Shopify</li>
+                    </ul>
+
+                    <h3>Common App Development Projects</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Popular App Categories</h4>
+                        <ul>
+                            <li><strong>Inventory Management:</strong> Advanced stock control and automation</li>
+                            <li><strong>Customer Management:</strong> CRM integration and customer portals</li>
+                            <li><strong>Marketing Tools:</strong> Email marketing, loyalty programs, and promotions</li>
+                            <li><strong>Analytics & Reporting:</strong> Custom reports and business intelligence</li>
+                            <li><strong>Order Management:</strong> Fulfillment automation and order processing</li>
+                            <li><strong>Payment Solutions:</strong> Custom payment gateways and processing</li>
+                            <li><strong>Shipping Tools:</strong> Advanced shipping calculators and logistics</li>
+                            <li><strong>Product Tools:</strong> Bulk editing, product builders, and configurators</li>
+                        </ul>
+                    </div>
+
+                    <h3>App Development Technology Stack</h3>
+                    
+                    <ul>
+                        <li><strong>Frontend:</strong> React, Vue.js, HTML5, CSS3, JavaScript</li>
+                        <li><strong>Backend:</strong> Node.js, Python, Ruby on Rails, PHP</li>
+                        <li><strong>Database:</strong> MongoDB, PostgreSQL, MySQL</li>
+                        <li><strong>APIs:</strong> Shopify REST API, GraphQL API, Webhooks</li>
+                        <li><strong>Deployment:</strong> AWS, Google Cloud, Heroku</li>
+                    </ul>
+
+                    <h3>App Development Pricing</h3>
+                    
+                    <ul>
+                        <li><strong>Simple Private App:</strong> $1,299 - $2,999 (Basic functionality)</li>
+                        <li><strong>Advanced Private App:</strong> $2,999 - $7,999 (Complex features)</li>
+                        <li><strong>Public App:</strong> $5,999 - $15,999 (App Store ready)</li>
+                        <li><strong>API Integration:</strong> $599 - $2,999 (Third-party connections)</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="migration-services">Platform Migration to Shopify</h2>
+                    
+                    <p><strong>Platform migration</strong> involves moving your entire e-commerce operation from another platform to Shopify while preserving data, SEO rankings, and user experience.</p>
+
+                    <h3>Supported Migration Platforms</h3>
+                    
+                    <ul>
+                        <li><strong>WooCommerce to Shopify:</strong> WordPress/WooCommerce complete migration</li>
+                        <li><strong>Magento to Shopify:</strong> Magento 1.x/2.x enterprise migration</li>
+                        <li><strong>BigCommerce to Shopify:</strong> Full platform transition</li>
+                        <li><strong>Custom Platforms:</strong> Legacy systems and custom-built solutions</li>
+                        <li><strong>Squarespace to Shopify:</strong> Simple platform migration</li>
+                        <li><strong>Wix to Shopify:</strong> Basic e-commerce migration</li>
+                    </ul>
+
+                    <h3>Migration Data Coverage</h3>
+                    
+                    <div class="highlight-box">
+                        <h4>Complete Data Migration</h4>
+                        <ul>
+                            <li><strong>Products:</strong> Catalog, variants, images, descriptions, pricing</li>
+                            <li><strong>Customers:</strong> Accounts, contact info, order history</li>
+                            <li><strong>Orders:</strong> Complete order records and payment data</li>
+                            <li><strong>Content:</strong> Pages, blog posts, media files</li>
+                            <li><strong>SEO Data:</strong> Meta tags, URLs, redirects</li>
+                            <li><strong>Reviews:</strong> Customer reviews and ratings</li>
+                            <li><strong>Custom Fields:</strong> Product attributes and meta data</li>
+                            <li><strong>Integrations:</strong> Third-party app connections</li>
+                        </ul>
+                    </div>
+
+                    <h3>Migration Pricing</h3>
+                    
+                    <ul>
+                        <li><strong>Basic Migration:</strong> $1,499 - $3,999 (Up to 1,000 products)</li>
+                        <li><strong>Standard Migration:</strong> $3,999 - $7,999 (1,000-10,000 products)</li>
+                        <li><strong>Enterprise Migration:</strong> $7,999 - $19,999 (10,000+ products)</li>
+                        <li><strong>Custom Platform:</strong> Quote based on complexity</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="seo-services">Shopify SEO Optimization Services</h2>
+                    
+                    <p><strong>Shopify SEO optimization</strong> improves search engine rankings, increases organic traffic, and enhances overall store visibility in search results.</p>
+
+                    <h3>Complete SEO Optimization Package</h3>
+                    
+                    <ul>
+                        <li><strong>Technical SEO Audit:</strong> Comprehensive site analysis and issues identification</li>
+                        <li><strong>On-Page SEO:</strong> Meta tags, headers, content optimization</li>
+                        <li><strong>Site Structure:</strong> URL structure, navigation, and internal linking</li>
+                        <li><strong>Page Speed:</strong> Performance optimization for faster loading</li>
+                        <li><strong>Mobile SEO:</strong> Mobile-first optimization and responsiveness</li>
+                        <li><strong>Schema Markup:</strong> Structured data for rich snippets</li>
+                        <li><strong>Content SEO:</strong> Product descriptions and content optimization</li>
+                        <li><strong>Image SEO:</strong> Alt text, file names, and image optimization</li>
+                    </ul>
+
+                    <h3>SEO Services Pricing</h3>
+                    
+                    <ul>
+                        <li><strong>SEO Audit:</strong> $399 (Comprehensive analysis and recommendations)</li>
+                        <li><strong>Basic SEO Package:</strong> $599 (Essential optimization)</li>
+                        <li><strong>Advanced SEO Package:</strong> $1,299 (Complete optimization)</li>
+                        <li><strong>Ongoing SEO:</strong> $299/month (Monthly optimization and monitoring)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Pricing Section -->
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Transparent Pricing for All Services</h2>
+                    <p class="section-subtitle">Professional Shopify development at 60% less cost than agencies</p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Starter Package</h3>
+                        <div class="pricing-price">$599</div>
+                        <div class="pricing-period">Complete Setup</div>
+                        <ul class="pricing-features">
+                            <li>Shopify store setup</li>
+                            <li>Theme customization</li>
+                            <li>Payment gateway setup</li>
+                            <li>Basic SEO optimization</li>
+                            <li>Mobile optimization</li>
+                            <li>Product catalog setup</li>
+                            <li>30 days support</li>
+                        </ul>
+                        <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20the%20Starter%20package.%20Can%20we%20discuss?" class="btn primary">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <h3>Professional Package</h3>
+                        <div class="pricing-price">$1,299</div>
+                        <div class="pricing-period">Complete Development</div>
+                        <ul class="pricing-features">
+                            <li>Custom theme development</li>
+                            <li>Advanced functionality</li>
+                            <li>SEO optimization</li>
+                            <li>Performance optimization</li>
+                            <li>Third-party integrations</li>
+                            <li>Mobile responsiveness</li>
+                            <li>60 days support</li>
+                        </ul>
+                        <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20the%20Professional%20package.%20Let's%20discuss%20my%20project." class="btn primary">Most Popular</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Enterprise Package</h3>
+                        <div class="pricing-price">$2,999</div>
+                        <div class="pricing-period">Complete Solution</div>
+                        <ul class="pricing-features">
+                            <li>Custom app development</li>
+                            <li>Advanced integrations</li>
+                            <li>Complex functionality</li>
+                            <li>Performance optimization</li>
+                            <li>Advanced SEO</li>
+                            <li>Priority support</li>
+                            <li>90 days support</li>
+                        </ul>
+                        <a href="https://wa.me/923010482120?text=Hi!%20I%20need%20the%20Enterprise%20package.%20Can%20we%20discuss%20requirements?" class="btn primary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Our Services -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Our Shopify Development Services?</h2>
+                    <p class="section-subtitle">Professional quality at affordable prices</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>60% Cost Savings</h3>
+                        <p>Get the same quality as expensive agencies at 60% less cost. No overhead, no markup - just professional development at fair prices.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Fast Delivery</h3>
+                        <p>Direct developer contact means faster communication and quicker project delivery without project management delays.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Guaranteed</h3>
+                        <p>3+ years of Shopify development experience with 100+ successful projects and 100% client satisfaction rate.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock support and maintenance available across all time zones with fluent English communication.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>International Experience</h3>
+                        <p>Successfully served clients in 25+ countries including USA, UK, Canada, and Australia with local market understanding.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Complete Solutions</h3>
+                        <p>Full-service Shopify development from initial setup to ongoing maintenance, all under one roof.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about Shopify development services</p>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What Shopify development services do you offer?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            I offer comprehensive Shopify development services including custom theme development, app development, platform migrations, SEO optimization, store setup, and ongoing maintenance. Each service is tailored to meet specific business requirements and includes transparent pricing.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How much do Shopify development services cost?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Shopify development services start from $299 for basic store setup up to $15,999 for complex enterprise solutions. Custom theme development ranges from $599-$5,999, app development from $1,299-$15,999, and migrations from $1,499-$19,999. All pricing is transparent with no hidden fees.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does Shopify development take?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Development timelines vary by project complexity: basic store setup takes 3-5 days, custom theme development 1-4 weeks, app development 2-8 weeks, and platform migrations 2-12 weeks. Direct developer contact ensures faster delivery compared to agencies.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you provide post-launch support?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! All development packages include free support (30-90 days depending on package). Ongoing maintenance and support are available starting at $99/month. Emergency support is available 24/7 for critical issues.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can you migrate my store from another platform?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! I specialize in migrating stores from WooCommerce, Magento, BigCommerce, and other platforms to Shopify. The migration includes complete data preservation, SEO protection with 301 redirects, design recreation, and comprehensive testing.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you work with international clients?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! I work with clients worldwide including USA, UK, Canada, Australia, and Europe. I provide 24/7 support across all time zones with fluent English communication and understanding of international market requirements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="container">
+            <div class="cta-section">
+                <h2>Ready to Start Your Shopify Project?</h2>
+                <p>Get professional Shopify development services at 60% less cost with transparent pricing and guaranteed quality. Free consultation available to discuss your project requirements.</p>
+                <div class="cta-actions">
+                    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20Shopify%20development%20services.%20Can%20we%20discuss%20my%20project%20requirements?" 
+                       class="btn success" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Start Your Project
+                    </a>
+                    <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects" class="btn primary">
+                        <i class="fas fa-eye"></i>
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observeOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observeOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .service-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20Shopify%20development%20services.%20Can%20you%20help%20with%20my%20project?" 
+       style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 999; text-decoration: none; transition: all 0.3s; animation: bounce 2s infinite;"
+       target="_blank"
+       title="Get Shopify Development Quote">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</body>
+</html>
