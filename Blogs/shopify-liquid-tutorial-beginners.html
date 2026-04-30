@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shopify Liquid Tutorial for Beginners 2026</title>
+<meta name="description" content="Learn Shopify Liquid from scratch: objects, tags, filters, writing your first template, and practical examples. Beginner tutorial by Ibrar Zahoor.">
+<meta name="keywords" content="shopify liquid tutorial for beginners, shopify liquid guide, liquid templating shopify, ibrar zahoor, shopify developer pakistan">
+<meta name="author" content="Ibrar Zahoor">
+<meta name="creator" content="Ibrar Zahoor">
+<meta name="publisher" content="Ibrar Zahoor">
+<meta property="article:author" content="Ibrar Zahoor">
+<meta name="DC.creator" content="Ibrar Zahoor">
+<meta name="DC.publisher" content="Ibrar Zahoor - Shopify Developer">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-liquid-tutorial-beginners.html">
+<meta property="og:title" content="Shopify Liquid Tutorial for Beginners – Objects, Tags & Filters">
+<meta property="og:description" content="Complete Shopify Liquid tutorial for beginners by Ibrar Zahoor: objects, tags, filters, loops, conditionals, and real-world template examples.">
+<meta property="og:url" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-liquid-tutorial-beginners.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="../site-ui.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Liquid Tutorial for Beginners – Objects, Tags & Filters","description":"Complete Shopify Liquid tutorial for beginners by Ibrar Zahoor: objects, tags, filters, loops, conditionals, and real-world template examples.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-liquid-tutorial-beginners.html","datePublished":"2026-01-20","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrar-zahoor/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-liquid-tutorial-beginners.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Shopify Liquid used for?","acceptedAnswer":{"@type":"Answer","text":"Shopify Liquid is the templating language that powers every Shopify theme. As Ibrar Zahoor explains, Liquid lets developers and designers dynamically render product data, customer info, cart contents, and more into HTML pages without a separate backend."}},{"@type":"Question","name":"Is Shopify Liquid hard to learn?","acceptedAnswer":{"@type":"Answer","text":"Liquid is one of the simpler templating languages available. With a basic understanding of HTML, most beginners can write useful Liquid code within a few hours. The official Shopify documentation and tutorials like this one by Ibrar Zahoor make the learning curve manageable."}},{"@type":"Question","name":"What is the difference between Liquid objects, tags, and filters?","acceptedAnswer":{"@type":"Answer","text":"Objects output dynamic data (e.g., product.title), tags control logic and flow (e.g., if, for loops), and filters transform output values (e.g., upcase, date). Together these three building blocks make up the entire Liquid language on Shopify."}}]}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--sur:#111;--bdr:#222;--txt:#e5e5e5;--mut:#888;--brand:#0070f3;--grad:linear-gradient(135deg,#0070f3,#7928ca)}
+body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.72}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.c{max-width:860px;margin:0 auto;padding:0 22px}
+.bc{padding:13px 22px;font-size:.82rem;color:var(--mut);border-bottom:1px solid var(--bdr)}
+.bc a{color:var(--mut)}.bc a:hover{color:var(--brand)}
+.hero{background:linear-gradient(135deg,rgba(0,112,243,.1),rgba(121,40,202,.1));padding:52px 22px 42px;border-bottom:1px solid var(--bdr)}
+.hero h1{font-size:clamp(1.55rem,4vw,2.35rem);font-weight:800;line-height:1.2;margin-bottom:13px}
+.hero-sub{color:var(--mut);font-size:.97rem;margin-bottom:18px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--mut)}
+.meta span{display:flex;align-items:center;gap:5px}
+.content{padding:42px 22px}
+h2{font-size:1.4rem;font-weight:700;margin:36px 0 13px;color:#fff}
+h3{font-size:1.07rem;font-weight:600;margin:22px 0 9px;color:var(--brand)}
+p{margin-bottom:13px}ul,ol{margin:0 0 15px 22px}li{margin-bottom:7px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.88rem}
+th{background:rgba(0,112,243,.14);padding:10px 13px;text-align:left;border:1px solid var(--bdr);font-weight:600}
+td{padding:10px 13px;border:1px solid var(--bdr);vertical-align:top}
+tr:nth-child(even)td{background:rgba(255,255,255,.02)}
+.box{background:var(--sur);border:1px solid var(--bdr);border-radius:11px;padding:20px;margin:18px 0}
+.tip{background:rgba(0,112,243,.07);border-left:3px solid var(--brand);padding:13px 17px;margin:16px 0;border-radius:0 8px 8px 0}
+.tip strong{color:var(--brand)}
+pre{background:var(--sur);border:1px solid var(--bdr);border-radius:8px;padding:16px;overflow-x:auto;font-size:.85rem;margin:14px 0;line-height:1.55}
+code{font-family:'Courier New',monospace;font-size:.88em;background:rgba(0,112,243,.1);padding:2px 6px;border-radius:4px}
+@media(max-width:600px){.hero h1{font-size:1.35rem}table{font-size:.8rem}th,td{padding:7px 9px}}
+</style>
+</head>
+<body>
+<div class="bc"><div class="c"><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/">Home</a> / <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a> / <span>Shopify Liquid Tutorial for Beginners</span></div></div>
+<section class="hero"><div class="c">
+<h1>Shopify Liquid Tutorial for Beginners – Objects, Tags &amp; Filters</h1>
+<p class="hero-sub">Master Shopify's templating language from the ground up — learn objects, tags, filters, loops, conditionals, and write your first real Liquid template.</p>
+<div class="meta"><span><i class="far fa-calendar"></i> January 20, 2026</span><span><i class="far fa-clock"></i> 14 min read</span><span><i class="fas fa-user"></i> Ibrar Zahoor</span></div>
+</div></section>
+<div class="content"><div class="c">
+
+<p>If you want to customize Shopify themes beyond what the drag-and-drop editor allows, you need to understand <strong>Shopify Liquid</strong>. Liquid is an open-source templating language created by Shopify — it is the engine behind every Shopify store's HTML output. This tutorial for beginners covers everything: what Liquid is, how it works, its three core building blocks, practical examples, and how to write your first complete product template.</p>
+
+<h2>What Is Shopify Liquid?</h2>
+<p>Liquid is a safe, customer-facing template language. Unlike PHP or JavaScript, Liquid code runs on Shopify's servers before the page is sent to the browser — the browser only ever receives clean HTML. This makes it fast and secure. Every <code>.liquid</code> file in a Shopify theme is a Liquid template.</p>
+<p>Liquid files live inside theme folders like <code>templates/</code>, <code>sections/</code>, <code>snippets/</code>, and <code>layout/</code>. When a customer visits a product page, Shopify finds the matching template, processes all the Liquid code, and serves the resulting HTML.</p>
+
+<h2>The Three Building Blocks of Liquid</h2>
+<table>
+<thead><tr><th>Building Block</th><th>Syntax</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Objects</td><td><code>{{ }}</code> double curly braces</td><td>Output dynamic values</td></tr>
+<tr><td>Tags</td><td><code>{% %}</code> curly brace percent</td><td>Logic, loops, includes</td></tr>
+<tr><td>Filters</td><td><code>| filter_name</code> pipe notation</td><td>Transform output values</td></tr>
+</tbody>
+</table>
+
+<h2>Liquid Objects – Outputting Dynamic Data</h2>
+<p>Objects are the most fundamental part of Liquid. They output content from your Shopify store into the page. You write an object by wrapping it in double curly braces.</p>
+<pre>{{ product.title }}
+{{ product.price | money }}
+{{ shop.name }}
+{{ customer.first_name }}</pre>
+<p>Shopify provides dozens of global objects. The most commonly used ones are:</p>
+<ul>
+<li><code>product</code> — the current product (title, description, variants, images, price)</li>
+<li><code>collection</code> — the current collection and its products</li>
+<li><code>cart</code> — the current cart (items, total, item count)</li>
+<li><code>customer</code> — the logged-in customer's data</li>
+<li><code>shop</code> — your store's name, email, domain, currency</li>
+<li><code>request</code> — current URL, page type, locale</li>
+</ul>
+
+<div class="tip"><strong>Pro Tip:</strong> In the Shopify theme editor, open any template and use <code>{{ product | json }}</code> temporarily to dump the full object as JSON — this reveals every available property on that object.</div>
+
+<h2>Liquid Tags – Controlling Logic and Flow</h2>
+<p>Tags use the <code>{% %}</code> syntax and do not produce visible output themselves — they control what gets rendered. There are three categories of tags: control flow, iteration, and theme tags.</p>
+
+<h3>Control Flow Tags (if / unless / elsif / else)</h3>
+<pre>{% if product.available %}
+  &lt;button&gt;Add to Cart&lt;/button&gt;
+{% elsif product.available == false %}
+  &lt;button disabled&gt;Sold Out&lt;/button&gt;
+{% endif %}
+
+{% unless customer %}
+  &lt;a href="/account/login"&gt;Log in&lt;/a&gt;
+{% endunless %}</pre>
+
+<h3>Iteration Tags (for loops)</h3>
+<pre>{% for product in collection.products %}
+  &lt;div class="product-card"&gt;
+    &lt;h2&gt;{{ product.title }}&lt;/h2&gt;
+    &lt;p&gt;{{ product.price | money }}&lt;/p&gt;
+  &lt;/div&gt;
+{% endfor %}
+
+{% comment %}Limit to first 4 products{% endcomment %}
+{% for product in collection.products limit:4 %}
+  {{ product.title }}
+{% endfor %}</pre>
+
+<h3>Variable Tags (assign / capture)</h3>
+<pre>{% assign discount_price = product.price | times: 0.9 %}
+{{ discount_price | money }}
+
+{% capture full_name %}{{ customer.first_name }} {{ customer.last_name }}{% endcapture %}
+{{ full_name }}</pre>
+
+<h3>Theme Tags (render / include)</h3>
+<pre>{% render 'product-card', product: product %}
+{% render 'icon-search' %}</pre>
+
+<h2>Liquid Filters – Transforming Output</h2>
+<p>Filters modify the output of objects. They are chained with the pipe character <code>|</code> and can be stacked in sequence.</p>
+<table>
+<thead><tr><th>Filter</th><th>Example</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>upcase</td><td><code>{{ "hello" | upcase }}</code></td><td>HELLO</td></tr>
+<tr><td>downcase</td><td><code>{{ "HELLO" | downcase }}</code></td><td>hello</td></tr>
+<tr><td>capitalize</td><td><code>{{ "ibrar zahoor" | capitalize }}</code></td><td>Ibrar zahoor</td></tr>
+<tr><td>money</td><td><code>{{ product.price | money }}</code></td><td>$29.99</td></tr>
+<tr><td>date</td><td><code>{{ "now" | date: "%B %d, %Y" }}</code></td><td>April 30, 2026</td></tr>
+<tr><td>truncate</td><td><code>{{ product.description | truncate: 80 }}</code></td><td>First 80 chars...</td></tr>
+<tr><td>strip_html</td><td><code>{{ product.description | strip_html }}</code></td><td>Plain text only</td></tr>
+<tr><td>size</td><td><code>{{ cart.items | size }}</code></td><td>Number of items</td></tr>
+<tr><td>default</td><td><code>{{ var | default: "N/A" }}</code></td><td>"N/A" if var is blank</td></tr>
+<tr><td>url_encode</td><td><code>{{ "hello world" | url_encode }}</code></td><td>hello+world</td></tr>
+</tbody>
+</table>
+
+<h2>Writing Your First Product Template</h2>
+<p>Here is a minimal but complete product template that combines objects, tags, and filters. In Dawn and OS 2.0 themes, product templates live in <code>templates/product.json</code> (JSON template) and corresponding sections. For older themes, create <code>templates/product.liquid</code>.</p>
+<pre>&lt;div class="product"&gt;
+  &lt;h1&gt;{{ product.title }}&lt;/h1&gt;
+
+  {% if product.featured_image %}
+    &lt;img src="{{ product.featured_image | img_url: '800x' }}"
+         alt="{{ product.featured_image.alt | escape }}"
+         width="800" loading="lazy"&gt;
+  {% endif %}
+
+  &lt;div class="price"&gt;
+    {% if product.compare_at_price > product.price %}
+      &lt;s&gt;{{ product.compare_at_price | money }}&lt;/s&gt;
+    {% endif %}
+    &lt;strong&gt;{{ product.price | money }}&lt;/strong&gt;
+  &lt;/div&gt;
+
+  &lt;div class="description"&gt;
+    {{ product.description }}
+  &lt;/div&gt;
+
+  {% form 'product', product %}
+    &lt;select name="id"&gt;
+      {% for variant in product.variants %}
+        &lt;option value="{{ variant.id }}"
+          {% unless variant.available %}disabled{% endunless %}&gt;
+          {{ variant.title }} – {{ variant.price | money }}
+        &lt;/option&gt;
+      {% endfor %}
+    &lt;/select&gt;
+    &lt;button type="submit"&gt;
+      {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
+    &lt;/button&gt;
+  {% endform %}
+&lt;/div&gt;</pre>
+
+<h2>Liquid in Sections and Schemas</h2>
+<p>In Online Store 2.0 themes, sections use a <code>{% schema %}</code> tag at the bottom to define merchant-editable settings. These settings become accessible as the <code>section.settings</code> object in Liquid.</p>
+<pre>{{ section.settings.heading }}
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Banner Heading",
+      "default": "Welcome to our store"
+    }
+  ]
+}
+{% endschema %}</pre>
+
+<div class="tip"><strong>Pro Tip:</strong> Always use the <code>| escape</code> filter on user-generated content (like <code>customer.name</code> or URL parameters) to prevent XSS injection in your templates.</div>
+
+<h2>Common Beginner Mistakes in Liquid</h2>
+<ul>
+<li><strong>Forgetting to close tags</strong> — every <code>{% if %}</code> needs a <code>{% endif %}</code>, every <code>{% for %}</code> needs an <code>{% endfor %}</code>.</li>
+<li><strong>Using include instead of render</strong> — <code>{% include %}</code> is deprecated in OS 2.0 themes. Use <code>{% render %}</code> instead.</li>
+<li><strong>Not using the money filter on prices</strong> — Shopify stores prices in cents. <code>{{ product.price }}</code> outputs <code>2999</code> not <code>$29.99</code>. Always pipe through <code>| money</code>.</li>
+<li><strong>Nested for loops without forloop.index</strong> — use <code>{{ forloop.index }}</code> and <code>{{ forloop.index0 }}</code> to track position when you need it.</li>
+</ul>
+
+<h2>Need Expert Help?</h2>
+<p>Ibrar Zahoor is an Expert Shopify Developer based in Lahore, Pakistan with 5+ years experience and 50+ successful projects. Contact him for custom Shopify development, theme design, SEO optimization, and marketplace solutions.</p>
+<p><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Get a free consultation with Ibrar Zahoor &rarr;</a></p>
+
+</div></div>
+</body></html>

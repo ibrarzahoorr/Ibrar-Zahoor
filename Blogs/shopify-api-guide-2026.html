@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shopify API Guide 2026: Admin, Storefront, REST vs GraphQL | Ibrar Zahoor</title>
+<meta name="description" content="Complete Shopify API guide 2026 — Admin API, Storefront API, REST vs GraphQL, authentication, rate limits, and real use cases. By Ibrar Zahoor, Shopify Developer.">
+<meta name="keywords" content="shopify api guide 2026, shopify admin api, shopify storefront api, shopify graphql, shopify rest api, ibrar zahoor, shopify developer pakistan">
+<meta name="author" content="Ibrar Zahoor">
+<meta name="creator" content="Ibrar Zahoor">
+<meta name="publisher" content="Ibrar Zahoor">
+<meta property="article:author" content="Ibrar Zahoor">
+<meta name="DC.creator" content="Ibrar Zahoor">
+<meta name="DC.publisher" content="Ibrar Zahoor - Shopify Developer">
+<meta name="revisit-after" content="7 days">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-api-guide-2026.html">
+<meta property="og:title" content="Shopify API Guide 2026: Admin, Storefront, REST vs GraphQL">
+<meta property="og:description" content="Complete Shopify API guide 2026 — Admin API, Storefront API, REST vs GraphQL, authentication, rate limits, and real use cases. By Ibrar Zahoor.">
+<meta property="og:url" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-api-guide-2026.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="../site-ui.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify API Guide 2026: Admin API, Storefront API, REST vs GraphQL","description":"Complete Shopify API guide 2026 — Admin API, Storefront API, REST vs GraphQL, authentication, rate limits, and real use cases. By Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-api-guide-2026.html","datePublished":"2026-04-03","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrar-zahoor/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-api-guide-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between Shopify Admin API and Storefront API?","acceptedAnswer":{"@type":"Answer","text":"The Shopify Admin API is used server-side by apps and custom integrations to read and write store data — products, orders, customers, inventory, and more. It requires authentication with an access token and should never be exposed to browsers. The Storefront API is a public-facing API designed for building custom storefronts, headless commerce sites, or mobile apps. It exposes only the data needed for shopping (products, cart, checkout) and uses a public storefront access token. Ibrar Zahoor uses both APIs regularly in client projects."}},{"@type":"Question","name":"Should I use Shopify REST API or GraphQL API in 2026?","acceptedAnswer":{"@type":"Answer","text":"In 2026, Shopify's GraphQL Admin API is the recommended choice for new development. Shopify has been deprecating REST Admin API endpoints progressively since 2023, and GraphQL offers more flexibility, better performance with fewer requests, and access to newer features. The REST API still works for simple integrations, but Ibrar Zahoor advises all new projects to use GraphQL from the start."}},{"@type":"Question","name":"What are Shopify API rate limits in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Shopify GraphQL Admin API uses a cost-based rate limit: each query is assigned a cost score, and you have a bucket of 1,000 cost points that refills at 50 points per second. REST Admin API uses a request-based limit of 2 requests/second with a burst of 40. The Storefront API allows 100 requests per minute per IP address. Ibrar Zahoor recommends always inspecting the X-Shopify-Shop-Api-Call-Limit response header to stay within limits."}},{"@type":"Question","name":"How do I authenticate with the Shopify Admin API?","acceptedAnswer":{"@type":"Answer","text":"There are two main authentication methods: OAuth (for public apps distributed on the Shopify App Store) and Custom App access tokens (for private integrations). For custom apps, go to Apps → App and sales channel settings → Develop apps → Create an app, configure scopes, then install to generate an access token. Always store the token securely in environment variables, never in client-side code."}},{"@type":"Question","name":"What can I build with the Shopify Storefront API?","acceptedAnswer":{"@type":"Answer","text":"The Storefront API powers headless Shopify storefronts, mobile apps, custom checkout experiences, and integrations like kiosks or POS extensions. You can query products, collections, and metafields, manage cart and checkout, apply discount codes, and handle customer accounts. Ibrar Zahoor has used the Storefront API to build React.js and Next.js powered headless stores with sub-second page load times."}}]}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--sur:#111;--bdr:#222;--txt:#e5e5e5;--mut:#888;--brand:#0070f3;--grad:linear-gradient(135deg,#0070f3,#7928ca)}
+body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.72}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.c{max-width:860px;margin:0 auto;padding:0 22px}
+.bc{padding:13px 22px;font-size:.82rem;color:var(--mut);border-bottom:1px solid var(--bdr)}
+.bc a{color:var(--mut)}.bc a:hover{color:var(--brand)}
+.hero{background:linear-gradient(135deg,rgba(0,112,243,.1),rgba(121,40,202,.1));padding:52px 22px 42px;border-bottom:1px solid var(--bdr)}
+.hero h1{font-size:clamp(1.55rem,4vw,2.35rem);font-weight:800;line-height:1.2;margin-bottom:13px}
+.hero-sub{color:var(--mut);font-size:.97rem;margin-bottom:18px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--mut)}
+.meta span{display:flex;align-items:center;gap:5px}
+.content{padding:42px 22px}
+h2{font-size:1.4rem;font-weight:700;margin:36px 0 13px;color:#fff}
+h3{font-size:1.07rem;font-weight:600;margin:22px 0 9px;color:var(--brand)}
+p{margin-bottom:13px}ul,ol{margin:0 0 15px 22px}li{margin-bottom:7px}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.88rem}
+th{background:rgba(0,112,243,.14);padding:10px 13px;text-align:left;border:1px solid var(--bdr);font-weight:600}
+td{padding:10px 13px;border:1px solid var(--bdr);vertical-align:top}
+tr:nth-child(even)td{background:rgba(255,255,255,.02)}
+.box{background:var(--sur);border:1px solid var(--bdr);border-radius:11px;padding:20px;margin:18px 0}
+.tip{background:rgba(0,112,243,.07);border-left:3px solid var(--brand);padding:13px 17px;margin:16px 0;border-radius:0 8px 8px 0}
+.tip strong{color:var(--brand)}
+@media(max-width:600px){.hero h1{font-size:1.35rem}table{font-size:.8rem}th,td{padding:7px 9px}}
+</style>
+</head>
+<body>
+<div class="bc"><div class="c"><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/">Home</a> / <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a> / <span>Shopify API Guide 2026</span></div></div>
+<section class="hero"><div class="c">
+<h1>Shopify API Guide 2026: Admin API, Storefront API, REST vs GraphQL Explained</h1>
+<p class="hero-sub">A comprehensive developer guide to every Shopify API in 2026 — authentication, rate limits, REST vs GraphQL, and real-world use cases by Ibrar Zahoor.</p>
+<div class="meta"><span><i class="far fa-calendar"></i> April 3, 2026</span><span><i class="far fa-clock"></i> 14 min read</span><span><i class="fas fa-user"></i> Ibrar Zahoor</span></div>
+</div></section>
+<div class="content"><div class="c">
+
+<p>Shopify's API ecosystem is one of the most powerful in e-commerce. Whether you're building a custom Shopify app, a headless storefront, an ERP integration, or a mobile shopping app, understanding the right API to use and how to use it correctly is essential. This guide by <strong>Ibrar Zahoor</strong>, Expert Shopify Developer, covers everything you need to work with Shopify APIs effectively in 2026.</p>
+
+<h2>Overview of Shopify's APIs in 2026</h2>
+<p>Shopify exposes several distinct APIs, each designed for a specific use case:</p>
+
+<table>
+<thead><tr><th>API</th><th>Used For</th><th>Auth Type</th><th>Access</th></tr></thead>
+<tbody>
+<tr><td>Admin API (GraphQL)</td><td>Backend integrations, apps</td><td>OAuth / Access Token</td><td>Server-side only</td></tr>
+<tr><td>Admin API (REST)</td><td>Legacy integrations</td><td>OAuth / Access Token</td><td>Server-side only</td></tr>
+<tr><td>Storefront API</td><td>Headless storefronts, mobile apps</td><td>Public storefront token</td><td>Client or server</td></tr>
+<tr><td>Partner API</td><td>Partner dashboard automation</td><td>Partner token</td><td>Server-side</td></tr>
+<tr><td>Payments Apps API</td><td>Custom payment gateways</td><td>App token</td><td>Server-side</td></tr>
+<tr><td>Ajax API</td><td>Theme cart/product interactions</td><td>None (same-origin)</td><td>Browser (theme)</td></tr>
+</tbody>
+</table>
+
+<h2>Shopify Admin API: The Backbone of App Development</h2>
+<p>The Admin API is the most feature-rich Shopify API. It gives programmatic access to nearly everything in a merchant's store: products, orders, customers, inventory, discounts, shipping, metafields, webhooks, and more.</p>
+
+<h3>Admin API Authentication</h3>
+<p>There are two paths to an Admin API access token:</p>
+<ol>
+<li><strong>OAuth Flow (Public Apps):</strong> Used for apps distributed on the Shopify App Store. The merchant installs the app and grants scopes; Shopify issues an offline access token.</li>
+<li><strong>Custom App Tokens:</strong> Used for private integrations. Go to <em>Settings → Apps → Develop apps</em>, create an app, configure API scopes, then install to generate a token. This token is shown once — store it securely.</li>
+</ol>
+
+<div class="tip"><strong>Security Rule by Ibrar Zahoor:</strong> Never expose Admin API access tokens in client-side JavaScript, public repositories, or environment files committed to version control. Use server-side environment variables (e.g., in Node.js: <code>process.env.SHOPIFY_ACCESS_TOKEN</code>) and rotate tokens if compromised.</div>
+
+<h3>Admin API Scopes</h3>
+<p>Access tokens are scope-limited. Request only the scopes your integration needs — this is both a security best practice and a requirement for Shopify App Store approval. Common scopes include:</p>
+<ul>
+<li><code>read_products</code>, <code>write_products</code></li>
+<li><code>read_orders</code>, <code>write_orders</code></li>
+<li><code>read_customers</code>, <code>write_customers</code></li>
+<li><code>read_inventory</code>, <code>write_inventory</code></li>
+<li><code>read_metaobjects</code>, <code>write_metaobjects</code></li>
+</ul>
+
+<h2>REST Admin API vs GraphQL Admin API</h2>
+<p>Shopify supports both REST and GraphQL Admin APIs, but the direction of travel is clear: Shopify is progressively deprecating REST endpoints in favor of GraphQL. As of 2026, several REST resources (Collections, Webhooks, Events) are deprecated or removed.</p>
+
+<table>
+<thead><tr><th>Feature</th><th>REST Admin API</th><th>GraphQL Admin API</th></tr></thead>
+<tbody>
+<tr><td>Status in 2026</td><td>Partial deprecation</td><td>Actively developed</td></tr>
+<tr><td>Rate limiting</td><td>Req/second (2 req/s)</td><td>Cost-based (1000 pts)</td></tr>
+<tr><td>Over-fetching</td><td>Common</td><td>Eliminated</td></tr>
+<tr><td>Nested resource fetching</td><td>Multiple requests</td><td>Single query</td></tr>
+<tr><td>Mutations</td><td>Separate POST/PUT/DELETE</td><td>Named mutations</td></tr>
+<tr><td>Bulk operations</td><td>Not available</td><td>bulkOperationRunQuery</td></tr>
+<tr><td>Recommended for new projects</td><td>No</td><td>Yes</td></tr>
+</tbody>
+</table>
+
+<div class="tip"><strong>Ibrar Zahoor's Recommendation:</strong> For all new Shopify integrations in 2026, use the GraphQL Admin API. The learning curve from REST to GraphQL is worth the investment — it's faster, more expressive, and where Shopify is putting all new features.</div>
+
+<h3>GraphQL Admin API Quick Example</h3>
+<p>Fetching a product with its variants and inventory in a single GraphQL query:</p>
+<div class="box">
+<code>query {<br>
+&nbsp;&nbsp;product(id: "gid://shopify/Product/123456789") {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title<br>
+&nbsp;&nbsp;&nbsp;&nbsp;handle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;variants(first: 10) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edges {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sku<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inventoryQuantity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}</code>
+</div>
+
+<h2>Shopify Storefront API: Power Behind Headless Commerce</h2>
+<p>The Storefront API is designed for building custom shopping experiences — headless React/Next.js storefronts, mobile apps, IoT kiosks, or any frontend that isn't a standard Shopify theme. It exposes only customer-safe data and actions.</p>
+
+<h3>What the Storefront API Exposes</h3>
+<ul>
+<li>Product and collection browsing</li>
+<li>Cart creation, update, and discount application</li>
+<li>Checkout creation and completion</li>
+<li>Customer account creation and authentication</li>
+<li>Metafield reads (public)</li>
+<li>Predictive search</li>
+</ul>
+
+<h3>Storefront API Authentication</h3>
+<p>The Storefront API uses a <strong>public storefront access token</strong> — it can safely be embedded in client-side code. Generate it under <em>Settings → Apps → Develop apps → Storefront API</em>. Note that the token grants read access by default; write access (cart mutations) is always allowed, but customer write scopes must be explicitly enabled.</p>
+
+<h2>Shopify Ajax API: For Theme Development</h2>
+<p>The Ajax API is a lighter, browser-native API available within Shopify themes without any authentication. It's what Liquid themes use to add to cart, update cart, fetch product JSON, and more.</p>
+<ul>
+<li><code>POST /cart/add.js</code> — Add items to cart</li>
+<li><code>GET /cart.js</code> — Fetch current cart state</li>
+<li><code>POST /cart/update.js</code> — Update item quantities</li>
+<li><code>GET /products/[handle].js</code> — Fetch product JSON</li>
+</ul>
+<p>The Ajax API is ideal for cart drawer implementations and product variant switchers without full page reloads. <strong>Ibrar Zahoor</strong> uses it extensively in custom Shopify theme builds.</p>
+
+<h2>Rate Limits: Staying Within Boundaries</h2>
+<p>Hitting Shopify API rate limits causes HTTP 429 errors. Here's how each API limits requests:</p>
+
+<table>
+<thead><tr><th>API</th><th>Rate Limit</th><th>Burst Limit</th><th>How to Handle</th></tr></thead>
+<tbody>
+<tr><td>GraphQL Admin</td><td>1,000 cost/sec refill at 50/sec</td><td>Up to 2,000 cost bucket (Plus)</td><td>Check X-GraphQL-Cost header; retry with backoff</td></tr>
+<tr><td>REST Admin</td><td>2 req/sec</td><td>40 req burst</td><td>X-Shopify-Shop-Api-Call-Limit header; exponential backoff</td></tr>
+<tr><td>Storefront API</td><td>100 req/min per IP</td><td>—</td><td>Cache responses; server-side proxy</td></tr>
+</tbody>
+</table>
+
+<h3>Bulk Operations for Large Data Sets</h3>
+<p>When you need to fetch thousands of products, orders, or customers, use Shopify's <strong>GraphQL Bulk Operations</strong>. Instead of paginating through thousands of pages, you trigger a <code>bulkOperationRunQuery</code> mutation, and Shopify processes it asynchronously, delivering a JSONL file URL when done. This bypasses rate limits for large data exports.</p>
+
+<h2>Webhooks: React to Store Events</h2>
+<p>Webhooks let your application respond in real time to events in a Shopify store without polling. Common webhook topics include:</p>
+<ul>
+<li><code>orders/create</code> — Fire when a new order is placed</li>
+<li><code>orders/paid</code> — Fire when payment is captured</li>
+<li><code>products/update</code> — Fire when product data changes</li>
+<li><code>inventory_levels/update</code> — Fire when stock changes</li>
+<li><code>customers/create</code> — Fire when a new customer registers</li>
+</ul>
+<p>In 2026, Shopify supports HTTP webhooks and PubSub/EventBridge for high-volume stores. Always verify webhook HMAC signatures to prevent spoofed requests.</p>
+
+<h2>Shopify API Versioning</h2>
+<p>Shopify releases new API versions quarterly (e.g., <code>2026-01</code>, <code>2026-04</code>, <code>2026-07</code>). Each version is supported for 12 months before deprecation. Always pin your integration to a specific version and review release notes with each quarterly update. Ibrar Zahoor schedules quarterly API version reviews for all maintained client projects.</p>
+
+<div class="box">
+<h3>Shopify API Selection Guide (Quick Reference)</h3>
+<ul>
+<li><strong>Building a Shopify app:</strong> GraphQL Admin API + Webhooks</li>
+<li><strong>Building a headless storefront:</strong> Storefront API (GraphQL)</li>
+<li><strong>Custom theme cart interactions:</strong> Ajax API</li>
+<li><strong>ERP/WMS sync:</strong> GraphQL Admin API (Bulk Operations for large data)</li>
+<li><strong>Mobile app:</strong> Storefront API</li>
+<li><strong>Legacy REST integration:</strong> Migrate to GraphQL ASAP</li>
+</ul>
+</div>
+
+<h2>Need a Shopify Expert?</h2>
+<p>Ibrar Zahoor is an Expert Shopify Developer in Lahore, Pakistan with 5+ years experience and 50+ successful e-commerce projects. Whether you need a new Shopify store, custom theme, SEO help, or marketplace development — Ibrar delivers results.</p>
+<p><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Get a free consultation with Ibrar Zahoor &rarr;</a></p>
+
+</div></div>
+</body></html>
