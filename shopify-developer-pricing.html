@@ -154,7 +154,7 @@ a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 .grad-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* PRICING GRID */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:start;margin-top:44px}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start;margin-top:44px}@media(max-width:1200px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}}
 .plan{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;transition:.3s}
 .plan:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .plan.featured{border:2px solid var(--brand);background:linear-gradient(160deg,rgba(0,112,243,.07),var(--surface))}
@@ -358,26 +358,25 @@ tr:nth-child(even) td{background:rgba(255,255,255,.02)}
       </div>
 
       <!-- ENTERPRISE -->
-      <div class="plan" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(121,40,202,.07),var(--surface));border-color:rgba(121,40,202,.3)">
-        <div class="plan-tier" style="color:#7928ca">ENTERPRISE / SHOPIFY PLUS</div>
-        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px">
-          <div class="plan-price-usd">$1,500+</div>
-          <div style="font-size:1.1rem;color:var(--muted)">PKR 420,000+</div>
-        </div>
+      <div class="plan" style="background:linear-gradient(135deg,rgba(121,40,202,.07),var(--surface));border-color:rgba(121,40,202,.3)">
+        <div class="plan-tier" style="color:#7928ca">ENTERPRISE / PLUS</div>
+        <div class="plan-price-usd">$1,500+</div>
+        <div class="plan-price-pkr">PKR 420,000+</div>
         <div class="plan-compare">Others charge $10,000–30,000+</div>
         <div class="plan-save">Save $8,500+ vs agencies</div>
+        <div class="plan-delivery"><i class="far fa-clock"></i> 4–6 week delivery</div>
         <div class="plan-divider"></div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-bottom:24px">
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> Shopify Plus / Headless Commerce</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> Custom Checkout Extensibility</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> ERP / 3PL / API Integrations</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> B2B Wholesale + Multi-Currency</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> React.js Storefront / Hydrogen</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> Marketplace Architecture</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> Advanced Analytics & Attribution</div>
-          <div style="font-size:.87rem;color:#ccc;display:flex;gap:8px"><span style="color:var(--success)">✓</span> 3 Months Priority Support</div>
-        </div>
-        <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20have%20an%20Enterprise%20Shopify%20project%20-%20can%20we%20discuss%3F" class="plan-btn plan-btn-outline" target="_blank" rel="noopener" style="max-width:320px;margin:0 auto"><i class="fab fa-whatsapp"></i> Discuss Enterprise Project</a>
+        <ul>
+          <li><span class="chk">✓</span> Shopify Plus / Headless Commerce</li>
+          <li><span class="chk">✓</span> Custom Checkout Extensibility</li>
+          <li><span class="chk">✓</span> ERP / 3PL / API Integrations</li>
+          <li><span class="chk">✓</span> B2B Wholesale + Multi-Currency</li>
+          <li><span class="chk">✓</span> React.js Storefront / Hydrogen</li>
+          <li><span class="chk">✓</span> Marketplace Architecture</li>
+          <li><span class="chk">✓</span> Advanced Analytics & Attribution</li>
+          <li><span class="chk">✓</span> 3 Months Priority Support</li>
+        </ul>
+        <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20have%20an%20Enterprise%20Shopify%20project%20-%20can%20we%20discuss%3F" class="plan-btn plan-btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Get a Quote →</a>
       </div>
 
     </div>
