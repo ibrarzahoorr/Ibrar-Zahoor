@@ -436,7 +436,7 @@
             <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
                 Ibrar Zahoor
             </a>
-            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20read%20your%20salary%20guide." 
+            <a href="https://wa.me/923194699977?text=Hi%20Ibrar!%20I%20read%20your%20salary%20guide." 
                class="btn" 
                target="_blank">
                 <i class="fab fa-whatsapp"></i>
@@ -698,13 +698,14 @@
                 <div class="content-section">
                     <h2>Career Growth & Salary Progression in Pakistan</h2>
                     
-                    <h3>Year-by-Year Salary Growth (Average)</h3>
+                    <h3>Year-by-Year Salary Growth (2026 Market)</h3>
                     <ul>
-                        <li>Year 1: PKR 45,000/month (Starting)</li>
-                        <li>Year 2: PKR 60,000/month (+33%)</li>
-                        <li>Year 3: PKR 80,000/month (+33%)</li>
-                        <li>Year 5: PKR 120,000/month (+50%)</li>
-                        <li>Year 7+: PKR 160,000+/month (+33%)</li>
+                        <li>Year 0–6 months: PKR 60,000–90,000/month (Intern/Trainee)</li>
+                        <li>Year 1: PKR 130,000/month (Junior)</li>
+                        <li>Year 2: PKR 150,000–165,000/month (+20%)</li>
+                        <li>Year 3–4: PKR 180,000–210,000/month (Mid-Level)</li>
+                        <li>Year 5+: PKR 250,000–350,000+/month (Senior)</li>
+                        <li>Year 6+ freelance (USD): PKR 500,000–2,000,000+/month</li>
                     </ul>
 
                     <div class="key-takeaway">
@@ -768,8 +769,8 @@
                 <!-- CTA -->
                 <div class="content-section" style="text-align: center; background: linear-gradient(135deg, rgba(1, 65, 28, 0.1), rgba(6, 140, 58, 0.1)); border: 2px solid rgba(6, 140, 58, 0.3);">
                     <h2 style="color: var(--success);">Looking for a Professional Pakistani Shopify Developer?</h2>
-                    <p style="margin: 20px 0; font-size: 18px;">I'm Ibrar Zahoor with 5+ years of experience. Get enterprise-quality development at competitive Pakistani rates.</p>
-                    <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20read%20your%20salary%20guide%20and%20want%20to%20hire%20you." 
+                    <p style="margin: 20px 0; font-size: 18px;">I'm <strong>Ibrar Zahoor</strong> — Certified Shopify Partner, currently Shopify Plus Developer at <strong>ZARR</strong> (Jazz/PMCL digital venture, 40+ brands). Previously Shopify Developer &amp; Assistant E-Commerce Manager at <strong>EGI</strong> (Chinyere, Rang Ja, Minnie Minors — 105 locations, 1,000+ daily orders). 5+ years, BS CS COMSATS. I deliver enterprise-quality Shopify development at competitive Pakistani rates for clients in USA, UK, UAE, and Australia.</p>
+                    <a href="https://wa.me/923194699977?text=Hi%20Ibrar!%20I%20read%20your%20salary%20guide%20and%20want%20to%20hire%20you." 
                        class="btn" 
                        target="_blank"
                        style="font-size: 18px; padding: 14px 28px;">
@@ -782,27 +783,35 @@
     </main>
 
     <script>
-        // Interactive Salary Calculator
+        // Interactive Salary Calculator — 2026 updated numbers
         function updateSalary() {
             const years = parseInt(document.getElementById('experienceSlider').value);
             const cityMultiplier = parseFloat(document.getElementById('citySelect').value);
             const skillMultiplier = parseFloat(document.getElementById('skillSelect').value);
-            
+
             document.getElementById('yearsDisplay').textContent = years;
-            
+
+            // 2026 market rates: Junior 130k, Mid 150k-210k, Senior 250k+
             let baseSalary;
-            if (years <= 2) {
-                baseSalary = 40000 + (years * 10000);
-            } else if (years <= 5) {
-                baseSalary = 60000 + ((years - 2) * 13333);
+            if (years === 0) {
+                baseSalary = 75000;
+            } else if (years === 1) {
+                baseSalary = 130000;
+            } else if (years <= 2) {
+                baseSalary = 155000;
+            } else if (years <= 4) {
+                baseSalary = 180000 + ((years - 2) * 15000);
+            } else if (years <= 6) {
+                baseSalary = 250000 + ((years - 4) * 30000);
             } else {
-                baseSalary = 100000 + ((years - 5) * 16000);
+                baseSalary = 350000 + ((years - 6) * 25000);
             }
-            
+
             const finalSalary = Math.round(baseSalary * cityMultiplier * skillMultiplier);
-            const hourlyUSD = Math.round((finalSalary / 160) / 285);
-            
-            document.getElementById('salaryOutput').innerHTML = 
+            // PKR/USD rate ~280, hourly based on 160hrs/month
+            const hourlyUSD = Math.round((finalSalary / 160) / 280);
+
+            document.getElementById('salaryOutput').innerHTML =
                 `Monthly: PKR ${finalSalary.toLocaleString()} | Hourly: $${hourlyUSD}`;
         }
 
