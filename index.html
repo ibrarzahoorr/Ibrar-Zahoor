@@ -435,6 +435,30 @@
         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
       @media (prefers-reduced-motion: reduce){.marquee-track{animation:none}}
       @media (max-width:768px){.marquee-item{font-size:13px}.marquee-wrap{padding:16px 0}}
+
+      /* ===== Creative signature elements: code window, custom cursor, scroll progress, tilt ===== */
+      .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent-vivid),var(--brand),var(--brand-3));z-index:10000;transition:width .1s linear}
+      .custom-cursor{position:fixed;top:0;left:0;width:22px;height:22px;border:2px solid var(--accent-vivid);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,border-color .2s;mix-blend-mode:difference;display:none}
+      body.has-custom-cursor{cursor:none}
+      body.has-custom-cursor a,body.has-custom-cursor button{cursor:none}
+      .custom-cursor.is-active{display:block}
+      .custom-cursor.is-hover{width:44px;height:44px;background:rgba(0,217,163,.25)}
+      .code-window{grid-column:1/-1;background:#0d0d12;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
+      .code-window-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#15151d;border-bottom:1px solid var(--border)}
+      .code-window-bar .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+      .code-window-bar .dot.red{background:#ff5f56}
+      .code-window-bar .dot.yellow{background:#ffbd2e}
+      .code-window-bar .dot.green{background:#27c93f}
+      .code-window-title{margin-left:8px;font-size:12px;color:var(--muted);font-family:Monaco,'Courier New',monospace}
+      .code-window-body{margin:0;padding:20px;font-family:Monaco,'Courier New',monospace;font-size:12.5px;line-height:1.85;color:#cfd8e3;min-height:210px;overflow-x:auto}
+      .code-window-body .cm{color:#6a737d}
+      .code-window-body .ck{color:var(--accent-vivid);font-weight:600}
+      .code-window-body .cn{color:#ffaa00}
+      .type-cursor{display:inline-block;width:7px;height:14px;background:var(--accent-vivid);margin-left:2px;vertical-align:-2px;animation:cursorBlink 1s step-end infinite}
+      @keyframes cursorBlink{50%{opacity:0}}
+      .project-card{transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s ease}
+      @media (prefers-reduced-motion: reduce){.type-cursor{animation:none}}
+      @media (max-width:1024px){.custom-cursor{display:none!important}}
     </style>
 </head>
 
@@ -443,6 +467,9 @@
     <div class="loader" id="loader">
         <div class="loader-spinner"></div>
     </div>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20found%20your%20Shopify%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
@@ -569,6 +596,13 @@
                     
                     <div class="hero-visual">
                         <div class="hero-glow" aria-hidden="true"></div>
+                        <div class="code-window" aria-hidden="true">
+                            <div class="code-window-bar">
+                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                <span class="code-window-title">featured-collection.liquid</span>
+                            </div>
+                            <pre class="code-window-body"><code id="typedCode"></code></pre>
+                        </div>
                         <div class="stat-card">
                             <div class="stat-number" data-count="50" data-suffix="+">0+</div>
                             <div class="stat-label">Projects Completed</div>
@@ -2460,6 +2494,107 @@
                 btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
             });
         }
+
+        // Scroll progress bar
+        const scrollProgressEl = document.getElementById('scrollProgress');
+        if (scrollProgressEl) {
+            window.addEventListener('scroll', () => {
+                const h = document.documentElement;
+                const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+                scrollProgressEl.style.width = scrolled + '%';
+            });
+        }
+
+        // Custom cursor (desktop pointer only)
+        const customCursor = document.getElementById('customCursor');
+        if (customCursor && !prefersReduced && hasFinePointer) {
+            document.body.classList.add('has-custom-cursor');
+            customCursor.classList.add('is-active');
+            window.addEventListener('mousemove', (e) => {
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+            });
+            document.querySelectorAll('a, button, .project-card, .stat-card').forEach(el => {
+                el.addEventListener('mouseenter', () => customCursor.classList.add('is-hover'));
+                el.addEventListener('mouseleave', () => customCursor.classList.remove('is-hover'));
+            });
+        }
+
+        // 3D tilt on project cards (desktop pointer only)
+        if (!prefersReduced && hasFinePointer) {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const r = card.getBoundingClientRect();
+                    const px = (e.clientX - r.left) / r.width - 0.5;
+                    const py = (e.clientY - r.top) / r.height - 0.5;
+                    card.style.transform = `perspective(800px) rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateY(-4px)`;
+                });
+                card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+            });
+        }
+
+        // Text scramble intro for the hero accent phrase
+        (function scrambleAccent() {
+            const el = document.querySelector('.accent-pop');
+            if (!el || prefersReduced) return;
+            const finalText = el.textContent;
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01{}%$#';
+            let frame = 0;
+            const totalFrames = 18;
+            function tick() {
+                frame++;
+                let out = '';
+                for (let i = 0; i < finalText.length; i++) {
+                    if (finalText[i] === ' ') { out += ' '; continue; }
+                    const reveal = frame - i * 1.5;
+                    out += reveal > totalFrames ? finalText[i] : chars[Math.floor(Math.random() * chars.length)];
+                }
+                el.textContent = out;
+                if (frame < totalFrames + finalText.length * 1.5) requestAnimationFrame(tick);
+                else el.textContent = finalText;
+            }
+            requestAnimationFrame(tick);
+        })();
+
+        // Typing code animation in the hero code window
+        (function typeCode() {
+            const codeEl = document.getElementById('typedCode');
+            if (!codeEl) return;
+            const lines = [
+                '<span class="cm">{% comment %} Featured products {% endcomment %}</span>',
+                '<span class="ck">{% for</span> product <span class="ck">in</span> collections.featured.products <span class="ck">limit:</span> <span class="cn">4</span> <span class="ck">%}</span>',
+                '&nbsp;&nbsp;&lt;div class="card"&gt;',
+                '&nbsp;&nbsp;&nbsp;&nbsp;{{ product.featured_image | image_url: width: <span class="cn">600</span> | image_tag }}',
+                '&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;{{ product.title }}&lt;/h3&gt;',
+                '&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;{{ product.price | money }}&lt;/span&gt;',
+                '&nbsp;&nbsp;&lt;/div&gt;',
+                '<span class="ck">{% endfor %}</span>'
+            ];
+            let played = false;
+            function playOnce() {
+                if (played) return;
+                played = true;
+                if (prefersReduced) {
+                    codeEl.innerHTML = lines.join('<br>');
+                    return;
+                }
+                let i = 0;
+                function nextLine() {
+                    if (i >= lines.length) {
+                        codeEl.innerHTML += '<span class="type-cursor"></span>';
+                        return;
+                    }
+                    codeEl.innerHTML = lines.slice(0, i + 1).join('<br>') + '<span class="type-cursor"></span>';
+                    i++;
+                    setTimeout(nextLine, 260);
+                }
+                nextLine();
+            }
+            const codeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { playOnce(); codeObserver.disconnect(); } });
+            }, { threshold: 0.3 });
+            codeObserver.observe(codeEl);
+        })();
 
         // Testimonial Carousel
         const testimonialTrack = document.getElementById('testimonialTrack');
