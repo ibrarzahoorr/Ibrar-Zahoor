@@ -2461,18 +2461,40 @@
         }, { threshold: 0.4 });
         document.querySelectorAll('.stat-number[data-count]').forEach(el => statObserver.observe(el));
 
-        // Rotating "also expert in" tag
+        // Shared smooth scramble-to-text effect (used by the rotating tag + hero accent phrase)
+        function scrambleText(el, text, onDone) {
+            const scrambleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01{}%$#';
+            const longest = Math.max(text.length, el.textContent.length);
+            let frame = 0;
+            const totalFrames = 16;
+            function tick() {
+                frame++;
+                let out = '';
+                for (let i = 0; i < longest; i++) {
+                    const targetChar = text[i] || '';
+                    if (targetChar === ' ') { out += ' '; continue; }
+                    if (!targetChar) continue;
+                    const reveal = frame - i * 1.2;
+                    out += reveal > totalFrames ? targetChar : scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+                }
+                el.textContent = out;
+                if (frame < totalFrames + longest * 1.2) requestAnimationFrame(tick);
+                else { el.textContent = text; if (onDone) onDone(); }
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Rotating "also expert in" tag — smooth scramble transition (no more instant pop)
         const rotWords = ['Liquid Programming', 'React.js Development', 'Shopify Plus Migrations', 'SEO That Ranks #1', 'Custom App Development'];
-        let rotIndex = 0;
         const rotEl = document.getElementById('rotWord');
-        if (rotEl) {
-            setInterval(() => {
-                rotIndex = (rotIndex + 1) % rotWords.length;
-                rotEl.style.animation = 'none';
-                void rotEl.offsetWidth;
-                rotEl.textContent = rotWords[rotIndex];
-                rotEl.style.animation = 'rotateWordIn 0.5s ease';
-            }, 2600);
+        if (rotEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let rotIndex = 0;
+            (function loopRot() {
+                setTimeout(() => {
+                    rotIndex = (rotIndex + 1) % rotWords.length;
+                    scrambleText(rotEl, rotWords[rotIndex], loopRot);
+                }, 2600);
+            })();
         }
 
         // Cursor spotlight + magnetic buttons (desktop pointer only, respects reduced motion)
@@ -2534,43 +2556,18 @@
             });
         }
 
-        // Text scramble + rotating keyword phrases in the hero accent span
+        // Rotating keyword phrases in the hero accent span (same shared smooth scramble effect)
         (function scrambleRotateAccent() {
             const el = document.getElementById('heroAccent');
-            if (!el) return;
+            if (!el || prefersReduced) return; // static "Global Clients" from HTML stays as-is
             const phrases = ['Global Clients', 'USA Businesses', 'UK Brands', 'UAE Stores', 'Canadian Merchants', 'Australian Retailers', 'Pakistani Startups'];
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01{}%$#';
-            if (prefersReduced) return; // static "Global Clients" from HTML stays as-is
-
-            function scrambleTo(text, onDone) {
-                const longest = Math.max(text.length, el.textContent.length);
-                let frame = 0;
-                const totalFrames = 16;
-                function tick() {
-                    frame++;
-                    let out = '';
-                    for (let i = 0; i < longest; i++) {
-                        const targetChar = text[i] || '';
-                        if (targetChar === ' ') { out += ' '; continue; }
-                        if (!targetChar) continue;
-                        const reveal = frame - i * 1.2;
-                        out += reveal > totalFrames ? targetChar : chars[Math.floor(Math.random() * chars.length)];
-                    }
-                    el.textContent = out;
-                    if (frame < totalFrames + longest * 1.2) requestAnimationFrame(tick);
-                    else { el.textContent = text; if (onDone) onDone(); }
-                }
-                requestAnimationFrame(tick);
-            }
-
             let idx = 0;
-            scrambleTo(phrases[0], scheduleNext);
-            function scheduleNext() {
+            (function loopAccent() {
                 setTimeout(() => {
                     idx = (idx + 1) % phrases.length;
-                    scrambleTo(phrases[idx], scheduleNext);
+                    scrambleText(el, phrases[idx], loopAccent);
                 }, 2600);
-            }
+            })();
         })();
 
         // Typing code animation in the hero code window
