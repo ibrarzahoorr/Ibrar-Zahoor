@@ -17,7 +17,7 @@
     <title>Ibrar Zahoor — Shopify Developer Pakistan | ZARR (Jazz) • Chinyere • Rang Ja | Hire Now</title>
 
     <!-- OPTIMIZED META DESCRIPTION -->
-    <meta name="description" content="Ibrar Zahoor — Certified Shopify Plus Developer. Currently at ZARR (Jazz/PMCL), previously EGI (Chinyere, Rang Ja). 5+ years, 15+ stores, 40+ brands. Hire from USA, UK, UAE at $420–$1,500+. WhatsApp for free quote." />
+    <meta name="description" content="Ibrar Zahoor, Certified Shopify Plus Developer with 5+ years experience, 15+ stores & 40+ brands. Hire from USA, UK or UAE from $420 — free WhatsApp quote." />
 
     <!-- KEYWORDS FOR AI OVERVIEW & SEARCH -->
     <meta name="keywords" content="Ibrar Zahoor, Shopify developer Pakistan, Shopify developer Lahore, Ibrar Zahoor Shopify, expert Shopify developer, custom Shopify theme, Liquid developer Pakistan, Shopify freelancer Pakistan" />
@@ -416,7 +416,13 @@
       @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap');
       :root{--accent-vivid:#00d9a3;--accent-vivid-dark:#00a67d}
       h1,.section-title,.brand-name{font-family:'Inter Tight',Inter,-apple-system,sans-serif}
-      h1{letter-spacing:-.04em}
+      h1{letter-spacing:-.045em!important;font-size:clamp(40px,6vw,72px)!important}
+      .btn{border-radius:100px!important}
+      .stat-card{background:rgba(255,255,255,.045)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)!important}
+      .stat-card:hover{box-shadow:0 0 36px rgba(0,217,163,.28)!important}
+      .stat-card.bento-wide{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;padding:20px 24px}
+      .stat-card.bento-wide .stat-number{margin-bottom:0;font-size:38px}
+      .stat-card.bento-wide .stat-label{font-size:15px}
       .accent-pop{background:linear-gradient(135deg,var(--accent-vivid),var(--brand));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;min-width:1ch}
       .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
       .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-vivid);margin-bottom:14px}
@@ -424,6 +430,9 @@
       .btn.primary{background:linear-gradient(135deg,var(--accent-vivid),var(--brand))!important;transition:transform .15s ease,box-shadow .25s ease}
       .btn.primary:hover{box-shadow:0 8px 24px rgba(0,217,163,.35);transform:translateY(-2px)}
       .status-badge{border-color:rgba(0,217,163,.35)!important;color:var(--accent-vivid)!important;background:rgba(0,217,163,.1)!important}
+      .service-card,.skill-category,.testimonial-card,.timeline-card,.project-card{background:rgba(255,255,255,.04)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+      .service-card:hover,.skill-category:hover{box-shadow:0 0 32px rgba(0,217,163,.18)!important;border-color:rgba(0,217,163,.4)!important}
+      .service-card::before{background:linear-gradient(135deg,var(--accent-vivid),var(--brand))!important}
       .status-badge::before{background:var(--accent-vivid)!important}
       .stat-card::before{background:linear-gradient(135deg,var(--accent-vivid),var(--brand))!important}
       .marquee-wrap{position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;background:var(--surface);z-index:1}
@@ -604,7 +613,7 @@
                             </div>
                             <pre class="code-window-body"><code id="typedCode"></code></pre>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-card bento-wide">
                             <div class="stat-number" data-count="50" data-suffix="+">0+</div>
                             <div class="stat-label">Projects Completed</div>
                         </div>
@@ -616,7 +625,7 @@
                             <div class="stat-number" data-count="30" data-suffix="+">0+</div>
                             <div class="stat-label">Happy Clients</div>
                         </div>
-                        <div class="stat-card">
+                        <div class="stat-card bento-wide">
                             <div class="stat-number" data-count="100" data-suffix="%">0%</div>
                             <div class="stat-label">Client Satisfaction</div>
                         </div>
