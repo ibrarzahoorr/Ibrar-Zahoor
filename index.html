@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>(function(){try{var t=localStorage.getItem('theme')||'light';if(t==='light')document.documentElement.classList.add('light');}catch(e){}})();</script>
+    <script>(function(){try{var t=localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');}catch(e){}})();</script>
 
 
     <script type="text/javascript">
@@ -2265,7 +2265,7 @@
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
 
         html.classList.toggle('light', savedTheme === 'light');
         updateThemeIcon();
