@@ -558,7 +558,7 @@ var bottomHTML =
       '<p class="iz-footer-desc">Professional Shopify developer helping businesses succeed online through custom development, strategic optimization, and data-driven solutions. Based in Lahore, Pakistan &mdash; serving clients worldwide.</p>' +
       '<div class="iz-footer-social">' +
         '<a href="https://github.com/ibrarzahoorr" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>' +
-        '<a href="https://www.linkedin.com/in/ibrar-zahoor/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>' +
+        '<a href="https://www.linkedin.com/in/ibrarzahoorr/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>' +
         '<a href="https://wa.me/923010482120" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
       '</div>' +
     '</div>' +
@@ -619,7 +619,7 @@ if (!document.getElementById('iz-person-schema')) {
         "nationality": "Pakistani",
         "sameAs": [
           "https://github.com/ibrarzahoorr",
-          "https://www.linkedin.com/in/ibrar-zahoor/",
+          "https://www.linkedin.com/in/ibrarzahoorr/",
           "https://wa.me/923010482120"
         ],
         "knowsAbout": [

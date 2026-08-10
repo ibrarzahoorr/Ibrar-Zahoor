@@ -805,35 +805,81 @@
       }
     </style>
 <script src="../site-ui.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Metafields Guide 2026 – Setup, Liquid & Use Cases","description":"Everything about Shopify metafields and metaobjects in 2026: how to create them, render with Liquid, and use them to add custom data to products, collections, and pages.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-metafields-guide-2026.html","datePublished":"2026-02-22","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrar-zahoor/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-metafields-guide-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Shopify metafields?","acceptedAnswer":{"@type":"Answer","text":"Shopify metafields let you attach custom data to store resources like products, collections, customers, orders, and pages. As Ibrar Zahoor explains, think of them as extra columns in a database — they let you store any data that Shopify's standard fields do not cover, such as ingredient lists, care instructions, size guides, or custom specifications."}},{"@type":"Question","name":"What is the difference between metafields and metaobjects in Shopify?","acceptedAnswer":{"@type":"Answer","text":"Metafields store a single piece of custom data attached to a specific resource (e.g., a product's material type). Metaobjects are reusable structured data entries — like a database record with multiple fields — that can be referenced by multiple resources. For example, a 'Team Member' metaobject with name, photo, and bio fields can be referenced across product pages, about pages, and blog posts."}},{"@type":"Question","name":"Do I need a developer to use Shopify metafields?","acceptedAnswer":{"@type":"Answer","text":"Basic metafield creation and editing can be done in the Shopify admin without coding. However, rendering metafields in your theme requires Liquid knowledge or a developer. Ibrar Zahoor can help set up metafield definitions, populate data via bulk import, and build custom Liquid sections that display metafield data beautifully."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Metafields Guide 2026 – Setup, Liquid & Use Cases","description":"Everything about Shopify metafields and metaobjects in 2026: how to create them, render with Liquid, and use them to add custom data to products, collections, and pages.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-metafields-guide-2026.html","datePublished":"2026-02-22","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-metafields-guide-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Shopify metafields?","acceptedAnswer":{"@type":"Answer","text":"Shopify metafields let you attach custom data to store resources like products, collections, customers, orders, and pages. As Ibrar Zahoor explains, think of them as extra columns in a database — they let you store any data that Shopify's standard fields do not cover, such as ingredient lists, care instructions, size guides, or custom specifications."}},{"@type":"Question","name":"What is the difference between metafields and metaobjects in Shopify?","acceptedAnswer":{"@type":"Answer","text":"Metafields store a single piece of custom data attached to a specific resource (e.g., a product's material type). Metaobjects are reusable structured data entries — like a database record with multiple fields — that can be referenced by multiple resources. For example, a 'Team Member' metaobject with name, photo, and bio fields can be referenced across product pages, about pages, and blog posts."}},{"@type":"Question","name":"Do I need a developer to use Shopify metafields?","acceptedAnswer":{"@type":"Answer","text":"Basic metafield creation and editing can be done in the Shopify admin without coding. However, rendering metafields in your theme requires Liquid knowledge or a developer. Ibrar Zahoor can help set up metafield definitions, populate data via bulk import, and build custom Liquid sections that display metafield data beautifully."}}]}]}</script>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav class="nav container">
-            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#" class="brand">
                 <div class="brand-logo">IZ</div>
-                <div class="brand-name">Ibrar Zahoor</div>
+                <div class="brand-info">
+                    <div class="brand-name">Ibrar Zahoor</div>
+                    <div class="brand-title">Shopify Developer</div>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a>
+            <ul>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/prime-logicx.html" target="_blank" rel="noopener">Agency</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn ghost" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://wa.me/923010482120" class="btn success" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Let's Talk</span>
+                </a>
+                <button class="btn menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
-            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20affordable%20Shopify%20Plus%20development.%20Can%20you%20provide%20a%20quote?" 
-               class="btn success" 
-               target="_blank" 
-               rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i>
-                Get Quote
-            </a>
         </nav>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="brand">
+                <div class="brand-logo">IZ</div>
+                <div>
+                    <div class="brand-name">Ibrar Zahoor</div>
+                    <div class="brand-title">Shopify Developer</div>
+                </div>
+            </div>
+            <button class="btn ghost" id="closeMobileMenu" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-nav">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#skills">Skills</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#tech-stack">Tech Stack</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
+        </div>
+    </div>
+
+    
 
     <main>
 <div class="bc"><div class="c"><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/">Home</a> / <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a> / <span>Shopify Metafields Guide 2026</span></div></div>

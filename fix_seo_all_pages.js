@@ -103,7 +103,7 @@ function fixBlogPage(filePath, fileName) {
         "@type": "Person",
         "name": "${AUTHOR_NAME}",
         "url": "${BASE_URL}/",
-        "sameAs": ["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrar-zahoor/"]
+        "sameAs": ["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]
       },
       "publisher": {
         "@type": "Person",

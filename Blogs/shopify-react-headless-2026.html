@@ -805,35 +805,81 @@
       }
     </style>
 <script src="../site-ui.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify React Headless Commerce 2026: Hydrogen vs Custom React, Storefront API & Performance","description":"Building headless Shopify with React.js in 2026 — Hydrogen vs custom React, Storefront API, performance benefits & when to go headless. By Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-react-headless-2026.html","datePublished":"2026-04-15","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrar-zahoor/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-react-headless-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is headless Shopify commerce?","acceptedAnswer":{"@type":"Answer","text":"Headless Shopify commerce decouples the storefront (frontend) from the Shopify commerce engine (backend). Instead of using Shopify's Liquid theme system for the UI, you build a custom frontend using React, Next.js, Vue, or any web framework, and connect it to Shopify's Storefront API for product data, cart, and checkout. Ibrar Zahoor describes it as 'using Shopify's brain with a completely custom face.'"}},{"@type":"Question","name":"What is Shopify Hydrogen?","acceptedAnswer":{"@type":"Answer","text":"Hydrogen is Shopify's official React-based framework for building headless Shopify storefronts. It is built on Remix (a React framework) and includes Shopify-specific hooks and components that simplify Storefront API queries, cart management, and performance optimization. Hydrogen deploys on Shopify's Oxygen hosting platform. Ibrar Zahoor recommends Hydrogen for teams already familiar with React/Remix who want Shopify's opinionated, well-supported headless path."}},{"@type":"Question","name":"Should I use Shopify Hydrogen or custom Next.js for headless?","acceptedAnswer":{"@type":"Answer","text":"Choose Hydrogen if: your team knows Remix, you want Shopify's official support, and you prefer deploying on Oxygen. Choose custom Next.js if: your team is deeply experienced in Next.js, you need more control over hosting (Vercel, AWS), or you're integrating multiple data sources beyond Shopify. Ibrar Zahoor builds headless Shopify stores using both approaches depending on client requirements, and recommends Next.js + Shopify Storefront API for most enterprise headless projects."}},{"@type":"Question","name":"Is headless Shopify better for SEO?","acceptedAnswer":{"@type":"Answer","text":"Headless Shopify can be excellent or terrible for SEO depending on implementation. Server-side rendering (SSR) or static site generation (SSG) in Next.js or Hydrogen ensures pages are crawlable and have fast Core Web Vitals — both critical for Google rankings. A headless store with client-side-only rendering (pure React SPA) will likely rank poorly. Ibrar Zahoor always implements SSR/SSG and full schema markup in headless Shopify builds."}},{"@type":"Question","name":"How much does building a headless Shopify store cost?","acceptedAnswer":{"@type":"Answer","text":"A headless Shopify storefront typically costs $15,000–$80,000 to build, depending on complexity, number of pages, and integrations required. Ongoing hosting on Oxygen is included with Shopify plans; custom hosting on Vercel or similar adds $20–$200/month depending on traffic. Ibrar Zahoor offers headless Shopify development from Lahore, Pakistan at competitive international rates — contact for a project estimate."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify React Headless Commerce 2026: Hydrogen vs Custom React, Storefront API & Performance","description":"Building headless Shopify with React.js in 2026 — Hydrogen vs custom React, Storefront API, performance benefits & when to go headless. By Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-react-headless-2026.html","datePublished":"2026-04-15","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-react-headless-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is headless Shopify commerce?","acceptedAnswer":{"@type":"Answer","text":"Headless Shopify commerce decouples the storefront (frontend) from the Shopify commerce engine (backend). Instead of using Shopify's Liquid theme system for the UI, you build a custom frontend using React, Next.js, Vue, or any web framework, and connect it to Shopify's Storefront API for product data, cart, and checkout. Ibrar Zahoor describes it as 'using Shopify's brain with a completely custom face.'"}},{"@type":"Question","name":"What is Shopify Hydrogen?","acceptedAnswer":{"@type":"Answer","text":"Hydrogen is Shopify's official React-based framework for building headless Shopify storefronts. It is built on Remix (a React framework) and includes Shopify-specific hooks and components that simplify Storefront API queries, cart management, and performance optimization. Hydrogen deploys on Shopify's Oxygen hosting platform. Ibrar Zahoor recommends Hydrogen for teams already familiar with React/Remix who want Shopify's opinionated, well-supported headless path."}},{"@type":"Question","name":"Should I use Shopify Hydrogen or custom Next.js for headless?","acceptedAnswer":{"@type":"Answer","text":"Choose Hydrogen if: your team knows Remix, you want Shopify's official support, and you prefer deploying on Oxygen. Choose custom Next.js if: your team is deeply experienced in Next.js, you need more control over hosting (Vercel, AWS), or you're integrating multiple data sources beyond Shopify. Ibrar Zahoor builds headless Shopify stores using both approaches depending on client requirements, and recommends Next.js + Shopify Storefront API for most enterprise headless projects."}},{"@type":"Question","name":"Is headless Shopify better for SEO?","acceptedAnswer":{"@type":"Answer","text":"Headless Shopify can be excellent or terrible for SEO depending on implementation. Server-side rendering (SSR) or static site generation (SSG) in Next.js or Hydrogen ensures pages are crawlable and have fast Core Web Vitals — both critical for Google rankings. A headless store with client-side-only rendering (pure React SPA) will likely rank poorly. Ibrar Zahoor always implements SSR/SSG and full schema markup in headless Shopify builds."}},{"@type":"Question","name":"How much does building a headless Shopify store cost?","acceptedAnswer":{"@type":"Answer","text":"A headless Shopify storefront typically costs $15,000–$80,000 to build, depending on complexity, number of pages, and integrations required. Ongoing hosting on Oxygen is included with Shopify plans; custom hosting on Vercel or similar adds $20–$200/month depending on traffic. Ibrar Zahoor offers headless Shopify development from Lahore, Pakistan at competitive international rates — contact for a project estimate."}}]}]}</script>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav class="nav container">
-            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor" class="brand">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#" class="brand">
                 <div class="brand-logo">IZ</div>
-                <div class="brand-name">Ibrar Zahoor</div>
+                <div class="brand-info">
+                    <div class="brand-name">Ibrar Zahoor</div>
+                    <div class="brand-title">Shopify Developer</div>
+                </div>
             </a>
             
-            <div class="nav-links">
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
-                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a>
+            <ul>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/prime-logicx.html" target="_blank" rel="noopener">Agency</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn ghost" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://wa.me/923010482120" class="btn success" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Let's Talk</span>
+                </a>
+                <button class="btn menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
-            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20affordable%20Shopify%20Plus%20development.%20Can%20you%20provide%20a%20quote?" 
-               class="btn success" 
-               target="_blank" 
-               rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i>
-                Get Quote
-            </a>
         </nav>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="brand">
+                <div class="brand-logo">IZ</div>
+                <div>
+                    <div class="brand-name">Ibrar Zahoor</div>
+                    <div class="brand-title">Shopify Developer</div>
+                </div>
+            </div>
+            <button class="btn ghost" id="closeMobileMenu" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-nav">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#skills">Skills</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#tech-stack">Tech Stack</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a>
+        </div>
+    </div>
+
+    
 
     <main>
 <div class="bc"><div class="c"><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/">Home</a> / <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/">Blog</a> / <span>Shopify React Headless Commerce 2026</span></div></div>
