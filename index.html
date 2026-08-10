@@ -638,11 +638,7 @@
 
       /* ===== Signature elements: code window, quiet cursor, scroll progress ===== */
       .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent-vivid);z-index:10000;transition:width .15s ease-out;opacity:.85}
-      .custom-cursor{position:fixed;top:0;left:0;width:18px;height:18px;border:1.5px solid rgba(var(--accent-rgb),.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s ease,height .3s ease,background .3s ease;display:none}
-      body.has-custom-cursor{cursor:none}
-      body.has-custom-cursor a,body.has-custom-cursor button{cursor:none}
-      .custom-cursor.is-active{display:block}
-      .custom-cursor.is-hover{width:32px;height:32px;background:rgba(var(--accent-rgb),.12)}
+      
       .code-window{grid-column:1/-1;background:#10043a;border:none;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px rgba(var(--accent-navy-rgb),.2)}
       .code-window-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#1a0d4d;border-bottom:1px solid rgba(255,255,255,.06)}
       .code-window-bar .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
@@ -658,7 +654,7 @@
       @keyframes cursorBlink{50%{opacity:0}}
       .project-card{transform:none!important}
       @media (prefers-reduced-motion: reduce){.type-cursor{animation:none}}
-      @media (max-width:1024px){.custom-cursor{display:none!important}}
+      
     </style>
 <!-- Hreflang for International Markets -->
     <link rel="alternate" hreflang="x-default" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/" />
@@ -672,7 +668,7 @@
     </div>
 
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20found%20your%20Shopify%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
@@ -702,7 +698,8 @@
                 <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a></li>
                 <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a></li>
                 <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a>
-                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a></li>
+                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
+                        </li>
 
                 <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/prime-logicx.html" target="_blank" rel="noopener">Agency</a></li>
                 <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>
@@ -2752,20 +2749,7 @@
             });
         }
 
-        // Custom cursor (desktop pointer only)
-        const customCursor = document.getElementById('customCursor');
-        if (customCursor && !prefersReduced && hasFinePointer) {
-            document.body.classList.add('has-custom-cursor');
-            customCursor.classList.add('is-active');
-            window.addEventListener('mousemove', (e) => {
-                customCursor.style.left = e.clientX + 'px';
-                customCursor.style.top = e.clientY + 'px';
-            });
-            document.querySelectorAll('a, button, .project-card, .stat-card').forEach(el => {
-                el.addEventListener('mouseenter', () => customCursor.classList.add('is-hover'));
-                el.addEventListener('mouseleave', () => customCursor.classList.remove('is-hover'));
-            });
-        }
+        
 
         // 3D tilt on project cards (desktop pointer only)
         if (!prefersReduced && hasFinePointer) {
