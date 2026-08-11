@@ -1,4 +1,4 @@
-﻿(function(){
+(function(){
 'use strict';
 
 /* ── CSS — exact match to affordable-shopify-developer.html design ── */
@@ -426,6 +426,19 @@ body { padding-top: 70px !important; }
   0% { transform: scale(1); opacity: 0.8; }
   100% { transform: scale(1.9); opacity: 0; }
 }
+
+/* ── PRICING COMPARISON OVERRIDE ── */
+.pricing-comparison {
+  display: grid !important;
+  gap: 24px !important;
+  margin: 30px 0 !important;
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 768px) {
+  .pricing-comparison {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
 `;
 
 /* ── INJECT CSS ── */
@@ -447,10 +460,13 @@ var headerHTML = '<header id="iz-header">' +
     '<button id="iz-menu-btn" aria-label="Menu" aria-expanded="false">&#9776;</button>' +
     '<ul class="iz-nav-links" id="iz-nav-links">' +
       '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a></li>' +
-      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#shopify-services">Services</a></li>' +
+      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a></li>' +
+      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing</a></li>' +
       '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a></li>' +
+      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a></li>' +
+      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a></li>' +
+      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/prime-logicx.html" target="_blank" rel="noopener">Agency</a></li>' +
       '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>' +
-      '<li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" class="iz-active">Blog</a></li>' +
     '</ul>' +
     '<a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20Let%27s%20talk." class="iz-btn-talk" target="_blank" rel="noopener">' +
       '<i class="fab fa-whatsapp"></i> Let\'s Talk' +
@@ -530,10 +546,7 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(function(a) {
   if (s.indexOf('fixed') !== -1) a.remove();
 });
 
-// Remove old bounce keyframes style blocks
-document.querySelectorAll('style').forEach(function(s) {
-  if (s.textContent.indexOf('keyframes bounce') !== -1) s.remove();
-});
+// Removed aggressive style deletion to prevent breaking blog styles
 
 var bottomHTML =
 '<section class="iz-build-cta">' +
