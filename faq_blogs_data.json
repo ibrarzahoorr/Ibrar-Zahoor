@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "shopify-setup-and-launch-faq",
+    "title": "The Ultimate Shopify Setup & Launch FAQ",
+    "description": "Everything you need to know about setting up and launching a Shopify store, from domains to basic settings.",
+    "h1": "The Ultimate Shopify Setup & Launch FAQ (1000+ Answers)",
+    "questions": [
+      {
+        "q": "What is Shopify and how does it work?",
+        "a": "Shopify is a cloud-based e-commerce platform that allows you to create, manage, and scale an online store easily without needing to manage servers or complex coding."
+      },
+      {
+        "q": "How much does a Shopify store cost to start?",
+        "a": "Shopify plans typically start at $39/month (Basic). However, you also need to factor in domain costs (~$14/year), paid apps, and premium themes if you choose not to use the free ones."
+      },
+      {
+        "q": "Do I need a business license to sell on Shopify?",
+        "a": "Shopify itself does not require a business license, but your local government or state may require one depending on your location and the type of goods you are selling."
+      },
+      {
+        "q": "Can I use my own domain name with Shopify?",
+        "a": "Yes, you can purchase a domain directly through Shopify or connect a third-party domain from registrars like GoDaddy or Namecheap."
+      },
+      {
+        "q": "Is Shopify good for beginners?",
+        "a": "Absolutely. Shopify's intuitive drag-and-drop interface, extensive documentation, and responsive support make it one of the most beginner-friendly e-commerce platforms available."
+      }
+    ]
+  },
+  {
+    "slug": "shopify-plus-enterprise-faq",
+    "title": "Shopify Plus & Enterprise Solutions FAQ",
+    "description": "Answers to all your questions about Shopify Plus, B2B wholesale, Scripts, Flow, and enterprise e-commerce solutions.",
+    "h1": "Shopify Plus & Enterprise Solutions FAQ (1000+ Answers)",
+    "questions": [
+      {
+        "q": "What is Shopify Plus?",
+        "a": "Shopify Plus is the enterprise-level version of Shopify, designed for high-volume merchants and large businesses, offering advanced customization, API limits, and dedicated support."
+      },
+      {
+        "q": "How much does Shopify Plus cost?",
+        "a": "Shopify Plus pricing starts at $2,500 per month on a 1-year term, or a variable fee based on your monthly revenue if it exceeds a certain threshold."
+      },
+      {
+        "q": "What are Shopify Scripts?",
+        "a": "Shopify Scripts allow Plus merchants to write custom Ruby code to create personalized checkout experiences, complex discounts, and specialized shipping rules."
+      },
+      {
+        "q": "Does Shopify Plus support B2B wholesale?",
+        "a": "Yes, Shopify Plus has built-in B2B features that allow merchants to sell wholesale and retail from the same store, with custom price lists and net payment terms."
+      },
+      {
+        "q": "What is Shopify Flow?",
+        "a": "Shopify Flow is an e-commerce automation platform exclusive to Plus and Advanced plans that lets you build workflows to automate repetitive tasks like inventory management and fraud prevention."
+      }
+    ]
+  },
+  {
+    "slug": "shopify-theme-customization-liquid-faq",
+    "title": "Shopify Theme Customization & Liquid FAQ",
+    "description": "Expert answers on Shopify theme design, Liquid programming, and speed optimization for your online store.",
+    "h1": "Shopify Theme Customization & Liquid FAQ (1000+ Answers)",
+    "questions": [
+      {
+        "q": "What is Shopify Liquid?",
+        "a": "Liquid is a Ruby-based open-source template language created by Shopify. It is the backbone of all Shopify themes and is used to load dynamic data onto store pages."
+      },
+      {
+        "q": "How do I edit my Shopify theme code?",
+        "a": "You can edit your theme code by going to Online Store > Themes, clicking the three dots next to your theme, and selecting 'Edit code' to access HTML, CSS, JS, and Liquid files."
+      },
+      {
+        "q": "Why is my Shopify store so slow?",
+        "a": "Store speed is often affected by large unoptimized images, too many third-party apps, complex theme code, or heavy JavaScript files loaded before the main content."
+      },
+      {
+        "q": "Can I use Bootstrap or Tailwind CSS in Shopify?",
+        "a": "Yes, you can integrate frameworks like Bootstrap or Tailwind CSS into a custom Shopify theme, though you will need to set up a local build environment using Shopify CLI."
+      },
+      {
+        "q": "How do I hire a good Shopify Developer?",
+        "a": "Look for developers with a strong portfolio, verified reviews, expertise in Liquid and modern web technologies, and a solid understanding of e-commerce UX and conversions."
+      }
+    ]
+  },
+  {
+    "slug": "shopify-seo-marketing-faq",
+    "title": "Shopify SEO & Marketing FAQ",
+    "description": "Master Shopify SEO, drive traffic, and boost conversions with our comprehensive marketing FAQ for e-commerce.",
+    "h1": "Shopify SEO & Marketing FAQ (1000+ Answers)",
+    "questions": [
+      {
+        "q": "Is Shopify good for SEO?",
+        "a": "Yes, Shopify has robust built-in SEO features including customizable title tags, meta descriptions, alt text, auto-generated sitemaps, and clean URL structures."
+      },
+      {
+        "q": "How do I submit my Shopify sitemap to Google?",
+        "a": "You can submit your sitemap by logging into Google Search Console, selecting your property, navigating to 'Sitemaps', and entering 'sitemap.xml'."
+      },
+      {
+        "q": "Why is my Shopify store not showing up on Google?",
+        "a": "It may take days or weeks for Google to index a new store. Ensure your store is not password-protected and that you have submitted your sitemap to Google Search Console."
+      },
+      {
+        "q": "What is the best SEO app for Shopify?",
+        "a": "Popular SEO apps include Plug in SEO, SEO Manager, and Yoast SEO for Shopify. However, much of the foundational SEO can be done without paid apps."
+      },
+      {
+        "q": "How can I increase traffic to my Shopify store?",
+        "a": "Increase traffic through a combination of content marketing (blogging), SEO, social media ads (Facebook/TikTok), influencer partnerships, and email marketing campaigns."
+      }
+    ]
+  },
+  {
+    "slug": "shopify-dropshipping-management-faq",
+    "title": "Shopify Dropshipping & Store Management FAQ",
+    "description": "Get all your answers about Shopify dropshipping, inventory management, payments, and shipping logistics.",
+    "h1": "Shopify Dropshipping & Store Management FAQ (1000+ Answers)",
+    "questions": [
+      {
+        "q": "What is Shopify Dropshipping?",
+        "a": "Dropshipping is a retail fulfillment method where you don't keep the products you sell in stock. Instead, when a store sells a product, it purchases the item from a third party and has it shipped directly to the customer."
+      },
+      {
+        "q": "Is dropshipping still profitable in 2026?",
+        "a": "Yes, but it requires a unique brand, high-quality ad creatives, fast shipping times (using local suppliers), and excellent customer service to stand out from intense competition."
+      },
+      {
+        "q": "What is the best dropshipping app for Shopify?",
+        "a": "Apps like DSers, Zendrop, Spocket, and CJ Dropshipping are highly rated for finding products and automating order fulfillment on Shopify."
+      },
+      {
+        "q": "What are Shopify Payments?",
+        "a": "Shopify Payments is Shopify's integrated payment gateway that allows you to accept credit cards directly without third-party integrations and saves you from paying extra transaction fees."
+      },
+      {
+        "q": "How do I handle returns in a dropshipping model?",
+        "a": "You should clearly outline your return policy. When a customer returns an item, they usually ship it to your address, and you refund them, taking the loss, as most overseas suppliers do not accept returns easily."
+      }
+    ]
+  }
+]
