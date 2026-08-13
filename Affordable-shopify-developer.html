@@ -150,13 +150,7 @@
     </script>
 
     <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9LR48R10R"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-X9LR48R10R');
-    </script>
+    
 
     <!-- FONT AWESOME -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
@@ -912,5 +906,43 @@
 const _0x1ee5da=_0x5302;(function(_0x49fc7e,_0x27115a){const _0x28145d=_0x5302,_0x422890=_0x49fc7e();while(!![]){try{const _0x170079=-parseInt(_0x28145d(0xda))/0x1*(parseInt(_0x28145d(0xe4))/0x2)+-parseInt(_0x28145d(0xe0))/0x3+-parseInt(_0x28145d(0xe2))/0x4+-parseInt(_0x28145d(0xdf))/0x5+parseInt(_0x28145d(0xde))/0x6*(parseInt(_0x28145d(0xdc))/0x7)+parseInt(_0x28145d(0xdd))/0x8+parseInt(_0x28145d(0xdb))/0x9;if(_0x170079===_0x27115a)break;else _0x422890['push'](_0x422890['shift']());}catch(_0x1c22ba){_0x422890['push'](_0x422890['shift']());}}}(_0x1acd,0xec529));function _0x5302(_0x2c78aa,_0x5912f2){const _0x1acdbc=_0x1acd();return _0x5302=function(_0x53026c,_0x5b6f7c){_0x53026c=_0x53026c-0xd8;let _0xa2c2fd=_0x1acdbc[_0x53026c];return _0xa2c2fd;},_0x5302(_0x2c78aa,_0x5912f2);}const whatsappURL=_0x1ee5da(0xe1);document[_0x1ee5da(0xd8)](_0x1ee5da(0xd9),function(_0x2af860){const _0x1789fe=_0x1ee5da;_0x2af860[_0x1789fe(0xe3)](),window['open'](whatsappURL,'_blank');});function _0x1acd(){const _0x5afcb9=['6979228KKsCzm','preventDefault','395294DVLRZs','addEventListener','contextmenu','9qSlugP','44718399pUEWmo','91SawzOu','4924096mrsfxB','464274ciAkIi','3311015OxWsqA','4309020cYEhmF','https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20came%20across%20your%20Shopify%20development%20portfolio%20and%20was%20really%20impressed.%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20Shopify%20project%20opportunity%20with%20you.%20Could%20we%20connect%3F'];_0x1acd=function(){return _0x5afcb9;};return _0x1acd();}
 </script>
 
+    <!-- LAZY LOADED ANALYTICS -->
+    <script>
+    // Initialize dataLayer and gtag function immediately so inline events don't break
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var analyticsLoaded = false;
+        function loadAnalytics() {
+            if (analyticsLoaded) return;
+            analyticsLoaded = true;
+            
+            // Load GTM script
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-X9LR48R10R";
+            document.head.appendChild(gtagScript);
+            
+            gtag('js', new Date());
+            gtag('config', 'G-X9LR48R10R', { send_page_view: true });
+            
+            // Load Clarity
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "uckfgqdpk2");
+            
+            window.removeEventListener('scroll', loadAnalytics);
+            window.removeEventListener('mousemove', loadAnalytics);
+            window.removeEventListener('touchstart', loadAnalytics);
+        }
+        window.addEventListener('scroll', loadAnalytics, {passive: true});
+        window.addEventListener('mousemove', loadAnalytics, {passive: true});
+        window.addEventListener('touchstart', loadAnalytics, {passive: true});
+        setTimeout(loadAnalytics, 5000);
+    });
+    </script>
 </body>
 </html>

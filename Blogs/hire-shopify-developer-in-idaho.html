@@ -242,18 +242,7 @@
     </script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9LR48R10R"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-X9LR48R10R', {
-        page_title: 'Affordable Shopify Plus Development',
-        page_location: window.location.href,
-        content_group1: 'Shopify Plus Services',
-        content_group2: 'Affordable Development'
-      });
-    </script>
+    
 
     <!-- Font Awesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
@@ -841,6 +830,44 @@
             }
         }
     </style>
+    <!-- LAZY LOADED ANALYTICS -->
+    <script>
+    // Initialize dataLayer and gtag function immediately so inline events don't break
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var analyticsLoaded = false;
+        function loadAnalytics() {
+            if (analyticsLoaded) return;
+            analyticsLoaded = true;
+            
+            // Load GTM script
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-X9LR48R10R";
+            document.head.appendChild(gtagScript);
+            
+            gtag('js', new Date());
+            gtag('config', 'G-X9LR48R10R', { send_page_view: true });
+            
+            // Load Clarity
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "uckfgqdpk2");
+            
+            window.removeEventListener('scroll', loadAnalytics);
+            window.removeEventListener('mousemove', loadAnalytics);
+            window.removeEventListener('touchstart', loadAnalytics);
+        }
+        window.addEventListener('scroll', loadAnalytics, {passive: true});
+        window.addEventListener('mousemove', loadAnalytics, {passive: true});
+        window.addEventListener('touchstart', loadAnalytics, {passive: true});
+        setTimeout(loadAnalytics, 5000);
+    });
+    </script>
 </body>
 </html>
 
