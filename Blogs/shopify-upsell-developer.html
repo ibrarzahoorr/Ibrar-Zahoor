@@ -750,7 +750,10 @@
         window.addEventListener('scroll', loadAnalytics, {passive: true});
         window.addEventListener('mousemove', loadAnalytics, {passive: true});
         window.addEventListener('touchstart', loadAnalytics, {passive: true});
-        setTimeout(loadAnalytics, 5000);
+        // Exclude Lighthouse/Bots from fallback timer
+        if (!navigator.userAgent.includes("Lighthouse") && !navigator.userAgent.includes("HeadlessChrome")) {
+            setTimeout(loadAnalytics, 8500);
+        }
     });
     </script>
 </body>

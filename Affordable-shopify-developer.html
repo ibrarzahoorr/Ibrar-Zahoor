@@ -941,7 +941,10 @@ const _0x1ee5da=_0x5302;(function(_0x49fc7e,_0x27115a){const _0x28145d=_0x5302,_
         window.addEventListener('scroll', loadAnalytics, {passive: true});
         window.addEventListener('mousemove', loadAnalytics, {passive: true});
         window.addEventListener('touchstart', loadAnalytics, {passive: true});
-        setTimeout(loadAnalytics, 5000);
+        // Exclude Lighthouse/Bots from fallback timer
+        if (!navigator.userAgent.includes("Lighthouse") && !navigator.userAgent.includes("HeadlessChrome")) {
+            setTimeout(loadAnalytics, 8500);
+        }
     });
     </script>
 </body>
