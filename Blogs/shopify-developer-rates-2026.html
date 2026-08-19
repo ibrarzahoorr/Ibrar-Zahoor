@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +43,14 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
 
     <!-- Google Analytics -->
     
 
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS -->
     <style>
@@ -156,6 +157,14 @@
       
       .tip, .highlight-box { background: rgba(var(--accent-rgb), 0.05); border-left: 4px solid var(--accent-vivid); padding: 24px; border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; color: var(--text-2); }
       .tip strong { color: var(--accent-vivid); font-style: normal; font-family: 'Inter Tight', Inter, sans-serif; }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <script src="../site-ui.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Developer Rates 2026 – Full Cost Breakdown by Region","description":"Complete guide to Shopify developer rates in 2026: hourly rates by country, project-based pricing, Pakistan vs USA vs UK, and how to hire without overpaying.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-developer-rates-2026.html","datePublished":"2026-03-15","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-developer-rates-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a Shopify developer charge per hour in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shopify developer hourly rates in 2026 vary widely by region: USA developers charge $75–$200/hour, UK developers $60–$150/hour, and Pakistan-based developers like Ibrar Zahoor charge $25–$60/hour while delivering equivalent or higher quality due to specialization. For fixed projects, rates depend on complexity and scope."}},{"@type":"Question","name":"Is hiring a Shopify developer from Pakistan worth it?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Pakistan has a large pool of highly skilled Shopify developers who deliver professional-quality work at 40–70% lower rates than Western developers. Ibrar Zahoor, based in Lahore, has served clients across the USA, UK, Canada, and Australia with 50+ successful Shopify projects, demonstrating that geography does not limit quality."}},{"@type":"Question","name":"How much does a full Shopify store development cost in 2026?","acceptedAnswer":{"@type":"Answer","text":"A basic Shopify store setup costs $500–$2,000. A custom-designed store with theme development, product setup, app integrations, and SEO costs $2,000–$8,000. Complex enterprise builds with custom apps and integrations can cost $10,000–$50,000+. Ibrar Zahoor offers competitive pricing for all tiers."}}]}]}</script>
@@ -185,7 +194,7 @@
             "name": "Ibrar Zahoor - Shopify Developer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg"
+              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png"
             }
           },
           "mainEntityOfPage": {
@@ -388,7 +397,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Header -->
@@ -608,6 +621,14 @@ Pakistan Senior Developer (Ibrar Zahoor): 80 × $50 = <strong>$4,000</strong><br
                 transform: translateY(-5px);
             }
         }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
     <!-- LAZY LOADED ANALYTICS -->
     <script>

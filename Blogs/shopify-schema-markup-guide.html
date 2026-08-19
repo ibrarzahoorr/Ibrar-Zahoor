@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +43,14 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
 
     <!-- Google Analytics -->
     
 
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS -->
     <style>
@@ -156,6 +157,14 @@
       
       .tip, .highlight-box { background: rgba(var(--accent-rgb), 0.05); border-left: 4px solid var(--accent-vivid); padding: 24px; border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; color: var(--text-2); }
       .tip strong { color: var(--accent-vivid); font-style: normal; font-family: 'Inter Tight', Inter, sans-serif; }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <script src="../site-ui.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Schema Markup Guide: Complete Structured Data Implementation with Liquid Code","description":"Complete Shopify schema markup guide — Product, BreadcrumbList, FAQ & Article schemas with Liquid code examples. Boost rich results. By Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-schema-markup-guide.html","datePublished":"2026-04-11","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-schema-markup-guide.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Shopify automatically add schema markup to product pages?","acceptedAnswer":{"@type":"Answer","text":"Most Shopify themes (including Dawn and other official themes) include basic Product schema markup by default. However, this markup is often incomplete — it may miss offer pricing, availability, aggregate reviews, or brand information. Ibrar Zahoor recommends auditing your theme's schema output with Google's Rich Results Test and supplementing or replacing it with a custom Liquid implementation to ensure completeness and accuracy."}},{"@type":"Question","name":"How do I add FAQ schema to a Shopify page?","acceptedAnswer":{"@type":"Answer","text":"To add FAQ schema to a Shopify page, add a JSON-LD script block to the page template with @type FAQPage and an array of Question and Answer objects. You can hardcode the questions/answers in the JSON-LD or use metafields to make them editable via the Shopify admin. Ibrar Zahoor recommends the metafield approach for flexibility — store FAQ Q&A pairs in a structured metafield and loop through them in Liquid to generate both the visible HTML accordion and the JSON-LD schema."}},{"@type":"Question","name":"What is the difference between JSON-LD and microdata for Shopify schema?","acceptedAnswer":{"@type":"Answer","text":"JSON-LD (JavaScript Object Notation for Linked Data) is Google's recommended format for structured data. It is placed in a script tag in the page head or body, separate from the HTML content, making it easier to maintain. Microdata is embedded directly within HTML elements using itemscope and itemprop attributes. Ibrar Zahoor exclusively uses JSON-LD for all Shopify schema implementations because it is cleaner, less error-prone, and easier to update without touching the visible HTML."}},{"@type":"Question","name":"How do I add review schema to Shopify products?","acceptedAnswer":{"@type":"Answer","text":"To add review (AggregateRating) schema to Shopify products, you need to include an aggregateRating property in your Product JSON-LD with ratingValue and reviewCount. If you use a reviews app like Judge.me, Yotpo, or Loox, check whether the app injects its own schema — many do. If it does, ensure you don't duplicate the Product schema, as two competing Product schema blocks can confuse Google. Ibrar Zahoor always audits schema output after installing a reviews app."}},{"@type":"Question","name":"How do I test my Shopify schema markup?","acceptedAnswer":{"@type":"Answer","text":"Use Google's Rich Results Test (search.google.com/test/rich-results) by entering any Shopify page URL. It will show all detected schema types and flag errors or warnings. Also use Schema.org's validator and monitor the Enhancements section in Google Search Console for structured data coverage and errors. Ibrar Zahoor runs schema audits on all client stores before launch and after major theme updates."}}]}]}</script>
@@ -185,7 +194,7 @@
             "name": "Ibrar Zahoor - Shopify Developer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg"
+              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png"
             }
           },
           "mainEntityOfPage": {
@@ -412,7 +421,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Header -->
@@ -725,6 +738,14 @@
                 transform: translateY(-5px);
             }
         }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
     <!-- LAZY LOADED ANALYTICS -->
     <script>

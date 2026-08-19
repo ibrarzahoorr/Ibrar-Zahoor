@@ -97,7 +97,7 @@
     <link rel="dns-prefetch" href="//wa.me">
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
     
     <!-- COMPREHENSIVE PERSON SCHEMA FOR AI OVERVIEW VISIBILITY -->
     <script type="application/ld+json">
@@ -581,7 +581,8 @@
 
 
     <!-- FONT AWESOME -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- ORIGINAL CSS STYLES (UNCHANGED) -->
     <style>
@@ -639,6 +640,14 @@
       .project-card{transform:none!important}
       @media (prefers-reduced-motion: reduce){.type-cursor{animation:none}}
       
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <!-- Hreflang for International Markets -->
     <link rel="alternate" hreflang="x-default" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/" />
@@ -739,7 +748,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Loading Screen -->
@@ -1756,7 +1769,15 @@
         .ts-dot.active{background:var(--brand);width:48px}
         @media(max-width:1024px){.ts-card{flex:0 0 calc(50% - 10px)}}
         @media(max-width:640px){.ts-card{flex:0 0 calc(100% - 0px);min-width:0}.ts-carousel-wrap{padding:0 8px}.ts-btn{width:36px;height:36px;font-size:13px}}
-        </style>
+          /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
+    </style>
         <script>
         (function(){
         var stacks=[

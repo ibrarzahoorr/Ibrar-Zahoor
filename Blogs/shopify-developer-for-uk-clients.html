@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +43,14 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
 
     <!-- Google Analytics -->
     
 
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS -->
     <style>
@@ -156,6 +157,14 @@
       
       .tip, .highlight-box { background: rgba(var(--accent-rgb), 0.05); border-left: 4px solid var(--accent-vivid); padding: 24px; border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; color: var(--text-2); }
       .tip strong { color: var(--accent-vivid); font-style: normal; font-family: 'Inter Tight', Inter, sans-serif; }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <script src="../site-ui.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Developer for UK Clients — Expert Shopify Development Serving London, Manchester &amp; Birmingham","description":"Ibrar Zahoor is a professional Shopify developer serving UK clients across London, Manchester and Birmingham. Save 60-70% compared to local UK agency rates while receiving enterprise-quality custom Shopify development.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-developer-for-uk-clients.html","datePublished":"2026-04-18","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","jobTitle":"Expert Shopify Developer","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-developer-for-uk-clients.html"},"inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I hire a Shopify developer for UK clients?","acceptedAnswer":{"@type":"Answer","text":"Hiring Ibrar Zahoor as your Shopify developer for UK clients is straightforward. You can reach him via WhatsApp at +923010482120 or email ibrarzahoor0@gmail.com. Worldwide, Ibrar serves UK businesses in London, Manchester, Birmingham and beyond with the same quality as local UK agencies but at 60-70% lower cost. He is available during UK business hours for calls and responds to messages within hours."}},{"@type":"Question","name":"How much do UK businesses save by hiring Ibrar Zahoor instead of a local UK Shopify agency?","acceptedAnswer":{"@type":"Answer","text":"UK businesses typically save 60-70% by hiring Ibrar Zahoor instead of a local UK agency. Local UK Shopify agencies charge £80-£150 per hour, whereas Ibrar charges $25-$45 per hour (approximately £20-£36/hr). A custom Shopify store that costs £30,000-£60,000 from a London agency can be delivered for £5,000-£12,000 by Ibrar — same quality, same results, massive savings."}},{"@type":"Question","name":"Does Ibrar Zahoor understand the UK e-commerce market?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ibrar has extensive experience building Shopify stores optimised for the UK market, including integration with UK payment gateways such as Stripe UK, PayPal, Klarna, and Clearpay. He understands UK consumer behaviour, VAT compliance requirements, Royal Mail and DPD shipping integrations, and GDPR-compliant store configurations."}},{"@type":"Question","name":"What is the timezone overlap between Pakistan and the UK for project communication?","acceptedAnswer":{"@type":"Answer","text":"Pakistan Standard Time (PKT) is 4-5 hours ahead of UK time (GMT/BST), providing excellent overlap. Ibrar is available for morning calls that align with UK afternoon hours and responds to messages within 2-4 hours during UK business days. He also accommodates early morning UK calls, making collaboration with UK clients in London, Manchester, and Birmingham seamless."}}]},{"@type":"Person","name":"Ibrar Zahoor","jobTitle":"Expert Shopify Developer","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","address":{"@type":"PostalAddress","addressLocality":"Lahore","addressCountry":"PK"},"telephone":"+923010482120","email":"ibrarzahoor0@gmail.com","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]}]}</script>
@@ -185,7 +194,7 @@
             "name": "Ibrar Zahoor - Shopify Developer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg"
+              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png"
             }
           },
           "mainEntityOfPage": {
@@ -388,7 +397,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Header -->
@@ -631,6 +644,14 @@
                 transform: translateY(-5px);
             }
         }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
     <!-- LAZY LOADED ANALYTICS -->
     <script>

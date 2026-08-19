@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +43,14 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
 
     <!-- Google Analytics -->
     
 
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS -->
     <style>
@@ -156,6 +157,14 @@
       
       .tip, .highlight-box { background: rgba(var(--accent-rgb), 0.05); border-left: 4px solid var(--accent-vivid); padding: 24px; border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; color: var(--text-2); }
       .tip strong { color: var(--accent-vivid); font-style: normal; font-family: 'Inter Tight', Inter, sans-serif; }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <script src="../site-ui.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Multilingual Store 2026: Complete Setup Guide","description":"How to create a Shopify multilingual store in 2026 — Translate & Adapt app, hreflang tags, multi-currency, and best practices. Guide by Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-multilingual-store-2026.html","datePublished":"2026-04-01","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-multilingual-store-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add multiple languages to my Shopify store in 2026?","acceptedAnswer":{"@type":"Answer","text":"Ibrar Zahoor recommends using Shopify's free Translate & Adapt app as the first step. You can add up to 20 languages on Shopify and Shopify Plus plans. The app lets you auto-translate content using Google Translate or manually refine translations. You'll also need to configure language subfolders and add hreflang tags for SEO."}},{"@type":"Question","name":"What is the best Shopify translation app in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shopify's native Translate & Adapt app is the top choice in 2026 because it is free, deeply integrated, and avoids third-party script injection. For stores needing advanced translation management workflows, Weglot and LangShop are solid paid alternatives. Ibrar Zahoor recommends starting with Translate & Adapt and upgrading only if workflow demands it."}},{"@type":"Question","name":"Do I need hreflang tags for a multilingual Shopify store?","acceptedAnswer":{"@type":"Answer","text":"Yes. Hreflang tags tell Google which language version to serve to users in different locales. Shopify automatically adds hreflang tags when you add languages through the Languages settings, but you should verify they are correct using Google Search Console and a hreflang checker tool. Ibrar Zahoor always audits hreflang implementation after launching a multilingual store."}},{"@type":"Question","name":"Can Shopify show different currencies for different languages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shopify Markets (available on all plans) lets you pair specific currencies and languages per market. For example, your French store can show EUR prices while your English store shows GBP, all from a single Shopify admin. Prices can be automatically converted at market rates or manually set."}},{"@type":"Question","name":"How does language URL structure work on Shopify?","acceptedAnswer":{"@type":"Answer","text":"Shopify uses language subfolders by default — for example, yourstore.com/fr for French and yourstore.com/de for German. This is SEO-friendly because each language gets its own indexable URL path. Subdomain structures (fr.yourstore.com) are not natively supported without a custom domain setup."}}]}]}</script>
@@ -185,7 +194,7 @@
             "name": "Ibrar Zahoor - Shopify Developer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg"
+              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png"
             }
           },
           "mainEntityOfPage": {
@@ -412,7 +421,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Header -->
@@ -675,6 +688,14 @@
                 transform: translateY(-5px);
             }
         }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
     <!-- LAZY LOADED ANALYTICS -->
     <script>

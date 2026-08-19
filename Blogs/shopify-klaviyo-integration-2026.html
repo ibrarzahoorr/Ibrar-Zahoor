@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,13 +43,14 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg">
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
 
     <!-- Google Analytics -->
     
 
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Critical CSS -->
     <style>
@@ -156,6 +157,14 @@
       
       .tip, .highlight-box { background: rgba(var(--accent-rgb), 0.05); border-left: 4px solid var(--accent-vivid); padding: 24px; border-radius: 0 16px 16px 0; margin: 30px 0; font-style: italic; color: var(--text-2); }
       .tip strong { color: var(--accent-vivid); font-style: normal; font-family: 'Inter Tight', Inter, sans-serif; }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
 <script src="../site-ui.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Shopify Klaviyo Integration 2026: Complete Setup Guide with Flows, SMS & Revenue Attribution","description":"Complete Shopify Klaviyo integration guide 2026 — flows, segments, email sequences, SMS, revenue attribution & setup steps. By Ibrar Zahoor.","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-klaviyo-integration-2026.html","datePublished":"2026-04-09","dateModified":"2026-04-30","author":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/","sameAs":["https://github.com/ibrarzahoorr","https://www.linkedin.com/in/ibrarzahoorr/"]},"publisher":{"@type":"Person","name":"Ibrar Zahoor","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/shopify-klaviyo-integration-2026.html"},"inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Ibrar Zahoor - Shopify Developer Blog","url":"https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I integrate Klaviyo with Shopify?","acceptedAnswer":{"@type":"Answer","text":"Integrating Klaviyo with Shopify takes about 15 minutes. Install the Klaviyo app from the Shopify App Store, connect your Shopify store by entering your store URL in Klaviyo's integration settings, and select which data to sync (orders, products, customers). Klaviyo will automatically begin pulling historical order data and firing real-time events. Ibrar Zahoor recommends also adding the Klaviyo JavaScript snippet to your theme for on-site tracking of active-on-site and viewed-product events."}},{"@type":"Question","name":"What are the most important Klaviyo flows for Shopify stores?","acceptedAnswer":{"@type":"Answer","text":"The highest-revenue Klaviyo flows for Shopify stores are: Abandoned Cart (typically 5-15% recovery rate), Welcome Series (nurtures new subscribers to first purchase), Browse Abandonment (retargets product viewers), Post-Purchase (drives repeat purchases and reviews), and Win-Back (re-engages lapsed customers). Ibrar Zahoor recommends setting up all five flows before investing in campaigns, as flows generate revenue passively 24/7."}},{"@type":"Question","name":"Does Klaviyo work with Shopify SMS?","acceptedAnswer":{"@type":"Answer","text":"Yes, Klaviyo has a built-in SMS marketing channel that works alongside email on Shopify. You can collect SMS consent at checkout and in popups, then use SMS in flows (e.g., abandoned cart text) and campaigns. SMS open rates are 95%+ vs 20-25% for email, making it a powerful complementary channel. SMS is available for US, UK, and select international phone numbers."}},{"@type":"Question","name":"How does Klaviyo attribute revenue to emails and SMS?","acceptedAnswer":{"@type":"Answer","text":"Klaviyo uses a 5-day click attribution and 1-day open attribution window by default for email. This means if a customer clicks an email and makes a purchase within 5 days, that revenue is attributed to the email. SMS uses a 24-hour click attribution. You can customize attribution windows in Klaviyo settings. Ibrar Zahoor recommends reviewing attributed revenue monthly and comparing to Shopify's native analytics to ensure alignment."}},{"@type":"Question","name":"What is the best Klaviyo email template for Shopify abandoned cart?","acceptedAnswer":{"@type":"Answer","text":"The best-performing abandoned cart email sequence is 3 emails: Email 1 at 1 hour (reminder, no discount), Email 2 at 24 hours (add social proof like reviews), and Email 3 at 72 hours (offer a small discount, 5-10%). Keep emails visually simple, include the abandoned product image, and use a single strong CTA button. Ibrar Zahoor's clients consistently see 6-12% cart recovery rates with this 3-email sequence."}}]}]}</script>
@@ -185,7 +194,7 @@
             "name": "Ibrar Zahoor - Shopify Developer",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.svg"
+              "url": "https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png"
             }
           },
           "mainEntityOfPage": {
@@ -412,7 +421,11 @@
     }
     </script>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">\n<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>\n</head>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+</head>
 
 <body>
     <!-- Header -->
@@ -671,6 +684,14 @@
                 transform: translateY(-5px);
             }
         }
+      /* FAQ Styles */
+      .faq-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 16px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item:hover { border-color: var(--accent-vivid); box-shadow: 0 4px 16px rgba(var(--accent-navy-rgb),.06); }
+      .faq-q { padding: 20px 24px; font-weight: 700; font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', Inter, sans-serif; }
+      .faq-q span { font-size: 24px; color: var(--accent-vivid); font-weight: 400; transition: transform 0.3s ease; }
+      .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-2); line-height: 1.7; opacity: 0; }
+      .faq-item.open .faq-a { padding: 0 24px 24px; max-height: 1000px; opacity: 1; }
+      .faq-item.open .faq-q span { transform: rotate(45deg); }
     </style>
     <!-- LAZY LOADED ANALYTICS -->
     <script>
