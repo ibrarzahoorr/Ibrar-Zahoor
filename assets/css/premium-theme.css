@@ -247,3 +247,128 @@ body {
   color: var(--pr-text-secondary);
   overflow-x: auto;
 }
+
+/* =========================================
+   Vercel / Premium Overrides for Old Classes 
+   ========================================= */
+
+.project-card, .testimonial-card, .timeline-card {
+  background: var(--pr-bg-surface) !important;
+  border: 1px solid var(--pr-border-subtle) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before, .testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent 40%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover, .testimonial-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(59, 130, 246, 0.1) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  background: var(--pr-bg-surface-elevated) !important;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-image {
+  background: #000 !important;
+  border-bottom: 1px solid var(--pr-border-subtle) !important;
+}
+
+.project-logo {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+
+.project-title, .testimonial-name {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.project-description, .testimonial-quote, .timeline-description {
+  color: var(--pr-text-secondary) !important;
+}
+
+.project-url {
+  color: var(--pr-accent-blue) !important;
+}
+
+.tag {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: var(--pr-text-secondary) !important;
+}
+
+.tag:hover {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+
+.project-tab {
+  background: transparent !important;
+  border: 1px solid var(--pr-border-subtle) !important;
+  color: var(--pr-text-secondary) !important;
+}
+
+.project-tab.active, .project-tab:hover {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+}
+
+.carousel-btn {
+  background: var(--pr-bg-surface) !important;
+  border: 1px solid var(--pr-border-subtle) !important;
+  color: #fff !important;
+}
+
+.carousel-btn:hover {
+  background: var(--pr-accent-purple) !important;
+  border-color: var(--pr-accent-purple) !important;
+}
+
+.project-stat-number {
+  color: #fff !important;
+}
+
+.projects-stats {
+  border-bottom: 1px solid var(--pr-border-subtle);
+  padding-bottom: 2rem;
+}
+
+/* Ensure headings have correct colors */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff !important;
+}
+
+p, li, span, div {
+  color: var(--pr-text-secondary);
+}
+
+.timeline-item::before {
+  background: var(--pr-accent-blue) !important;
+  border-color: #000 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.timeline::before {
+  background: var(--pr-border-subtle) !important;
+}
