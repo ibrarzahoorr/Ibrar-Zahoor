@@ -752,10 +752,10 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/rippling-theme.css">
+<link rel="stylesheet" href="assets/css/premium-theme.css">
 </head>
 
-<body class="light">
+<body class="dark-premium">
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-spinner"></div>
@@ -840,42 +840,52 @@
     <main>
         <!-- Hero Section with Better Content -->
         <!-- Hero Section with Better Content -->
-        <section class="rp-hero" id="about">
-            <div class="rp-tag">Available for Shopify Projects Worldwide</div>
-            <h1 class="rp-h1">Professional Shopify Developer Serving <br/><span class="rp-gradient-text" id="heroAccent">Global Clients</span><span class="sr-only"> — including USA businesses, UK brands, UAE stores, Canadian merchants, Australian retailers, and Pakistani startups</span></h1>
-            <p class="rp-lead" id="hero-summary">
-                I'm <strong>Ibrar Zahoor</strong> — the best Shopify developer in Pakistan, with 5+ years of experience and 50+ successful projects. Also expert in: <span id="rotWord" style="font-weight: 700; color: var(--rp-accent-blue);">Liquid Programming</span>.
+        <section class="pr-hero" id="about">
+            <div class="pr-hero-badge">
+                <span style="display:inline-block;width:8px;height:8px;background:var(--pr-accent-teal);border-radius:50%;box-shadow:0 0 10px var(--pr-accent-teal);"></span>
+                Available for Shopify Projects Worldwide
+            </div>
+            
+            <h1 class="pr-h1">
+                Shopify Developer for <br/>
+                <span class="pr-text-gradient-accent" id="heroAccent">Global Brands.</span>
+                <span class="sr-only"> — including USA businesses, UK brands, UAE stores, Canadian merchants, Australian retailers, and Pakistani startups</span>
+            </h1>
+            
+            <p class="pr-lead" id="hero-summary">
+                I'm <strong>Ibrar Zahoor</strong> — crafting high-performance e-commerce experiences. 5+ years expertise, 50+ successful projects, and a deep focus on <span id="rotWord" style="color:#ffffff;font-weight:600;">Liquid Programming</span>.
             </p>
-            <div style="display: flex; gap: 1rem; margin-bottom: 4rem;">
-                <a href="https://wa.me/923010482120" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Hire Me — Free Quote
+            
+            <div style="display:flex; gap:1rem; margin-bottom:4rem;">
+                <a href="https://wa.me/923010482120" class="pr-btn pr-btn-primary" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Free Quote
                 </a>
-                <a href="#projects" class="rp-btn rp-btn-secondary">
-                    See My Work
+                <a href="#projects" class="pr-btn pr-btn-glass">
+                    Explore Work
                 </a>
             </div>
 
-            <div class="rp-bento-grid" style="width: 100%;">
-                <!-- Code Window Bento -->
-                <div class="rp-bento-card rp-col-8" style="padding: 0; background: transparent; border: none;">
-                    <div class="code-window" aria-hidden="true" style="box-shadow: var(--rp-shadow-md); border-radius: var(--rp-radius-lg); height: 100%; border: 1px solid var(--rp-border);">
-                        <div class="code-window-bar">
-                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                            <span class="code-window-title">featured-collection.liquid</span>
+            <div class="pr-bento-grid">
+                <!-- Advanced Code Window Bento -->
+                <div class="pr-card pr-col-8" style="padding:0; display:flex; flex-direction:column;">
+                    <div class="pr-code-window" aria-hidden="true" style="border:none; border-radius:0; height:100%; display:flex; flex-direction:column;">
+                        <div class="pr-code-header">
+                            <span class="pr-dot red"></span><span class="pr-dot yellow"></span><span class="pr-dot green"></span>
+                            <span style="font-size:0.75rem; color:var(--pr-text-tertiary); margin-left:0.5rem;">featured-collection.liquid</span>
                         </div>
-                        <pre class="code-window-body" style="background: #111827;"><code id="typedCode"></code></pre>
+                        <pre class="pr-code-body" style="flex:1; margin:0;"><code id="typedCode" class="pr-text-gradient"></code></pre>
                     </div>
                 </div>
 
-                <!-- Stats Bento -->
-                <div class="rp-col-4" style="display: grid; grid-template-rows: 1fr 1fr; gap: 1.5rem;">
-                    <div class="rp-bento-card" style="justify-content: center; align-items: center; text-align: center;">
-                        <div class="stat-number rp-h2 rp-gradient-text" style="margin-bottom: 0;" data-count="50" data-suffix="+">0+</div>
-                        <div style="font-weight: 600; color: var(--rp-text-muted);">Projects Completed</div>
+                <!-- Sleek Stats Bento -->
+                <div class="pr-col-4" style="display:flex; flex-direction:column; gap:1.5rem;">
+                    <div class="pr-card" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <div class="pr-h2 pr-text-gradient" style="margin-bottom:0.25rem;" data-count="50" data-suffix="+">50+</div>
+                        <div style="font-size:0.875rem; color:var(--pr-text-secondary); letter-spacing:0.05em; text-transform:uppercase;">Projects Delivered</div>
                     </div>
-                    <div class="rp-bento-card" style="justify-content: center; align-items: center; text-align: center;">
-                        <div class="stat-number rp-h2 rp-gradient-text" style="margin-bottom: 0;" data-count="5" data-suffix="+">0+</div>
-                        <div style="font-weight: 600; color: var(--rp-text-muted);">Years Experience</div>
+                    <div class="pr-card" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                        <div class="pr-h2 pr-text-gradient" style="margin-bottom:0.25rem;" data-count="5" data-suffix="+">5+</div>
+                        <div style="font-size:0.875rem; color:var(--pr-text-secondary); letter-spacing:0.05em; text-transform:uppercase;">Years Experience</div>
                     </div>
                 </div>
             </div>
