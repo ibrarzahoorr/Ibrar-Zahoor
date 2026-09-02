@@ -752,9 +752,10 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/rippling-theme.css">
 </head>
 
-<body>
+<body class="light">
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-spinner"></div>
@@ -838,78 +839,43 @@
 
     <main>
         <!-- Hero Section with Better Content -->
-        <section class="hero" id="about">
-            <div class="grid-overlay" aria-hidden="true"></div>
-            <div class="hero-spotlight" aria-hidden="true"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text" id="hero-summary">
-                        <div class="status-badge">Available for Shopify Projects Worldwide</div>
-                        <h1>Professional Shopify Developer Serving <span class="accent-pop" id="heroAccent">Global Clients</span><span class="sr-only"> — including USA businesses, UK brands, UAE stores, Canadian merchants, Australian retailers, and Pakistani startups</span></h1>
-                        <div class="rotating-tag">Also expert in: <span class="word" id="rotWord">Liquid Programming</span></div>
-                        <p class="lead" id="ai-overview-content">
-                            I'm <strong>Ibrar Zahoor</strong> — the best Shopify developer in Pakistan based in Lahore, with 5+ years of experience and 50+ successful projects. I serve businesses in the USA, UK, UAE, Canada, Australia, and 40+ countries worldwide. From custom Shopify themes and Liquid programming to React.js apps and full marketplace solutions — I deliver results that grow your business.
-                        </p>
-                        
-                        <div class="hero-actions">
-                            <a href="https://wa.me/923010482120?text=Hi%20Ibrar!%20I%20need%20help%20with%20a%20Shopify%20project."
-                               class="btn success"
-                               target="_blank"
-                               rel="noopener">
-                                <i class="fab fa-whatsapp"></i>
-                                Hire Me — Free Quote
-                            </a>
-                            <a href="#pricing" class="btn primary">
-                                <i class="fas fa-tags"></i>
-                                View Pricing
-                            </a>
-                            <a href="#projects" class="btn ghost">
-                                <i class="fas fa-briefcase"></i>
-                                See My Work
-                            </a>
+        <!-- Hero Section with Better Content -->
+        <section class="rp-hero" id="about">
+            <div class="rp-tag">Available for Shopify Projects Worldwide</div>
+            <h1 class="rp-h1">Professional Shopify Developer Serving <br/><span class="rp-gradient-text" id="heroAccent">Global Clients</span><span class="sr-only"> — including USA businesses, UK brands, UAE stores, Canadian merchants, Australian retailers, and Pakistani startups</span></h1>
+            <p class="rp-lead" id="hero-summary">
+                I'm <strong>Ibrar Zahoor</strong> — the best Shopify developer in Pakistan, with 5+ years of experience and 50+ successful projects. Also expert in: <span id="rotWord" style="font-weight: 700; color: var(--rp-accent-blue);">Liquid Programming</span>.
+            </p>
+            <div style="display: flex; gap: 1rem; margin-bottom: 4rem;">
+                <a href="https://wa.me/923010482120" class="rp-btn rp-btn-primary" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Hire Me — Free Quote
+                </a>
+                <a href="#projects" class="rp-btn rp-btn-secondary">
+                    See My Work
+                </a>
+            </div>
+
+            <div class="rp-bento-grid" style="width: 100%;">
+                <!-- Code Window Bento -->
+                <div class="rp-bento-card rp-col-8" style="padding: 0; background: transparent; border: none;">
+                    <div class="code-window" aria-hidden="true" style="box-shadow: var(--rp-shadow-md); border-radius: var(--rp-radius-lg); height: 100%; border: 1px solid var(--rp-border);">
+                        <div class="code-window-bar">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                            <span class="code-window-title">featured-collection.liquid</span>
                         </div>
-                        
-                        <div class="social-links">
-                            <a href="https://github.com/ibrarzahoorr" class="social-link github" target="_blank" rel="noopener" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/ibrarzahoorr" class="social-link linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://wa.me/923010482120" class="social-link whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="mailto:ibrarzahoor0@gmail.com" class="social-link" aria-label="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
+                        <pre class="code-window-body" style="background: #111827;"><code id="typedCode"></code></pre>
                     </div>
-                    
-                    <div class="hero-visual">
-                        <div class="hero-glow" aria-hidden="true"></div>
-                        <div class="code-window" aria-hidden="true">
-                            <div class="code-window-bar">
-                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                                <span class="code-window-title">featured-collection.liquid</span>
-                            </div>
-                            <pre class="code-window-body"><code id="typedCode"></code></pre>
-                        </div>
-                        <div class="stat-card bento-wide">
-                            <div class="stat-number" data-count="50" data-suffix="+">0+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="5" data-suffix="+">0+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="30" data-suffix="+">0+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="stat-card bento-wide">
-                            <div class="stat-number" data-count="100" data-suffix="%">0%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
+                </div>
+
+                <!-- Stats Bento -->
+                <div class="rp-col-4" style="display: grid; grid-template-rows: 1fr 1fr; gap: 1.5rem;">
+                    <div class="rp-bento-card" style="justify-content: center; align-items: center; text-align: center;">
+                        <div class="stat-number rp-h2 rp-gradient-text" style="margin-bottom: 0;" data-count="50" data-suffix="+">0+</div>
+                        <div style="font-weight: 600; color: var(--rp-text-muted);">Projects Completed</div>
+                    </div>
+                    <div class="rp-bento-card" style="justify-content: center; align-items: center; text-align: center;">
+                        <div class="stat-number rp-h2 rp-gradient-text" style="margin-bottom: 0;" data-count="5" data-suffix="+">0+</div>
+                        <div style="font-weight: 600; color: var(--rp-text-muted);">Years Experience</div>
                     </div>
                 </div>
             </div>
