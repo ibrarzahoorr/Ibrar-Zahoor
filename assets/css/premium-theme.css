@@ -372,3 +372,47 @@ p, li, span, div {
 .timeline::before {
   background: var(--pr-border-subtle) !important;
 }
+
+/* =========================================
+   Mobile Overrides for New Header/Hero
+   ========================================= */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .hero-pagination {
+    display: none !important;
+  }
+  .hero-dots {
+    display: none !important;
+  }
+  .scroll-down {
+    display: none !important;
+  }
+  #home {
+    padding-top: 120px !important;
+  }
+  #home h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .project-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px 0 !important;
+  }
+  .project-row > div:first-child {
+    font-size: 24px !important;
+  }
+  .project-row > div:last-child {
+    justify-content: flex-start !important;
+    padding-top: 12px !important;
+  }
+}

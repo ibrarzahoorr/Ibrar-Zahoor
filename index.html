@@ -773,41 +773,22 @@
     </a>
 
     <!-- Header Navigation -->
-    <header id="header">
-        <nav class="nav container">
-            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#" class="brand">
-                <div class="brand-logo">IZ</div>
-                <div class="brand-info">
-                    <div class="brand-name">Ibrar Zahoor</div>
-                    <div class="brand-title">Shopify Developer</div>
+    <header id="header" style="background: #050505; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 24px 0; position: fixed; width: 100%; top: 0; z-index: 1000; transition: background 0.3s ease;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1600px; padding: 0 40px;">
+            <a href="#" style="color: #fff; font-weight: 600; letter-spacing: 0.15em; font-size: 14px; text-decoration: none;">IBRAR ZAHOOR</a>
+            <nav style="display: flex; gap: 40px; align-items: center;">
+                <div class="desktop-nav" style="display: flex; gap: 40px;">
+                    <a href="#projects" style="color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.8';">WORK</a>
+                    <a href="#about" style="color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.8';">ABOUT</a>
+                    <a href="#services" style="color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.8';">EXPERTISE</a>
+                    <a href="#experience" style="color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.8';">EXPERIENCE</a>
+                    <a href="#contact" style="color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.8';">CONTACT</a>
                 </div>
-            </a>
-            
-            <ul>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#experience">Experience</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#testimonials">Testimonials</a></li>
-
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/prime-logicx.html" target="_blank" rel="noopener">Agency</a></li>
-                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>
-            </ul>
-            
-            <div class="nav-actions">
-                <button class="btn ghost" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu" style="background: none; border: none; color: #fff; cursor: pointer; padding: 0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </button>
-                <a href="https://wa.me/923010482120" class="btn success" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>Let's Talk</span>
-                </a>
-                <button class="btn menu-btn" id="menuBtn" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <!-- Mobile Menu -->
@@ -839,55 +820,58 @@
 
     <main>
         <!-- Hero Section with Better Content -->
-        <!-- Hero Section with Better Content -->
-        <section class="pr-hero" id="about">
-            <div class="pr-hero-badge">
-                <span style="display:inline-block;width:8px;height:8px;background:var(--pr-accent-teal);border-radius:50%;box-shadow:0 0 10px var(--pr-accent-teal);"></span>
-                Available for Shopify Projects Worldwide
-            </div>
+        <!-- Ultimate Hero Section -->
+        <section id="home" style="background: #050505; min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px;">
+            <!-- Dot pattern background right side -->
+            <div class="hero-dots" style="position: absolute; right: 40px; bottom: 40px; width: 400px; height: 250px; background-image: radial-gradient(rgba(255,255,255,0.1) 1.5px, transparent 1.5px); background-size: 24px 24px; pointer-events: none;"></div>
             
-            <h1 class="pr-h1">
-                Shopify Developer for <br/>
-                <span class="pr-text-gradient-accent" id="heroAccent">Global Brands.</span>
-                <span class="sr-only"> — including USA businesses, UK brands, UAE stores, Canadian merchants, Australian retailers, and Pakistani startups</span>
-            </h1>
-            
-            <p class="pr-lead" id="hero-summary">
-                I'm <strong>Ibrar Zahoor</strong> — crafting high-performance e-commerce experiences. 5+ years expertise, 50+ successful projects, and a deep focus on <span id="rotWord" style="color:#ffffff;font-weight:600;">Liquid Programming</span>.
-            </p>
-            
-            <div style="display:flex; gap:1rem; margin-bottom:4rem;">
-                <a href="https://wa.me/923010482120" class="pr-btn pr-btn-primary" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Free Quote
-                </a>
-                <a href="#projects" class="pr-btn pr-btn-glass">
-                    Explore Work
-                </a>
-            </div>
-
-            <div class="pr-bento-grid">
-                <!-- Advanced Code Window Bento -->
-                <div class="pr-card pr-col-8" style="padding:0; display:flex; flex-direction:column;">
-                    <div class="pr-code-window" aria-hidden="true" style="border:none; border-radius:0; height:100%; display:flex; flex-direction:column;">
-                        <div class="pr-code-header">
-                            <span class="pr-dot red"></span><span class="pr-dot yellow"></span><span class="pr-dot green"></span>
-                            <span style="font-size:0.75rem; color:var(--pr-text-tertiary); margin-left:0.5rem;">featured-collection.liquid</span>
-                        </div>
-                        <pre class="pr-code-body" style="flex:1; margin:0;"><code id="typedCode" class="pr-text-gradient"></code></pre>
+            <div class="container" style="max-width: 1600px; padding: 0 40px; width: 100%; position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center;">
+                
+                <div style="max-width: 850px; width: 100%;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+                        <span style="color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.1em;">/</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.15em; font-weight: 600;">SOFTWARE ENGINEER</span>
+                    </div>
+                    
+                    <h1 style="font-size: clamp(3.5rem, 7vw, 6.5rem); color: #fff; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 48px; font-family: 'Inter', sans-serif;">
+                        I BUILD DIGITAL<br/>
+                        EXPERIENCES THAT<br/>
+                        MOVE BUSINESSES<br/>
+                        FORWARD.
+                    </h1>
+                    
+                    <div style="width: 60px; height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 40px;"></div>
+                    
+                    <p style="color: #a1a1aa; font-size: 17px; line-height: 1.6; max-width: 550px; margin-bottom: 56px; font-weight: 400;">
+                        Specializing in frontend development, Shopify, e-commerce and business automation to create fast, scalable and impactful digital products.
+                    </p>
+                    
+                    <div style="display: flex; align-items: center; gap: 32px;">
+                        <a href="#projects" style="display: inline-flex; align-items: center; gap: 16px; border: 1px solid rgba(255,255,255,0.3); padding: 18px 36px; color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; transition: all 0.3s ease;" onmouseover="this.style.background='#fff'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#fff';">
+                            VIEW MY WORK 
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#about" style="color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 4px; transition: border-color 0.3s ease;" onmouseover="this.style.borderColor='#fff';" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';">
+                            ABOUT ME
+                        </a>
                     </div>
                 </div>
-
-                <!-- Sleek Stats Bento -->
-                <div class="pr-col-4" style="display:flex; flex-direction:column; gap:1.5rem;">
-                    <div class="pr-card" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                        <div class="pr-h2 pr-text-gradient" style="margin-bottom:0.25rem;" data-count="50" data-suffix="+">50+</div>
-                        <div style="font-size:0.875rem; color:var(--pr-text-secondary); letter-spacing:0.05em; text-transform:uppercase;">Projects Delivered</div>
-                    </div>
-                    <div class="pr-card" style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                        <div class="pr-h2 pr-text-gradient" style="margin-bottom:0.25rem;" data-count="5" data-suffix="+">5+</div>
-                        <div style="font-size:0.875rem; color:var(--pr-text-secondary); letter-spacing:0.05em; text-transform:uppercase;">Years Experience</div>
-                    </div>
+                
+                <!-- Right pagination -->
+                <div class="hero-pagination" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; right: 40px; top: 50%; transform: translateY(-50%);">
+                    <span style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 16px;">01</span>
+                    <div style="width: 1px; height: 120px; background: rgba(255,255,255,0.2);"></div>
+                    <span style="color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; margin-top: 16px;">06</span>
                 </div>
+            </div>
+            
+            <!-- Scroll down indicator -->
+            <div style="position: absolute; left: 40px; bottom: 40px; display: flex; align-items: center; gap: 20px; z-index: 2;" class="scroll-down">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                    <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.3);"></div>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                </div>
+                <span style="color: rgba(255,255,255,0.4); font-size: 10px; font-weight: 600; letter-spacing: 0.25em;">SCROLL DOWN</span>
             </div>
         </section>
 
@@ -925,53 +909,80 @@
             </div>
         </div>
 
-        <!-- WHY CHOOSE IBRAR ZAHOOR - PREMIUM BENTO -->
-        <section id="why-me" class="section" style="padding: 100px 0; border-top: 1px solid var(--pr-border);">
-          <div class="container">
-            <div class="pr-section-header" style="text-align: center; margin-bottom: 64px;">
-              <div class="pr-eyebrow">WHY CHOOSE ME</div>
-              <h2 class="pr-h2">Why 50+ Clients <br/><span class="pr-text-gradient-accent">Chose Ibrar Zahoor</span></h2>
-              <p class="pr-subtitle" style="margin-top: 16px;">Expert-level Shopify development. Freelancer speed. Transparent pricing. No agency overhead.</p>
+        <!-- 2nd Section: About Me -->
+        <section id="why-me" style="background: #050505; padding: 160px 0; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+            <div class="container about-grid" style="max-width: 1600px; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative;">
+                
+                <!-- Left Column -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 40px;">
+                        <span style="color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.1em;">/</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.15em; font-weight: 600;">ABOUT ME</span>
+                    </div>
+                    
+                    <h2 style="font-size: clamp(3rem, 7vw, 6rem); color: #fff; font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 40px; font-family: 'Inter', sans-serif; text-transform: uppercase;">
+                        NOT JUST<br/>
+                        A DEVELOPER.
+                    </h2>
+                    
+                    <div style="width: 40px; height: 1px; background: rgba(255,255,255,0.3); margin-bottom: 40px;"></div>
+                    
+                    <p style="color: #a1a1aa; font-size: 15px; line-height: 1.8; letter-spacing: 0.15em; font-weight: 500; max-width: 450px; margin-bottom: 56px; text-transform: uppercase;">
+                        I work at the intersection of technology, commerce and business.
+                    </p>
+                    
+                    <a href="#about" style="color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 8px; display: inline-flex; align-items: center; gap: 16px; transition: border-color 0.3s;" onmouseover="this.style.borderColor='#fff';" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';">
+                        MORE ABOUT ME
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Right Column -->
+                <div style="padding-top: 40px; position: relative;">
+                    <p style="color: #d4d4d8; font-size: 16px; line-height: 1.7; margin-bottom: 64px; max-width: 500px;">
+                        From Shopify storefronts and custom e-commerce systems to React applications, automation and performance optimization — I build things that solve real problems.
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 48px;">
+                        <!-- Item 1 -->
+                        <div style="display: flex; gap: 24px;">
+                            <div style="font-size: 18px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif;">01</div>
+                            <div style="width: 1px; background: rgba(255,255,255,0.1); min-height: 100%;"></div>
+                            <div>
+                                <h4 style="color: #fff; font-size: 11px; letter-spacing: 0.15em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">Solve real problems</h4>
+                                <p style="color: #a1a1aa; font-size: 14px; line-height: 1.6; max-width: 320px;">I focus on building solutions that create real impact.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div style="display: flex; gap: 24px;">
+                            <div style="font-size: 18px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif;">02</div>
+                            <div style="width: 1px; background: rgba(255,255,255,0.1); min-height: 100%;"></div>
+                            <div>
+                                <h4 style="color: #fff; font-size: 11px; letter-spacing: 0.15em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">Think end to end</h4>
+                                <p style="color: #a1a1aa; font-size: 14px; line-height: 1.6; max-width: 320px;">I look at the big picture — from the idea to the product and beyond.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div style="display: flex; gap: 24px;">
+                            <div style="font-size: 18px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif;">03</div>
+                            <div style="width: 1px; background: rgba(255,255,255,0.1); min-height: 100%;"></div>
+                            <div>
+                                <h4 style="color: #fff; font-size: 11px; letter-spacing: 0.15em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">Details matter</h4>
+                                <p style="color: #a1a1aa; font-size: 14px; line-height: 1.6; max-width: 320px;">Clean code, performance and user experience are never optional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right pagination -->
+                    <div class="hero-pagination" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; right: 0; top: 0;">
+                        <span style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 16px;">02</span>
+                        <div style="width: 1px; height: 160px; background: rgba(255,255,255,0.2);"></div>
+                        <span style="color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; margin-top: 16px;">06</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="pr-bento-grid" style="grid-template-columns: repeat(3, 1fr);">
-              <!-- Bento Card 1 (Large) -->
-              <div class="pr-card" style="grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-size: 2rem; color: var(--pr-accent-teal); margin-bottom: 16px;"><i class="fas fa-bolt"></i></div>
-                <div>
-                  <h4 class="pr-h3" style="color: #fff; margin-bottom: 12px;">5+ Years Shopify Expertise</h4>
-                  <p style="color: var(--pr-text-secondary); line-height: 1.6;">Senior-level Shopify dev — Liquid, custom themes, Shopify Plus, APIs, headless. You get deep expertise, not a junior experimenting on your store.</p>
-                </div>
-              </div>
-              
-              <!-- Bento Card 2 -->
-              <div class="pr-card" style="display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, rgba(255,255,255,0.03), transparent);">
-                <div style="font-size: 2rem; color: var(--pr-accent-blue); margin-bottom: 16px;"><i class="fas fa-globe"></i></div>
-                <div>
-                  <h4 class="pr-h3" style="color: #fff; margin-bottom: 12px;">100% Remote</h4>
-                  <p style="color: var(--pr-text-secondary); line-height: 1.6;">USA, UK, UAE, Germany, Australia, Canada and 35+ more countries.</p>
-                </div>
-              </div>
-
-              <!-- Bento Card 3 -->
-              <div class="pr-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-size: 2rem; color: var(--pr-accent-purple); margin-bottom: 16px;"><i class="fas fa-project-diagram"></i></div>
-                <div>
-                  <h4 class="pr-h3" style="color: #fff; margin-bottom: 12px;">Real Projects, Real Results</h4>
-                  <p style="color: var(--pr-text-secondary); line-height: 1.6;">ZARR by Jazz (70M+ users), Chinyere, She Matters — live, high-traffic stores. Real work you can verify.</p>
-                </div>
-              </div>
-              
-              <!-- Bento Card 4 (Large) -->
-              <div class="pr-card" style="grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-size: 2rem; color: var(--pr-accent-teal); margin-bottom: 16px;"><i class="fas fa-tags"></i></div>
-                <div>
-                  <h4 class="pr-h3" style="color: #fff; margin-bottom: 12px;">75% Less Than UK/US Agencies</h4>
-                  <p style="color: var(--pr-text-secondary); line-height: 1.6;">A Shopify agency in the UK charges £3,000–£8,000 for a custom store. Ibrar Zahoor delivers the same quality at a fraction — with direct expert access.</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         <!-- PRICING TEASER -->
@@ -1037,684 +1048,249 @@
           </div>
         </section>
 
-        <!-- Services Section - PREMIUM GRID -->
-        <section id="services" class="section" style="padding: 100px 0; border-top: 1px solid var(--pr-border);">
-            <div class="container">
-                <div class="pr-section-header" style="text-align: center; margin-bottom: 64px;">
-                    <div class="pr-eyebrow">SERVICES</div>
-                    <h2 class="pr-h2">Shopify Development <br/><span class="pr-text-gradient-accent">Solutions</span></h2>
-                    <p class="pr-subtitle" style="margin-top: 16px;">Comprehensive technical solutions for growing e-commerce businesses.</p>
+        <!-- 3rd Section: Expertise -->
+        <section id="services" style="background: #050505; padding: 160px 0; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+            <div class="container about-grid" style="max-width: 1600px; padding: 0 40px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; position: relative;">
+                
+                <!-- Left Column -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 40px;">
+                        <span style="color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.1em;">/</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.15em; font-weight: 600;">EXPERTISE</span>
+                    </div>
+                    
+                    <h2 style="font-size: clamp(4rem, 8vw, 7rem); color: #fff; font-weight: 700; line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 40px; font-family: 'Inter', sans-serif; text-transform: uppercase;">
+                        WHAT<br/>
+                        I DO
+                    </h2>
+                    
+                    <div style="width: 40px; height: 1px; background: rgba(255,255,255,0.3); margin-bottom: 40px;"></div>
+                    
+                    <p style="color: #a1a1aa; font-size: 15px; line-height: 1.8; letter-spacing: 0.05em; font-weight: 400; max-width: 380px; margin-bottom: 56px;">
+                        I combine engineering, commerce and automation to build fast, scalable and high-performing digital experiences.
+                    </p>
+                    
+                    <a href="#projects" style="color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 8px; display: inline-flex; align-items: center; gap: 16px; transition: border-color 0.3s;" onmouseover="this.style.borderColor='#fff';" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';">
+                        VIEW MY WORK
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-                    <!-- Service 1 -->
-                    <article class="pr-card" style="padding: 40px; display: flex; flex-direction: column; gap: 20px;">
-                        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; border: 1px solid var(--pr-border);">
-                            <i class="fas fa-code"></i>
+                <!-- Right Column -->
+                <div style="padding-top: 0; position: relative;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px 40px;" class="expertise-grid">
+                        
+                        <!-- Category 1 -->
+                        <div>
+                            <div style="font-size: 24px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; margin-bottom: 16px;">01</div>
+                            <div style="height: 1px; width: 100%; background: rgba(255,255,255,0.2); margin-bottom: 24px;"></div>
+                            <h4 style="color: #fff; font-size: 13px; letter-spacing: 0.2em; font-weight: 600; margin-bottom: 24px; text-transform: uppercase;">FRONTEND</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> React.js</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> JavaScript (ES6+)</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> HTML5 / CSS3</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Tailwind CSS</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Performance Optimization</li>
+                            </ul>
                         </div>
-                        <h3 class="pr-h3" style="color: #fff;">Custom Theme Development</h3>
-                        <p style="color: var(--pr-text-secondary); line-height: 1.6;">Pixel-perfect, highly responsive Shopify themes using advanced Liquid programming and modern CSS.</p>
-                    </article>
+                        
+                        <!-- Category 2 -->
+                        <div>
+                            <div style="font-size: 24px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; margin-bottom: 16px;">02</div>
+                            <div style="height: 1px; width: 100%; background: rgba(255,255,255,0.2); margin-bottom: 24px;"></div>
+                            <h4 style="color: #fff; font-size: 13px; letter-spacing: 0.2em; font-weight: 600; margin-bottom: 24px; text-transform: uppercase;">E-COMMERCE</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Shopify Development</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Liquid</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Storefront API</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Shopify Plus</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Marketplace Systems</li>
+                            </ul>
+                        </div>
+
+                        <!-- Category 3 -->
+                        <div>
+                            <div style="font-size: 24px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; margin-bottom: 16px;">03</div>
+                            <div style="height: 1px; width: 100%; background: rgba(255,255,255,0.2); margin-bottom: 24px;"></div>
+                            <h4 style="color: #fff; font-size: 13px; letter-spacing: 0.2em; font-weight: 600; margin-bottom: 24px; text-transform: uppercase;">ENGINEERING</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Node.js</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Python</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Django</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> RESTful APIs</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Database Design (MongoDB)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Category 4 -->
+                        <div>
+                            <div style="font-size: 24px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; margin-bottom: 16px;">04</div>
+                            <div style="height: 1px; width: 100%; background: rgba(255,255,255,0.2); margin-bottom: 24px;"></div>
+                            <h4 style="color: #fff; font-size: 13px; letter-spacing: 0.2em; font-weight: 600; margin-bottom: 24px; text-transform: uppercase;">GROWTH & AUTOMATION</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Shopify Flow</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Business Automation</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> API Integrations</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Technical SEO</li>
+                                <li style="color: #a1a1aa; font-size: 14px; display: flex; align-items: center; gap: 12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Conversion Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
                     
-                    <!-- Service 2 -->
-                    <article class="pr-card" style="padding: 40px; display: flex; flex-direction: column; gap: 20px;">
-                        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; border: 1px solid var(--pr-border);">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="pr-h3" style="color: #fff;">Shopify Plus for Enterprise</h3>
-                        <p style="color: var(--pr-text-secondary); line-height: 1.6;">Scale your business with advanced automation, B2B setups, and custom checkout experiences.</p>
-                    </article>
+                    <!-- Right pagination -->
+                    <div class="hero-pagination" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; right: 0; top: 0;">
+                        <span style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 16px;">04</span>
+                        <div style="width: 1px; height: 160px; background: rgba(255,255,255,0.2);"></div>
+                        <span style="color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; margin-top: 16px;">06</span>
+              <!-- 4th Section: Selected Work -->
+        <section id="projects" style="background: #050505; padding: 160px 0; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+            <div class="container about-grid" style="max-width: 1600px; padding: 0 40px; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; position: relative;">
+                
+                <!-- Left Column -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 40px;">
+                        <span style="color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.1em;">/</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.15em; font-weight: 600;">SELECTED WORK</span>
+                    </div>
                     
-                    <!-- Service 3 -->
-                    <article class="pr-card" style="padding: 40px; display: flex; flex-direction: column; gap: 20px;">
-                        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; border: 1px solid var(--pr-border);">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3 class="pr-h3" style="color: #fff;">Platform Migration</h3>
-                        <p style="color: var(--pr-text-secondary); line-height: 1.6;">Seamlessly migrate from WooCommerce, Magento, or custom setups with zero data loss.</p>
-                    </article>
+                    <h2 style="font-size: clamp(3rem, 7vw, 5.5rem); color: #fff; font-weight: 700; line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 40px; font-family: 'Inter', sans-serif; text-transform: uppercase;">
+                        SELECTED<br/>
+                        WORK
+                    </h2>
                     
-                    <!-- Service 4 -->
-                    <article class="pr-card" style="padding: 40px; display: flex; flex-direction: column; gap: 20px;">
-                        <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; border: 1px solid var(--pr-border);">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3 class="pr-h3" style="color: #fff;">E-commerce SEO</h3>
-                        <p style="color: var(--pr-text-secondary); line-height: 1.6;">Technical SEO implementation, PageSpeed 90+ optimization, and Core Web Vitals fixes.</p>
-                    </article>
+                    <p style="color: #a1a1aa; font-size: 15px; line-height: 1.8; letter-spacing: 0.05em; font-weight: 400; max-width: 380px; margin-bottom: 56px;">
+                        A selection of projects where design, code and strategy came together to create real impact.
+                    </p>
+                    
+                    <a href="#projects" style="color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 8px; display: inline-flex; align-items: center; gap: 16px; transition: border-color 0.3s;" onmouseover="this.style.borderColor='#fff';" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';">
+                        VIEW ALL PROJECTS
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <!-- Right Column -->
+                <div style="position: relative;">
+                    <div style="display: flex; flex-direction: column; width: 100%; border-top: 1px solid rgba(255,255,255,0.1);">
+                        
+                        <!-- Project 1 -->
+                        <a href="https://zarr.com.pk/" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">01</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">ZARR</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">DIGITAL MARKETPLACE</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">Shopify · E-Commerce · Performance</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Built a high-performance digital marketplace with scalable architecture and seamless shopping experience.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                        <!-- Project 2 -->
+                        <a href="https://chinyere.pk" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">02</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">CHINYERE</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">FASHION E-COMMERCE</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">Shopify · Liquid · SEO</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Developed and optimized a premium fashion e-commerce store focused on speed, SEO and conversions.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                        <!-- Project 3 -->
+                        <a href="https://myrangja.com" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">03</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">RANG JA</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">FASHION COMMERCE PLATFORM</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">Shopify · Performance · UX</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Enhanced performance and user experience for a leading fashion brand across multiple markets.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                        <!-- Project 4 -->
+                        <a href="https://medvoyageglobal.com/" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">04</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">MEDVOYAGE</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">HEALTHCARE PLATFORM</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">React · JavaScript · SEO</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Built a modern healthcare platform with intuitive UI and robust performance for global users.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                        <!-- Project 5 -->
+                        <a href="https://ejobber.co.uk" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">05</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">EJOBBER</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">MULTI-VENDOR MARKETPLACE</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">Laravel · Shopify · APIs</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Engineered a multi-vendor marketplace with secure systems, APIs and smooth vendor management.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                        <!-- Project 6 -->
+                        <a href="https://orsina.co.uk" target="_blank" style="text-decoration: none; display: grid; grid-template-columns: 80px 1.5fr 2fr 40px; gap: 24px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start; transition: background 0.3s;" class="project-row" onmouseover="this.style.background='rgba(255,255,255,0.02)';" onmouseout="this.style.background='transparent';">
+                            <div style="font-size: 32px; color: #fff; font-weight: 400; font-family: 'Inter', sans-serif; line-height: 1;">06</div>
+                            <div>
+                                <h3 style="color: #fff; font-size: 18px; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px; text-transform: uppercase;">OR SINA</h3>
+                                <div style="color: #a1a1aa; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; text-transform: uppercase;">LUXURY E-COMMERCE</div>
+                                <div style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em;">Shopify · International Commerce</div>
+                            </div>
+                            <div>
+                                <p style="color: #a1a1aa; font-size: 13px; line-height: 1.6; margin: 0; max-width: 400px;">
+                                    Created a luxury e-commerce experience with advanced features and international shipping solutions.
+                                </p>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; color: #fff; padding-top: 4px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </a>
+        
+                    </div>
+                    
+                    <!-- Right pagination -->
+                    <div class="hero-pagination" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; right: 0; top: 0;">
+                        <span style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 16px;">03</span>
+                        <div style="width: 1px; height: 160px; background: rgba(255,255,255,0.2);"></div>
+                        <span style="color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; margin-top: 16px;">06</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Skills Section (Keeping your original structure) -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="eyebrow">Skills</div>
-                    <h2 class="section-title">Technical Expertise & Skills</h2>
-                    <p class="section-subtitle">Proven proficiency across the Shopify ecosystem and modern web development</p>
-                </div>
-                
-                <div class="skills-categories">
-                    <!-- Shopify Development -->
-                    <article class="skill-category">
-                        <div class="skill-category-header">
-                            <div class="skill-category-icon">
-                                <i class="fab fa-shopify"></i>
-                            </div>
-                            <h3 class="skill-category-title">Shopify Development</h3>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Custom Theme Development</div>
-                                    <div class="skill-details">Building themes from scratch, Dawn framework customization</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Liquid Templating</div>
-                                    <div class="skill-details">Advanced Liquid programming for complex functionality</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Shopify Plus</div>
-                                    <div class="skill-details">Enterprise solutions, Scripts, Flow automation</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">App Development</div>
-                                    <div class="skill-details">Private & public apps with Node.js, React</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">API Integration</div>
-                                    <div class="skill-details">Admin API, Storefront API, GraphQL, REST</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Development Tools</div>
-                                    <div class="skill-details">Shopify CLI, Theme Kit, modern workflows</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Technical Skills -->
-                    <article class="skill-category">
-                        <div class="skill-category-header">
-                            <div class="skill-category-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3 class="skill-category-title">Web Development</h3>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">JavaScript & React</div>
-                                    <div class="skill-details">ES6+, React.js, interactive features</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">HTML5 & CSS3</div>
-                                    <div class="skill-details">Semantic markup, responsive design</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">PHP & Laravel</div>
-                                    <div class="skill-details">Backend development, API integration</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Version Control</div>
-                                    <div class="skill-details">Git, GitHub, collaborative workflows</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Performance Optimization</div>
-                                    <div class="skill-details">Core Web Vitals, speed optimization</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- SEO & Marketing -->
-                    <article class="skill-category">
-                        <div class="skill-category-header">
-                            <div class="skill-category-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3 class="skill-category-title">SEO & Optimization</h3>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Technical SEO</div>
-                                    <div class="skill-details">Site architecture, crawlability, indexing</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">On-Page SEO</div>
-                                    <div class="skill-details">Meta optimization, content structure</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Schema Markup</div>
-                                    <div class="skill-details">Structured data, rich snippets</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Analytics</div>
-                                    <div class="skill-details">Google Analytics, Search Console</div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-bullet">▸</span>
-                                <div class="skill-content">
-                                    <div class="skill-name">Conversion Optimization</div>
-                                    <div class="skill-details">A/B testing, UX improvement</div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section with UNIQUE Descriptions (Part 1) -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="eyebrow">Portfolio</div>
-                    <h2 class="section-title">Featured Shopify Projects</h2>
-                    <p class="section-subtitle">Real-world e-commerce solutions delivering measurable results</p>
-                </div>
-                
-                <div class="projects-stats">
-                    <div class="project-stat">
-                        <div class="project-stat-number">22</div>
-                        <div class="project-stat-label">Shopify Stores</div>
-                    </div>
-                    <div class="project-stat">
-                        <div class="project-stat-number">20+</div>
-                        <div class="project-stat-label">SEO Projects</div>
-                    </div>
-                    <div class="project-stat">
-                        <div class="project-stat-number">5</div>
-                        <div class="project-stat-label">Laravel Apps</div>
-                    </div>
-                    <div class="project-stat">
-                        <div class="project-stat-number">100%</div>
-                        <div class="project-stat-label">Success Rate</div>
-                    </div>
-                </div>
-                
-                <div class="projects-tabs">
-                    <button class="project-tab active" data-filter="all">All Projects</button>
-                    <button class="project-tab" data-filter="shopify">Shopify</button>
-                    <button class="project-tab" data-filter="react">React.js</button>
-                    <button class="project-tab" data-filter="laravel">Laravel</button>
-                    <button class="project-tab" data-filter="seo">SEO Focus</button>
-                </div>
-                
-                <div class="projects-grid collapsed" id="projectsGrid">
-
-                    <!-- 1. ZARR — Shopify -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image" style="background:linear-gradient(135deg,#e63946,#a8201a)">
-                            <div class="project-logo">ZR</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Zarr — Premium Fashion</h3>
-                            <a href="https://zarr.com.pk/" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                zarr.com.pk
-                            </a>
-                            <p class="project-description">
-                                Built a fully custom Liquid theme for Zarr, a premium Pakistani fashion brand. Advanced collection
-                                filtering, multi-variant product pages, conversion-optimised checkout, and custom discount engine.
-                                Technical SEO achieved top-3 rankings for competitive fashion keywords within 4 months.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Shopify</span>
-                                <span class="tag">Liquid</span>
-                                <span class="tag">Custom Theme</span>
-                                <span class="tag">Technical SEO</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 2. CHINYERE (existing) -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">CH</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Chinyere Pakistan</h3>
-                            <a href="https://chinyere.pk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                chinyere.pk
-                            </a>
-                            <p class="project-description">
-                                Developed a comprehensive Shopify solution for Pakistan's premier fashion brand featuring custom theme architecture, 
-                                advanced product filtering for 2000+ SKUs, multi-variant management system, and integrated payment gateways. 
-                                Implemented technical SEO resulting in 180% increase in organic traffic within 6 months. Features include 
-                                custom size guides, wishlist functionality, and optimized checkout flow that reduced cart abandonment by 35%.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Shopify</span>
-                                <span class="tag">Liquid</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">SEO</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Featured Project 2 -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">RJ</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Rang Ja Fashion</h3>
-                            <a href="https://myrangja.com" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                myrangja.com
-                            </a>
-                            <p class="project-description">
-                                Built a custom Shopify theme with focus on mobile-first design, achieving 95+ PageSpeed score. Integrated 
-                                advanced product recommendations engine using Shopify's APIs, custom collection templates with Ajax filtering, 
-                                and implemented comprehensive on-page SEO strategy. The store features custom Liquid templates for seasonal 
-                                campaigns, Instagram feed integration, and seamless multi-currency support for international expansion.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Custom Theme</span>
-                                <span class="tag">API Integration</span>
-                                <span class="tag">Performance</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 3 -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">MM</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Minnie Minors</h3>
-                            <a href="https://minnieminors.com" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                minnieminors.com
-                            </a>
-                            <p class="project-description">
-                                Created a vibrant kids' fashion e-commerce platform with age-specific category navigation, interactive size 
-                                guide with growth charts, and custom gift wrapping options. Developed unique product bundles feature using 
-                                Liquid programming to increase average order value by 45%. Implemented structured data for enhanced Google 
-                                Shopping visibility and created conversion-optimized landing pages for paid campaigns.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Shopify</span>
-                                <span class="tag">Custom Features</span>
-                                <span class="tag">Schema Markup</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 4 -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">PH</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Premier Home</h3>
-                            <a href="https://premierhome.com.pk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                premierhome.com.pk
-                            </a>
-                            <p class="project-description">
-                                Designed and developed a luxury furniture e-commerce store with 360-degree product visualization, room 
-                                scene builder tool, and custom quote request system for bulk orders. Integrated ERP system for real-time 
-                                inventory management across multiple warehouses. Implemented local SEO strategy targeting Pakistani cities, 
-                                resulting in dominating furniture-related searches. Features custom shipping calculator based on product 
-                                dimensions and delivery zones.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Shopify</span>
-                                <span class="tag">ERP Integration</span>
-                                <span class="tag">Local SEO</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 5 -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">OR</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Orsina UK</h3>
-                            <a href="https://orsina.co.uk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                orsina.co.uk
-                            </a>
-                            <p class="project-description">
-                                Developed international furniture store for UK market with advanced shipping logic for oversized items, 
-                                VAT calculations, and Brexit-compliant checkout process. Created custom product comparison tool for 
-                                furniture pieces, integrated with multiple UK shipping carriers APIs, and implemented comprehensive 
-                                international SEO with hreflang tags. Store features finance options integration and showroom location 
-                                finder with booking system.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">International SEO</span>
-                                <span class="tag">Shipping APIs</span>
-                                <span class="tag">UK Market</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 6 -->
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">SD</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">SuperDrugs Pakistan</h3>
-                            <a href="https://superdrugs.pk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                superdrugs.pk
-                            </a>
-                            <p class="project-description">
-                                Built specialized online pharmacy platform with prescription upload functionality, drug interaction 
-                                checker, and automated compliance for controlled substances. Developed custom Liquid templates for 
-                                medicine categories with detailed active ingredients display, dosage calculators, and side effects 
-                                information. Implemented healthcare-specific schema markup and achieved GDPR compliance for sensitive 
-                                medical data. Features include medicine reminder system and doctor consultation booking.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Healthcare</span>
-                                <span class="tag">GDPR Compliant</span>
-                                <span class="tag">Custom Features</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Additional Projects (7-12) -->
-                    <article class="project-card" data-category="laravel react seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">SEO</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">EJ</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Ejobber Marketplace</h3>
-                            <a href="https://ejobber.co.uk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                ejobber.co.uk
-                            </a>
-                            <p class="project-description">
-                                Architected multi-vendor marketplace platform using Laravel framework with Shopify integration for vendor 
-                                storefronts. Developed comprehensive vendor dashboard with sales analytics, inventory management, and 
-                                automated commission calculations. Implemented advanced search with ElasticSearch, real-time notifications, 
-                                and escrow payment system. Features include dispute resolution workflow, vendor rating system, and 
-                                multi-language support for UAE and UK markets.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Laravel</span>
-                                <span class="tag">Multi-vendor</span>
-                                <span class="tag">ElasticSearch</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">FL</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">FLOTHES</h3>
-                            <a href="https://flothes.com" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                flothes.com
-                            </a>
-                            <p class="project-description">
-                                Launched trendy fashion brand with influencer marketing integration, user-generated content gallery, 
-                                and social proof notifications. Developed custom style quiz using Liquid to provide personalized product 
-                                recommendations based on fashion preferences. Integrated Instagram Shopping, created shoppable lookbooks, 
-                                and implemented AI-powered size recommendation system that reduced returns by 28%. Store features 
-                                limited-time flash sales with countdown timers.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Fashion Tech</span>
-                                <span class="tag">Social Commerce</span>
-                                <span class="tag">Personalization</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-logo">PU</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Prime UK Shop</h3>
-                            <a href="https://prime-uk.shop" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                prime-uk.shop
-                            </a>
-                            <p class="project-description">
-                                Created modern e-commerce platform with subscription box model for curated products. Developed custom 
-                                subscription management system using Shopify's recurring payments API, built flexible subscription plan 
-                                customizer, and integrated with UK postal service for automated shipping. Implemented advanced customer 
-                                retention strategies including loyalty points program and referral system. Features predictive reorder 
-                                suggestions based on purchase history.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Subscriptions</span>
-                                <span class="tag">Recurring Payments</span>
-                                <span class="tag">Loyalty Program</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-image">
-                            <div class="project-logo">KT</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Kaaj Taanka</h3>
-                            <a href="https://kaajtaanka.com" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                kaajtaanka.com
-                            </a>
-                            <p class="project-description">
-                                Designed artisan handicraft marketplace celebrating traditional craftsmanship with storytelling-focused 
-                                product pages. Created custom Liquid templates showcasing artisan profiles, crafting process videos, and 
-                                cultural heritage stories. Developed wholesale B2B portal within same store using customer tags and 
-                                exclusive pricing. Implemented impact tracking feature showing community support metrics. Store supports 
-                                made-to-order products with custom lead time management.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Storytelling</span>
-                                <span class="tag">B2B Portal</span>
-                                <span class="tag">Custom Orders</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-image">
-                            <div class="project-logo">VW</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Vogue Wing</h3>
-                            <a href="https://voguewing.com" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                voguewing.com
-                            </a>
-                            <p class="project-description">
-                                Built fashion-forward e-commerce site with virtual try-on feature using AR technology. Developed style 
-                                matching algorithm suggesting complete outfits, integrated with fashion bloggers' APIs for trend-based 
-                                recommendations, and created dynamic landing pages that update with current fashion trends. Implemented 
-                                advanced email marketing automation with abandoned cart recovery achieving 22% recovery rate. Features 
-                                include fashion calendar for seasonal collections.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">AR Integration</span>
-                                <span class="tag">Recommendation Engine</span>
-                                <span class="tag">Email Automation</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card" data-category="shopify seo">
-                        <div class="project-image">
-                            <div class="project-logo">MT</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Mega Thrift Store</h3>
-                            <a href="https://megathriftstore.pk" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                megathriftstore.pk
-                            </a>
-                            <p class="project-description">
-                                Developed unique thrift store concept with daily inventory updates and flash sale mechanics. Created
-                                custom product tagging system for condition ratings, era classification, and brand authenticity verification.
-                                Built real-time inventory countdown feature showing single-item availability, implemented waitlist system
-                                for sold-out items, and developed vintage sizing conversion tool. Features sustainable fashion impact
-                                calculator showing environmental savings per purchase.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">Real-time Updates</span>
-                                <span class="tag">Sustainability</span>
-                                <span class="tag">Unique UX</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- SHE MATTERS — React.js (last) -->
-                    <article class="project-card" data-category="react">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">React.js</span>
-                        </div>
-                        <div class="project-image" style="background:linear-gradient(135deg,#c9184a,#ff4d6d)">
-                            <div class="project-logo">SM</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">She Matters Official</h3>
-                            <a href="https://shemattersofficial.com/" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                shemattersofficial.com
-                            </a>
-                            <p class="project-description">
-                                Built a React.js single-page application for She Matters Official, a women's empowerment lifestyle brand.
-                                Component-based architecture, animated hero sections, product showcases, and custom inquiry flow.
-                                Implemented React Helmet SEO, JSON-LD structured data, and international hreflang for USA, UK, UAE, and Canada.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">React.js</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">React Helmet</span>
-                                <span class="tag">International SEO</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- MEDVOYAGE — React.js (last) -->
-                    <article class="project-card" data-category="react">
-                        <div class="project-badges">
-                            <span class="project-badge">Live</span>
-                            <span class="project-badge seo">Healthcare</span>
-                        </div>
-                        <div class="project-image" style="background:linear-gradient(135deg,#0077b6,#00b4d8)">
-                            <div class="project-logo">MV</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">MedVoyage Global</h3>
-                            <a href="https://medvoyageglobal.com/" class="project-url" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt"></i>
-                                medvoyageglobal.com
-                            </a>
-                            <p class="project-description">
-                                React.js medical tourism platform connecting international patients with hospitals and specialists worldwide.
-                                Custom treatment inquiry forms, cost estimator tools, doctor profile cards, and multi-step consultation booking.
-                                Healthcare schema markup, GDPR-compliant forms, multilingual SEO across USA, UK, Germany, and Gulf markets.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tag">React.js</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Healthcare Schema</span>
-                                <span class="tag">Multilingual SEO</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="show-more">
-                    <button class="show-more-btn" id="showMoreProjects">
-                        View All Projects
+        </section>                View All Projects
                     </button>
                 </div>
             </div>
@@ -2407,188 +1983,88 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="eyebrow">Contact</div>
-                    <h2 class="section-title">Let's Build Something Great</h2>
-                    <p class="section-subtitle">Ready to take your e-commerce business to the next level?</p>
+        <!-- 5th Section: Let's Connect -->
+        <section id="contact" style="background: #050505; padding: 160px 0; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+            <div class="container about-grid" style="max-width: 1600px; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative;">
+                
+                <!-- Left Column -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 80px;">
+                        <span style="color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.1em;">/</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 0.15em; font-weight: 600;">LET'S CONNECT</span>
+                    </div>
+                    
+                    <h2 style="font-size: clamp(3.5rem, 8vw, 6.5rem); color: #fff; font-weight: 700; line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 64px; font-family: 'Inter', sans-serif; text-transform: uppercase;">
+                        LET'S BUILD<br/>
+                        SOMETHING<br/>
+                        GREAT.
+                    </h2>
+                    
+                    <div style="width: 40px; height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 32px;"></div>
+                    
+                    <p style="color: #a1a1aa; font-size: 15px; line-height: 1.8; letter-spacing: 0.05em; font-weight: 400; max-width: 380px; margin-bottom: 48px;">
+                        Have a project, product or idea?<br/>
+                        Let's turn it into something meaningful<br/>
+                        and impactful.
+                    </p>
+                    
+                    <a href="mailto:hello@ibrarzahoor.com" style="display: inline-flex; align-items: center; justify-content: center; gap: 24px; border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 16px 32px; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-decoration: none; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.05)';" onmouseout="this.style.background='transparent';">
+                        GET IN TOUCH
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
                 
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3 class="contact-title">Get in Touch</h3>
-                        <p class="contact-text">
-                            I'm available for Shopify development projects, consulting, and full-time opportunities. 
-                            Whether you need a new store, want to optimize an existing one, or require ongoing support, 
-                            I'd love to hear about your project.
-                        </p>
-                        
-                        <div class="contact-methods">
-                            <a href="mailto:ibrarzahoor0@gmail.com" class="contact-method">
-                                <div class="contact-method-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-method-content">
-                                    <div class="contact-method-label">Email</div>
-                                    <div class="contact-method-value">ibrarzahoor0@gmail.com</div>
-                                </div>
+                <!-- Right Column -->
+                <div style="display: flex; flex-direction: column; padding-top: 120px; position: relative;">
+                    <!-- Email -->
+                    <div style="padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 500px;">
+                        <div style="color: #a1a1aa; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 16px;">EMAIL</div>
+                        <a href="mailto:hello@ibrarzahoor.com" style="color: #fff; font-size: 24px; text-decoration: none; font-weight: 400; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';">hello@ibrarzahoor.com</a>
+                    </div>
+        
+                    <!-- Location -->
+                    <div style="padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 500px;">
+                        <div style="color: #a1a1aa; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 16px;">LOCATION</div>
+                        <div style="color: #fff; font-size: 20px; font-weight: 400; margin-bottom: 8px;">Lahore, Pakistan</div>
+                        <div style="color: rgba(255,255,255,0.4); font-size: 13px;">Working Worldwide</div>
+                    </div>
+        
+                    <!-- Availability -->
+                    <div style="padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 500px;">
+                        <div style="color: #a1a1aa; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 16px;">AVAILABILITY</div>
+                        <div style="color: #fff; font-size: 20px; font-weight: 400; max-width: 320px; line-height: 1.4;">Available for freelance and<br/>full-time opportunities</div>
+                    </div>
+        
+                    <!-- Connect Links -->
+                    <div style="max-width: 500px;">
+                        <div style="color: #a1a1aa; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 24px;">CONNECT</div>
+                        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                            <a href="https://linkedin.com/in/ibrarzahoorr" target="_blank" style="color: #a1a1aa; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; display: inline-flex; align-items: center; gap: 12px; transition: color 0.3s;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#a1a1aa';">
+                                LINKEDIN
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
-                            
-                            <a href="https://wa.me/923010482120" class="contact-method" target="_blank" rel="noopener">
-                                <div class="contact-method-icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-method-content">
-                                    <div class="contact-method-label">WhatsApp</div>
-                                    <div class="contact-method-value">+92 301 0482120</div>
-                                </div>
+                            <a href="https://github.com/ibrarzahoorr" target="_blank" style="color: #a1a1aa; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; display: inline-flex; align-items: center; gap: 12px; transition: color 0.3s;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#a1a1aa';">
+                                GITHUB
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
-                            
-                            <a href="tel:+923010482120" class="contact-method">
-                                <div class="contact-method-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-method-content">
-                                    <div class="contact-method-label">Phone</div>
-                                    <div class="contact-method-value">+92 301 0482120</div>
-                                </div>
-                            </a>
-
-                            <a href="https://linkedin.com/in/ibrarzahoorr" class="contact-method" target="_blank" rel="noopener">
-                                <div class="contact-method-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="contact-method-content">
-                                    <div class="contact-method-label">LinkedIn</div>
-                                    <div class="contact-method-value">linkedin.com/in/ibrarzahoorr</div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="quick-actions">
-                            <button class="btn primary" id="copyEmail">
-                                <i class="fas fa-copy"></i>
-                                Copy Email
-                            </button>
-                            <a href="https://calendly.com/ibrarzahoor0" class="btn ghost" target="_blank" rel="noopener">
-                                <i class="fas fa-calendar"></i>
-                                Schedule Call
+                            <a href="assets/resume.pdf" target="_blank" style="color: #a1a1aa; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; display: inline-flex; align-items: center; gap: 12px; transition: color 0.3s;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#a1a1aa';">
+                                RESUME
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                         </div>
                     </div>
                     
-                    <form class="contact-form" id="contactForm">
-                        <h3 class="contact-title">Quick Message</h3>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="name">Your Name *</label>
-                            <input type="text" id="name" class="form-input" required placeholder="John Doe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email Address *</label>
-                            <input type="email" id="email" class="form-input" required placeholder="john@example.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-input" placeholder="+1 XXX XXX XXXX">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="project">Project Type *</label>
-                            <select id="project" class="form-select" required>
-                                <option value="">Select project type</option>
-                                <option value="New Shopify Store">New Shopify Store</option>
-                                <option value="Custom Theme Development">Custom Theme Development</option>
-                                <option value="Shopify Plus">Shopify Plus Development</option>
-                                <option value="Store Migration">Platform Migration</option>
-                                <option value="App Development">App Development</option>
-                                <option value="SEO Optimization">SEO & Performance</option>
-                                <option value="Maintenance">Ongoing Support</option>
-                                <option value="Consultation">Consultation</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="message">Project Details *</label>
-                            <textarea id="message" class="form-textarea" required placeholder="Tell me about your project requirements, timeline, and budget..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn success" style="width: 100%; justify-content: center;">
-                            <i class="fab fa-whatsapp"></i>
-                            Send via WhatsApp
-                        </button>
-                    </form>
+                    <!-- Right pagination -->
+                    <div class="hero-pagination" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: absolute; right: 0; top: 0;">
+                        <span style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 16px;">05</span>
+                        <div style="width: 1px; height: 160px; background: rgba(255,255,255,0.2);"></div>
+                        <span style="color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; margin-top: 16px;">06</span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="brand-logo">IZ</div>
-                        <div>
-                            <div class="brand-name">Ibrar Zahoor</div>
-                            <div class="brand-title">Shopify Developer</div>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Professional Shopify developer helping businesses succeed online through custom development, 
-                        strategic optimization, and data-driven solutions. Worldwide, serving clients worldwide.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://github.com/ibrarzahoorr" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/ibrarzahoorr" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://wa.me/923010482120" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                      <div class="footer-links">
-                        <a href="#about">About</a>
-                        <a href="#services">Services</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Portfolio</a>
-                        <a href="#experience">Experience</a>
-                        
-                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Blogs/" target="_blank" rel="noopener">Blog</a>
-                          <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/Tips/" target="_blank" rel="noopener">Tips</a>
-                          <a href="#contact">Contact</a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <div class="footer-links">
-                        <a href="#services">Custom Themes</a>
-                        <a href="#services">Shopify Plus</a>
-                        <a href="#services">App Development</a>
-                        <a href="#services">Migration</a>
-                        <a href="#services">SEO & Performance</a>
-                        <a href="#contact">Consultation</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Ibrar Zahoor. All rights reserved. Built with expertise and passion for e-commerce.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- CLEAN, READABLE JAVASCRIPT -->
     <script>
