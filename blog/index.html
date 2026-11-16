@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopify Development Blog & Expert Guides | Ibrar Zahoor</title>
+    <meta name="description" content="Explore expert Shopify and Shopify Plus guides, Liquid tutorials, theme performance tips, platform comparisons, and international ecommerce insights by Ibrar Zahoor." />
+    <meta name="keywords" content="Shopify blog, Shopify guides, Liquid tutorials, Shopify Plus guide, hire shopify developer tips, shopify speed optimization" />
+    <meta name="author" content="Ibrar Zahoor">
+    
+    <link rel="canonical" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/" />
+    <link rel="alternate" hreflang="x-default" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/" />
+    <link rel="alternate" hreflang="en" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/" />
+    <meta property="og:title" content="Shopify Development Blog & Expert Guides | Ibrar Zahoor" />
+    <meta property="og:description" content="Explore expert Shopify and Shopify Plus guides, Liquid tutorials, theme performance tips, platform comparisons, and international ecommerce insights." />
+    <meta property="og:image" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/ibrar-zahoor-shopify-developer.jpg" />
+    <meta property="og:site_name" content="Ibrar Zahoor Portfolio" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shopify Development Blog & Expert Guides | Ibrar Zahoor" />
+    <meta name="twitter:description" content="Explore expert Shopify and Shopify Plus guides, Liquid tutorials, theme performance tips, and ecommerce insights." />
+    <meta name="twitter:image" content="https://ibrarzahoorr.github.io/Ibrar-Zahoor/ibrar-zahoor-shopify-developer.jpg" />
+    
+    <link rel="icon" type="image/png" href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/favicon.png">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <style>
+      body,html{overflow-x:hidden!important;width:100%;margin:0;padding:0;font-family:Inter,-apple-system,sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
+      :root{--bg:#0a0a0a;--surface:#111111;--surface-2:#1a1a1a;--border:rgba(255,255,255,0.08);--muted:#888;--text:#fff;--text-2:#ccc;--brand:#0070f3;--accent-vivid:#fd7f10;--maxw:1200px}
+      .container{width:min(100% - 32px,var(--maxw));margin:0 auto;padding:0 16px}
+      header{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}
+      .nav{display:flex;justify-content:space-between;align-items:center;height:70px}
+      .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+      .brand-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#7928ca);display:flex;align-items:center;justify-content:center;font-weight:800}
+      .brand-name{font-size:18px;font-weight:700}
+      .brand-title{font-size:12px;color:var(--muted)}
+      nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+      nav a{color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;transition:.2s}
+      nav a:hover,nav a.active{color:var(--brand)}
+      .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:100px;text-decoration:none;font-weight:600;font-size:14px;border:none;cursor:pointer;transition:.2s}
+      .btn.primary{background:var(--accent-vivid);color:#fff}
+      .btn.success{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff}
+      
+      .blog-hero{padding:70px 0 40px;text-align:center}
+      .eyebrow{display:inline-block;padding:6px 16px;border-radius:100px;background:rgba(0,112,243,.1);border:1px solid rgba(0,112,243,.3);color:var(--brand);font-size:13px;font-weight:700;margin-bottom:16px}
+      h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:16px;line-height:1.2}
+      .lead{font-size:18px;color:var(--text-2);max-width:700px;margin:0 auto 30px}
+      
+      .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;margin:40px 0}
+      .blog-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column;text-decoration:none;color:inherit;position:relative}
+      .blog-card:hover{transform:translateY(-5px);border-color:var(--accent-vivid);box-shadow:0 12px 35px rgba(253,127,16,.15)}
+      .blog-card-badge{position:absolute;top:16px;right:16px;background:rgba(0,112,243,.15);border:1px solid rgba(0,112,243,.3);color:var(--brand);padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600}
+      .blog-card-body{padding:30px;display:flex;flex-direction:column;flex:1}
+      .blog-card-meta{display:flex;gap:12px;font-size:13px;color:var(--muted);margin-bottom:12px;align-items:center}
+      .blog-card-title{font-size:20px;font-weight:700;line-height:1.4;margin:0 0 12px;color:#fff}
+      .blog-card-desc{font-size:14px;color:var(--text-2);line-height:1.7;flex:1;margin-bottom:20px}
+      .blog-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border);font-size:14px;color:var(--accent-vivid);font-weight:600}
+      
+      .cities-section{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:40px;margin:60px 0}
+      .city-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+      .city-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--surface-2);border:1px solid var(--border);border-radius:100px;color:var(--text-2);text-decoration:none;font-size:13px;transition:.2s}
+      .city-pill:hover{background:rgba(0,112,243,.15);color:var(--brand);border-color:var(--brand)}
+      
+      footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 30px;margin-top:80px}
+      .footer-content{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+      .footer-links{display:flex;flex-direction:column;gap:12px}
+      .footer-links a{color:var(--text-2);text-decoration:none;font-size:14px}
+      .footer-links a:hover{color:var(--brand)}
+      .footer-bottom{border-top:1px solid var(--border);padding-top:24px;text-align:center;color:var(--muted);font-size:13px}
+      .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none}
+      @media(max-width:768px){nav ul{display:none}.footer-content{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="nav container">
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/" class="brand">
+                <div class="brand-logo">IZ</div>
+                <div class="brand-info">
+                    <div class="brand-name">Ibrar Zahoor</div>
+                    <div class="brand-title">Shopify Developer</div>
+                </div>
+            </a>
+            
+            <ul>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#about">About</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#services">Services</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#projects">Portfolio</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/" class="active">Blog</a></li>
+                <li><a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="https://wa.me/923010482120" class="btn success" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Let's Talk</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="blog-hero">
+            <div class="eyebrow"><i class="fas fa-book-open"></i> Shopify Knowledge Base</div>
+            <h1>Shopify Engineering, Guides & <span style="background:linear-gradient(120deg,#fff,var(--accent-vivid));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Market Insights</span></h1>
+            <p class="lead">Actionable architectural tutorials, speed optimizations, Shopify Plus comparisons, and international ecommerce benchmarks written by Certified Shopify Developer Ibrar Zahoor.</p>
+        </section>
+
+        <!-- Featured Technical Guides -->
+        <h2 style="font-size:24px;font-weight:700;margin-bottom:20px;border-left:3px solid var(--accent-vivid);padding-left:12px">Featured Technical Guides</h2>
+        
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/best-shopify-themes-2025.html" class="blog-card">
+                <span class="blog-card-badge">Themes & Speed</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 2026 Edition</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Best Shopify Themes for 2026: The Definitive Conversion & Speed Guide</h3>
+                    <p class="blog-card-desc">Detailed benchmark comparison between Dawn, Prestige, and Impulse. Learn which theme delivers the fastest mobile Core Web Vitals and highest checkout conversion.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/shopify-plus-vs-advanced.html" class="blog-card">
+                <span class="blog-card-badge">Enterprise</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Plan Comparison</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Shopify Plus ($2,300/mo) vs Advanced Shopify ($399/mo)</h3>
+                    <p class="blog-card-desc">Feature-by-feature ROI breakdown, transaction fee savings, checkout extensibility, and breakeven calculations for high-growth merchants.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/shopify-developer-salary-pakistan.html" class="blog-card">
+                <span class="blog-card-badge">Hiring Rates</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Global Benchmarks</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Shopify Developer Rates & Salaries: Pakistan vs USA/UK Benchmarks</h3>
+                    <p class="blog-card-desc">Discover how international brands in the US, UK, and Canada achieve 60-70% cost savings while hiring top-tier certified Shopify engineering talent.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/expert-shopify-developer-skills.html" class="blog-card">
+                <span class="blog-card-badge">Hiring Checklist</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Technical Standards</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 7 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Top Technical Skills of an Expert Shopify Developer in 2026</h3>
+                    <p class="blog-card-desc">Beyond basic drag-and-drop: Liquid architecture, Shopify Functions, Checkout Extensibility, Storefront APIs, and PageSpeed optimization.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/shopify-partner-program-guide.html" class="blog-card">
+                <span class="blog-card-badge">Partnership</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Ecosystem Guide</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Shopify Partner Program Explained: Why Work with a Verified Partner</h3>
+                    <p class="blog-card-desc">How development sandbox stores save you money, priority partner engineering support, and staging protocols before launch.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 6: Service Guide -->
+            <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/affordable-shopify-plus-development/" class="blog-card">
+                <span class="blog-card-badge">Shopify Plus</span>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Architecture</span>
+                        <span>•</span>
+                        <span><i class="fas fa-clock"></i> 10 min read</span>
+                    </div>
+                    <h3 class="blog-card-title">Affordable Shopify Plus Development: Enterprise Features at 60% Less Cost</h3>
+                    <p class="blog-card-desc">Scripts, Flow, Launchpad, B2B portals, and custom checkout apps built without exorbitant agency markups.</p>
+                    <div class="blog-card-footer">
+                        <span>Read Full Guide <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Major Hubs & International Guides -->
+        <section class="cities-section">
+            <h2 style="font-size:22px;font-weight:700;margin:0 0 8px">Global Shopify Services & City Hubs</h2>
+            <p style="color:var(--text-2);font-size:14px;margin:0">Explore dedicated localized Shopify Plus engineering hubs for major commercial cities worldwide:</p>
+            
+            <div class="city-pills">
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-new-york/" class="city-pill"><i class="fas fa-map-marker-alt"></i> New York City (USA)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-phoenix/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Phoenix (USA)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/uk/london/" class="city-pill"><i class="fas fa-map-marker-alt"></i> London (UK)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/uk/manchester/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Manchester (UK)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/middle-east/uae/dubai/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Dubai (UAE)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/middle-east/uae/abu-dhabi/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Abu Dhabi (UAE)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/middle-east/saudi-arabia/riyadh/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Riyadh (Saudi Arabia)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/germany/berlin/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Berlin (Germany)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/france/paris/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Paris (France)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/switzerland/zurich/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Zurich (Switzerland)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/blog/europe/ireland/dublin/" class="city-pill"><i class="fas fa-map-marker-alt"></i> Dublin (Ireland)</a>
+                <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-global.html" class="city-pill"><i class="fas fa-globe"></i> View All 50+ Countries</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="brand-logo">IZ</div>
+                        <div>
+                            <div class="brand-name">Ibrar Zahoor</div>
+                            <div class="brand-title">Shopify Developer</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Certified Shopify Plus developer helping global merchants scale through bespoke themes, sub-second speed, and enterprise reliability.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Core Services</h4>
+                    <div class="footer-links">
+                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/professional-shopify-development-services/">Custom Theme Development</a>
+                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/affordable-shopify-plus-development/">Shopify Plus Development</a>
+                        <a href="https://ibrarzahoorr.github.io/Ibrar-Zahoor/shopify-developer-pricing.html">Pricing & Packages</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="https://wa.me/923010482120" target="_blank" rel="noopener">WhatsApp Direct</a>
+                        <a href="mailto:ibrarzahoor0@gmail.com">ibrarzahoor0@gmail.com</a>
+                        <a href="https://calendly.com/ibrarzahoor0" target="_blank" rel="noopener">Schedule Call</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ibrar Zahoor. All rights reserved. Certified Shopify Partner.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/923010482120" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
